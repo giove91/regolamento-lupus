@@ -63,7 +63,7 @@ Le notti di gioco si estendono dalle 22:00 (circa) alle 8:00 di domenica, luned�
 \section{Svolgimento del giorno e votazioni}
 
 L'inizio del giorno è annunciato sul sito web, insieme a tutte le informazioni ottenute da ciascun giocatore in seguito agli avvenimenti della notte appena trascorsa.
-I personaggi vivi hanno il diritto di votare entro le ore 22 una persona del villaggio da uccidere. Dopo le ore 22, viene pubblicata la lista dei votanti insieme alla preferenza espressa da ciascuna persona. Il voto è ritenuto valido se almeno il 50\% dei vivi ha votato; in caso contrario, nessuno muore. La persona che ha ricevuto più voti di tutti muore se ha ricevuto almeno il 30\% dei voti totali espressi; in caso contrario, nessuno muore. Se due o più persone hanno ricevuto lo stesso numero di voti, che è superiore a quello dei voti ricevuti da chiunque altro, ed ognuna ha ricevuto almeno il 30\% dei voti totali espressi, muore quella che è stata votata dal Sindaco (vedi Sezione XYZ); se nessuna delle due è stata votata dal sindaco, ne muore una a caso.
+I personaggi vivi hanno il diritto di votare entro le ore 22 una persona del villaggio da uccidere. Dopo le ore 22, viene pubblicata la lista dei votanti insieme alla preferenza espressa da ciascuna persona. Il voto è ritenuto valido se almeno il 50\% dei vivi ha votato; in caso contrario, nessuno muore. La persona che ha ricevuto più voti di tutti muore. Se due o più persone hanno ricevuto lo stesso numero di voti, che è superiore a quello dei voti ricevuti da chiunque altro, muore quella che è stata votata dal Sindaco (vedi Sezione XYZ); se nessuna delle due è stata votata dal Sindaco, ne muore una a caso.
 
 TODO: elezione del Sindaco (?)
 
@@ -72,7 +72,7 @@ TODO: elezione del Sindaco (?)
 
 La notte inizia nel momento in cui viene pubblicato l'esito della votazione del giorno, e termina alle 8:00 della mattina seguente.
 Durante la notte, i personaggi che hanno poteri speciali hanno la facoltà di attivarli.
-Alcuni personaggi hanno un potere speciale attivabile ``ogni due notti'': si intende che tale potere può essere usato se e solo se non è stato usato durante la notte precedente (in altre parole, l'unica restrizione è data dal non poterlo usare in due notti consecutive).
+Alcuni personaggi hanno un potere speciale attivabile ogni due notti: si intende che tale potere può essere usato se e solo se non è stato usato durante la notte precedente (in altre parole, l'unica restrizione è data dal non poterlo usare in due notti consecutive).
 
 
 \section{Comunicazioni GM-giocatori, votazioni, attivazioni dei poteri}
@@ -143,7 +143,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco.
  
  \item {\bf Massoni} (aura bianca). I Massoni si conoscono tra loro.
  
- \item (DA MODIFICARE) {\bf Medium} (aura bianca, mistico). Ogni notte, il Medium può scegliere un personaggio morto per scoprirne il colore dell'aura. Scopre inoltre se tale personaggio è diventato o meno uno Spettro.
+ \item {\bf Investigatore} (aura bianca). Ogni notte, l'Investigatore può scegliere un personaggio morto per scoprirne il colore dell'aura.
 
  \item {\bf Messia} (aura bianca, mistico). Una sola volta in tutta la partita, il Messia può scegliere di resuscitare una persona morta. Quella persona ritornerà in vita il giorno seguente, riacquistando i suoi poteri speciali (ma non la carica di sindaco, qualora l'avesse avuta).
 
@@ -156,11 +156,20 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco.
  
  \item {\bf Mago} (aura bianca, mistico). Ogni notte, il Mago può sapere se una persona è un mistico oppure no.
  
- \item {\bf Nipote di Mubarak} (aura nera). Ha un potere passivo: se la Nipote di Mubarak viene messa al rogo dal villaggio, non muore.
+%  \item {\bf Nipote di Mubarak} (aura nera). Ha un potere passivo: se la Nipote di Mubarak viene messa al rogo dal villaggio, non muore.
 
- \item (DA MODIFICARE) {\bf Necrofilo}.
+ \item {\bf Necrofilo} (aura bianca). Il Necrofilo è buono ed ha un potere attivabile di notte, una sola volta in tutta la partita.
+Il Necrofilo, di notte, può indicare un morto. Se il morto ha un potere speciale attivabile una volta ogni una o due notti, il Necrofilo lo scopre ed acquista quel potere d’ora in poi. Se il morto non aveva un potere di questo tipo, il potere del Necrofilo è sprecato. Ad esempio, se il Necrofilo indica il Diavolo, che è morto, ne acquisisce il potere (ma continua ad essere buono e giocare per il villaggio). Se il Diavolo sarà resuscitato avrà ancora il suo potere, ovviamente.
+Il Necrofilo non può acquisire il potere dei Lupi (uccidere) o dei Negromanti (creare Spettri).
+
+ \item {\bf Esorcista} (aura bianca, mistico). Ogni notte, l'Esorcista può scegliere una persona (viva o morta, compreso sé stesso) e benedire la sua casa.
+ Per tutta la notte, tutti gli Spettri che utilizzano il proprio potere su quella persona falliscono nel loro intento.
+ Quando uno Spettro tenta di usare un potere su qualcuno schermato dall'Esorcista, viene a sapere che il suo potere non ha funzionato.
  
- \item {\bf Espansivo} (aura bianca). Ogni due notti, l'Espansivo può indicare una persona viva. Il GM rivela a questa persona l'identità dell'espansivo.
+%  Ad esempio, se l'Esorcista indica sé stesso ed i Lupi lo attaccano, non muore. Se l'Esorcista indica un morto che viene scelto sia dal Messia che dal Necrofilo, sia il Messia che il Necrofilo perdono i loro poteri. Se l'Esorcista indica una persona scrutata dal Veggente, il Veggente non scopre nulla su quella persona. Se l'Esorcista indica una persona sequestrata dal Sequestratore, la persona non viene sequestrata e il suo potere funziona normalmente.
+
+
+ \item {\bf Espansivo} (aura bianca). Ogni due notti, l'Espansivo può indicare una persona viva. Il GM rivela a questa persona l'identità dell'Espansivo.
 
  \item {\bf Cacciatore} (aura bianca). Ogni notte, il Cacciatore può indicare una persona. Se il Cacciatore muore durante la notte, spara e uccide la persona scelta.
  La Guradia del corpo non protegge dal potere del Cacciatore.
@@ -184,22 +193,45 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco.
  
  \item {\bf Indemoniato} (aura bianca). L'Indemoniato non ha alcun potere particolare. Conosce gli Esorcisti e gli eventuali altri Indemoniati.
 
- \item {\bf Diavolo} (aura nera, mistico). Ogni notte, il Diavolo può scegliere una persona viva scoprendone il ruolo.
-%  che aveva all'inizio della partita, il ruolo attuale ed il colore della sua aura.
+ \item {\bf Diavolo} (aura nera, mistico). Ogni notte, il Diavolo può scegliere una persona viva scoprendone il ruolo che aveva all'inizio della partita, il ruolo attuale e il colore della sua aura.
  
- \item {\bf Esorcista} (aura nera, mistico). Ogni notte, l'Esorcista può scegliere una persona (viva o morta, compreso se stesso) e formare intorno a lei un'aura speciale.
- Per tutta la notte, tutti coloro che utilizzano il proprio potere su quella persona falliscono nel loro intento.
- Quando una persona tenta di usare un potere su qualcuno schermato dall'Esorcista, viene a sapere che il suo potere non ha funzionato.
- 
- Ad esempio, se l'Esorcista indica sé stesso ed i Lupi lo attaccano, non muore. Se l'Esorcista indica un morto che viene scelto sia dal Messia che dal Necrofilo, sia il Messia che il Necrofilo perdono i loro poteri. Se l'Esorcista indica una persona scrutata dal Veggente, il Veggente non scopre nulla su quella persona. Se l'Esorcista indica una persona sequestrata dal Sequestratore, la persona non viene sequestrata e il suo potere funziona normalmente.
-
- \item {\bf Sequestratore} (aura nera). Ogni due notti, il Sequestratore può indicare una persona e rapirla. Se questa persona cerca di uscire di casa per utilizzare il proprio potere su qualcuno, fallisce. Se si tratta di un Lupo, ed è l'unico che va ad uccidere, non muore nessuno. Se si tratta di un personaggio che usa un potere speciale (ad esempio l'Espansivo, o il Messia), il potere è sprecato.
+ \item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può indicare una persona e rapirla. Se questa persona cerca di uscire di casa per utilizzare il proprio potere su qualcuno, fallisce. Se si tratta di un Lupo, ed è l'unico che va ad uccidere, non muore nessuno. Se si tratta di un personaggio che usa un potere speciale (ad esempio l'Espansivo, o il Messia), il potere è sprecato.
  Il Sequestratore non sa se la persona ha provato ad uscire di casa oppure no, e la persona non sa chi l'ha sequestrata (ma viene a sapere che il suo potere non ha funzionato).
+ Il Sequestratore non può rapire la stessa persona per due notti consecutive. Se prova a farlo, si sposta come se avesse agito, ma il suo potere non ha effetto.
 
- \item {\bf Avvocato del diavolo} (aura nera). Ogni due notti, l'Avvocato del diavolo può indicare una persona (diversa da sé stesso). Se questa persona sarà quella che, il giorno dopo, avrà ricevuto più voti, non morirà (grazie ad una legge ad personam), e morirà invece la persona con il secondo numero più alto di voti, purché i voti siano abbastanza.
+ \item {\bf Avvocato del diavolo} (aura nera). Ogni due notti, l'Avvocato del diavolo può indicare una persona (diversa da sé stesso). Se questa persona sarà quella che, il giorno dopo, avrà ricevuto più voti, non morirà (grazie ad una legge ad personam), e morirà invece la persona con il secondo numero più alto di voti.
 
 
 \end{itemize}
 
+\subsection*{Personaggi Non-morti}
+
+\begin{itemize}
+\item {\bf Negromanti} (aura bianca, mistici). Ogni notte, ciascun Negromante può scegliere tra due possibili azioni: creare uno Spettro, o ricercare un nuovo Potere.
+
+Per creare uno Spettro, un Negromante deve scegliere un Potere dal proprio Libro degli Spettri, e andare da un morto: quel morto diventa uno Spettro, e ottiene il Potere scelto. Da quel momento in poi, quella persona gioca per la fazione dei Non-morti.
+Per ricercare un nuovo Potere, un Negromante deve scegliere uno dei Poteri che in quel momento può ricercare. Il Potere scelto viene aggiunto al proprio Libro degli Spettri.
+
+Ogni Potere può essere assegnato ad un solo Spettro. Vi è un numero massimo di Spettri che possono essere creati; tale numero viene fissato all'inizio della partita e comunicato ai Negromanti.
+
+I Negromanti non possono essere uccisi dai Lupi.
+
+I Negromanti si conoscono tra loro.
+
+\item {\bf Medium} (aura bianca, mistico). Ogni notte, il Medium può scegliere un personaggio morto per scoprirne il colore dell'aura. Scopre inoltre se tale personaggio è diventato o meno uno Spettro.
+
+Il Medium conosce gli Ipnotisti e gli eventuali altri Medium.
+
+\item {\bf Ipnotista} (aura bianca). Ogni due notti, l'Ipnotista può scegliere una persona e assoggettarla al suo volere. Da quel momento in poi il voto di quella persona è considerato uguale a quello dell'Ipnotista, indipendentemente dall'eventuale voto espresso.
+Questo è vero anche se l'Ipnotista non vota.
+
+Quando l'Ipnotista muore, le persone da lui ipnotizzate ricominciano a votare secondo il proprio volere. Se tuttavia lo stesso Ipnotista viene resuscitato dal Messia, tutti coloro che si trovavano sotto il controllo dell'Ipnotista al momento della sua morte sono nuovamente assoggettati al suo volere (a meno che nel frattempo siano stati ipnotizzati da un altro Ipnotista, vedi oltre).
+
+Una persona può essere sotto il controllo di un solo Ipnotista per volta, e precisamente l'ultimo ad aver agito su di essa. Se più Ipnotisti agiscono sulla stessa persona durante la stessa notte, viene assoggettata da tutti in un ordine casuale, e perciò risulterà essere sotto il controllo soltanto dell'ultimo ad aver agito. Gli altri Ipnotisti non ricevono alcuna notifica di errore. 
+
+L'Ipnotista conosce i Medium e gli eventuali altri Ipnotisti.
+
+\item {\bf Fantasma} (aura bianca). Il Fantasma, finché è vivo, non ha alcun potere. Al momento della sua morte (anche se si suicida), diventa immediatamente uno Spettro e assume uno dei Poteri non ancora assegnati, scelto in modo casuale fra tutti quelli possibili. Gli viene inoltre comunicato chi sono i Negromanti. Il Fantasma non conta ai fini del numero di Spettri che possono essere creati dai Negromanti, ma i Negromanti non possono più creare Spettri con il Potere assegnato al Fantasma.
+\end{itemize}
 
 \end{document}
