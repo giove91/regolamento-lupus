@@ -197,13 +197,15 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
  La Fattucchiera conosce i Lupi e le eventuali altre Fattucchiere.
  
- \item {\bf Indemoniato} (aura bianca). L'Indemoniato non ha alcun potere particolare. Conosce gli Esorcisti e gli eventuali altri Indemoniati.
+ \item {\bf Indemoniato} (aura bianca). L'Indemoniato non ha alcun potere particolare. Conosce i Sequestratori e gli eventuali altri Indemoniati.
 
  \item {\bf Diavolo} (aura nera, mistico). Ogni notte, il Diavolo può scegliere una persona viva scoprendone il ruolo che aveva all'inizio della partita, il ruolo attuale e il colore della sua aura.
  
- \item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può indicare una persona e rapirla. Se questa persona cerca di uscire di casa per utilizzare il proprio potere su qualcuno, fallisce. Se si tratta di un Lupo, ed è l'unico che va ad uccidere, non muore nessuno. Se si tratta di un personaggio che usa un potere speciale (ad esempio l'Espansivo, o il Messia), il potere è sprecato.
+ \item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può indicare una persona e rapirla. Se questa persona cerca di uscire di casa per utilizzare il proprio potere su qualcuno, fallisce. Se si tratta di un Lupo, ed è l'unico che va ad uccidere, non muore nessuno. Se si tratta di un personaggio che usa un potere speciale (ad esempio l'Espansivo, o il Messia), il potere di quel personaggio è sprecato.
  Il Sequestratore non sa se la persona ha provato ad uscire di casa oppure no, e la persona non sa chi l'ha sequestrata (ma viene a sapere che il suo potere non ha funzionato).
  Il Sequestratore non può rapire la stessa persona per due notti consecutive. Se prova a farlo, si sposta come se avesse agito, ma il suo potere non ha effetto.
+ 
+ Il Sequestratore conosce gli Indemoniati e gli eventuali altri Sequestratori.
 
  \item {\bf Avvocato del diavolo} (aura nera). Ogni due notti, l'Avvocato del diavolo può indicare una persona (diversa da sé stesso). Se questa persona sarà quella che, il giorno dopo, avrà ricevuto più voti, non morirà (grazie ad una legge ad personam), e morirà invece la persona con il secondo numero più alto di voti.
 
@@ -242,6 +244,8 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  I Negromanti non possono essere uccisi dai Lupi.
 
  I Negromanti si conoscono tra loro.
+ 
+ TODO: Cosa succede se la notte prima è stato creato uno spettro e i negromanti cercano di uscire?
 
  \item {\bf Medium} (aura bianca, mistico). Ogni notte, il Medium può scegliere un personaggio morto per scoprirne il colore dell'aura. Scopre inoltre se tale personaggio è diventato o meno uno Spettro.
 
@@ -258,7 +262,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 
  \item {\bf Fantasma} (aura bianca). Il Fantasma, finché è vivo, non ha alcun potere. Al momento della sua morte (anche se si suicida), diventa immediatamente uno Spettro e assume uno dei Poteri non ancora assegnati, scelto in modo casuale fra tutti quelli possibili. Gli viene inoltre comunicato chi sono i Negromanti. Il Fantasma non conta ai fini del numero di Spettri che possono essere creati dai Negromanti, ma i Negromanti non possono più creare Spettri con il Potere assegnato al Fantasma.
  
- Se al Fantasma viene assegnato il Potere della Morte, i Negromanti non perdono il potere di creazione degli Spettri.
+ Al Fantasma non può venire assegnato il Potere della Morte.
  
  \item {\bf Spettri}. Gli Spettri non sono presenti all'inizio della partita: i personaggi morti possono essere risvegliati come Spettri in seguito all'azione di un Negromante.
  Nel momento in cui un personaggio diviene uno Spettro, mantiene la sua aura ma inizia a giocare per la fazione dei Non-morti. Gli viene comunicata l'identità del Negromante che lo ha risvegliato, e ottiene un Potere che può iniziare a usare dalla notte successiva. Inoltre, perde per sempre gli eventuali poteri che possedeva.
@@ -280,12 +284,16 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e ucciderlo. Questo Potere non ha effetto sui Lupi.
  
  \item {\bf Illusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e far comparire una sua illusione a casa di qualcun altro (vivo o morto): agli occhi del Voyeur, è come se il personaggio scelto si sia effettivamente spostato.
+ 
+ Questo Potere non ha effetto sullo Stalker.
 
  Se il personaggio scelto si reca proprio nella casa dove viene vista l'illusione, il Voyeur vede comunque solo una volta quel personaggio.
  
  L'Esorcista impedisce l'utilizzo di questo Potere agendo sulla casa dove compare l'illusione, ma non agendo sulla casa del personaggio di cui l'illusione ha preso l'aspetto.
 
  \item {\bf Ombra}. Ogni notte, lo Spettro può scegliere un personaggio vivo e far andare una sua ombra verso la casa di qualcun altro (vivo o morto): agli occhi dello Stalker, è come se il personaggio scelto si sia spostato nella casa indicata (a prescindere da dove eventualmente si rechi il personaggio).
+ 
+ Questo Potere non ha effetto sul Voyeur.
  
  L'Esorcista impedisce l'utilizzo di questo Potere agendo sulla casa del personaggio di cui viene creata l'ombra, ma non agendo sulla casa verso cui l'ombra si sposta.
  
@@ -315,7 +323,7 @@ Se il potere è unico o attivabile ogni due notti, l'utilizzo conta anche in cas
 
 \section{Lo status di Sindaco}
 
-Il voto del Sindaco vale 1,5 voti per stabilire se una votazione è valida e per stabilire chi muore dopo una votazione di giorno. (A SASHA NON PIACE)
+Il voto del Sindaco vale 1,5 voti per stabilire se una votazione è valida e per stabilire chi muore dopo una votazione di giorno.
 Il Sindaco è scelto casualmente all'inizio della partita dal GM (in modo scorrelato dalla Fazione di appartenenza), e può scegliere a chi passare la sua carica quando muore.
 
 Ogni giorno, oltre a votare per mettere qualcuno al rogo, ogni abitante del villaggio può votare per l'elezione di un nuovo Sindaco. Se alla fine della giornata qualcuno ha ricevuto un numero di voti superiore a metà dei giocatori vivi, riceve la carica di Sindaco (e il Sindaco precedente la perde).
@@ -332,7 +340,7 @@ Segue una lista (verosimilmente non esaustiva) di eventualità bizzarre con le c
 \begin{itemize}
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sulla stessa persona (morta), quella persona viene resuscitata dal Messia e non risvegliata come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
  
- \item Un Negromante che utilizza la propria azione notturna per ricercare un nuovo Potere e contemporaneamente viene sequestrato, fallisce. Potrà nuovamente provare a ricercare quel Potere nelle notti successive.
+%  \item Un Negromante che utilizza la propria azione notturna per ricercare un nuovo Potere e contemporaneamente viene sequestrato, fallisce. Potrà nuovamente provare a ricercare quel Potere nelle notti successive.
  
  \item Se un Necrofilo usa il proprio potere su uno Spettro, copia il potere che quel personaggio aveva prima di essere risvegliato come Spettro.
 \end{itemize}
