@@ -167,6 +167,8 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  \item {\bf Necrofilo} (aura bianca). Il Necrofilo è buono ed ha un potere attivabile di notte, una sola volta in tutta la partita.
  Il Necrofilo, di notte, può indicare un morto. Se il morto ha un potere speciale attivabile una volta ogni una o due notti, il Necrofilo lo scopre ed acquista quel potere d'ora in poi. Se il morto non aveva un potere di questo tipo, il potere del Necrofilo è sprecato. Ad esempio, se il Necrofilo indica il Diavolo, che è morto, ne acquisisce il potere (ma continua ad essere buono e giocare per il villaggio). Se il Diavolo sarà resuscitato avrà ancora il suo potere, ovviamente.
  Il Necrofilo non può acquisire il potere dei Lupi (uccidere), dei Negromanti (creare Spettri) o del Fantasma.
+ 
+ Nel momento in cui il Necrofilo utilizza con successo il proprio potere, acquisisce anche il ruolo, l'aura e la proprietà di essere mistico del personaggio su cui ha agito.
 
  \item {\bf Esorcista} (aura bianca, mistico). Ogni notte, l'Esorcista può scegliere una persona (viva o morta, compreso sé stesso) e benedire la sua casa.
  Per tutta la notte, tutti gli Spettri che utilizzano il proprio potere su quella persona falliscono nel loro intento.
@@ -285,7 +287,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 \paragraph{Poteri degli Spettri}
 
 \begin{itemize}
- \item {\bf Nebbia}. Ogni notte, lo Spettro può scegliere un personaggio vivo o morto, e creare attorno alla sua casa una fittissima nebbia magica. Per tutta la notte, chiunque cerchi di usare il proprio potere su quel personaggio (Spettri compresi), fallisce.
+ \item {\bf Nebbia}. Ogni notte, lo Spettro può scegliere un personaggio vivo o morto, e creare attorno alla sua casa una fittissima nebbia magica. Per tutta la notte, chiunque cerchi di usare il proprio potere su quel personaggio, compresi gli Spettri ma esclusi gli Esorcisti, fallisce.
  
  \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e ucciderlo. Questo Potere non ha effetto sui Lupi.
  
@@ -299,7 +301,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
  L'Esorcista impedisce l'utilizzo di questo Potere agendo sulla casa del personaggio di cui viene creata l'ombra, ma non agendo sulla casa verso cui l'ombra si sposta.
  
- \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e scoprirne l'aura.
+ \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e scoprirne l'aura. Scopre inoltre se quel personaggio appartiene o meno alla fazione dei Non-morti.
  
  \item {\bf Amnesia}. Ogni notte, lo Spettro può scegliere un personaggio vivo. Il giorno successivo, il suo eventuale voto per il rogo viene ignorato: a tutti gli effetti è come se non avesse votato. Ciò accade anche se il personaggio scelto è sotto il controllo dell'Ipnotista: invece di votare come l'Ipnotista, non vota affatto.
  
@@ -315,6 +317,10 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 
 
 \subsection{Utilizzo dei poteri e fallimento}
+\label{fallimento}
+
+I personaggi che ottengono informazioni di qualsiasi tipo su altri personaggi, le ottengono riguardo alla condizione in cui questi si trovavano al termine del giorno precedente, anche se tali informazioni cambiano nel corso della notte.
+Ad esempio, se un morto viene contemporaneamente risvegliato come Spettro e visitato dal Medium, quest'ultimo scopre che il morto (al termine del giorno precedente) non era diventato uno Spettro.
 
 Ci sono alcuni modi di utilizzare il proprio potere che sono a priori proibiti, e pertanto non risultano nemmeno tra le scelte disponibili sull'interfaccia web. Ad esempio, l'Investigatore non può scegliere di agire su un personaggio vivo; oppure, un Negromante non può provare a usare il proprio potere se durante la notte precedente è stato creato uno Spettro (anche se non è stato lui a crearlo).
 
@@ -345,7 +351,13 @@ Ogni giorno, oltre a votare per mettere qualcuno al rogo, ogni abitante del vill
 In qualsiasi momento il Sindaco può indicare a chi intende lasciare la sua carica se dovesse morire. Se il Sindaco muore senza aver mai indicato un successore, o se il successore designato è morto, il GM determina casualmente chi riceverà la carica.
 
 
-\subsection{Le cose che vorreste sapere ma non avete mai osato chiedere}
+\pagebreak
+\section{L'interfaccia web}
+(QUANDO CI SARÀ, METTEREMO QUI UNA BREVE GUIDA)
+
+
+
+\section{Le cose che vorreste sapere ma non avete mai osato chiedere}
 \label{faq}
 
 Le regole spiegate fino a questo punto sono più che sufficienti per poter giocare. Tuttavia possono accadere eventi piuttosto strani (ad esempio, cosa succede se due Sequestratori si sequestrano a vicenda?). In tutti questi casi, il GM decide in modo inappellabile cosa accade; ai giocatori è sempre permesso chiedergli cosa accade in una di queste combinazioni.
@@ -369,17 +381,22 @@ Segue una lista (verosimilmente non esaustiva) di eventualità bizzarre con le c
  
  \item Se più Ipnotisti agiscono sulla stessa persona durante la stessa notte, viene assoggettata da tutti in un ordine casuale, e perciò risulterà essere sotto il controllo soltanto dell'ultimo ad aver agito. Gli altri Ipnotisti non ricevono alcuna notifica di errore.
  
- \item Se uno Spettro con il potere dell'Illusione prende l'aspetto di un personaggio recandosi in una casa dove agiscono anche quel personaggio e il Voyeur, il Voyeur vede comunque solo una volta quel personaggio. Se tuttavia il personaggio scelto coincide con il Voyeur, questi compare nella lista dei personaggi visti.
+ \item Se uno Spettro con il Potere dell'Illusione prende l'aspetto di un personaggio recandosi in una casa dove agiscono anche quel personaggio e il Voyeur, il Voyeur vede comunque solo una volta quel personaggio. Se tuttavia il personaggio scelto coincide con il Voyeur, questi compare nella lista dei personaggi visti.
 
+ \item Se l'Esorcista e lo Spettro con il Potere della Nebbia agiscono sulla stessa persona, lo Spettro viene bloccato dall'Esorcista e non viceversa.
+ 
+ \item Se lo Stalker o il Voyeur si recano a casa di un personaggio che sta usando il proprio potere su sé stesso, ricevono informazioni come se quel personaggio non avesse agito.
+ 
+ \item In caso di contraddizione nell'utilizzo dei poteri, viene scelto casualmente un personaggio (o più di uno, se necessario), che non utilizza il proprio potere e riceve la consueta notifica di fallimento (questo è il fallimento ``di terza categoria'', vedi Sezione \ref{fallimento}).
+ 
+ Ad esempio, se un Esorcista, un Sequestratore e uno Spettro con il Potere della Nebbia agiscono simultaneamente sull'Esorcista, si verifica facilmente (esercizio) che non c'è alcun modo coerente di risolvere le azioni.
+ 
 \end{itemize}
 
 
 (E QUA CONTO SULL'ABILITÀ DI LEONARDO NEL TROVARE UN PO' DI CASI PATOLOGICI)
 
 
-\pagebreak
-\section{L'interfaccia web}
-(QUANDO CI SARÀ, METTEREMO QUI UNA BREVE GUIDA)
 
 \section{Chi c'è dietro tutto questo}
 
