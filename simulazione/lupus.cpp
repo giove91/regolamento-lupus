@@ -109,20 +109,22 @@ num += personaggi[i].vivo;
 return num;
 };
 
-p* randtag(int ruolo, int fazione, int vivo, int mistico, p* pers) //ruolo == -1 e i numeri negativi indicano "indifferente"
+p* randtag(int ruolo, int fazione, int vivo, int mistico, p* pers) //i numeri negativi indicano "indifferente"
 {
- p* per[len];
-for (int i=0; i<len; i++)
-per[i]=pers+i;
-vector<p*> punt;
-punt.assign (per, per + len);
-random_shuffle(punt.begin(), punt.end());
- for (int i=0; i<len; i++)
- 	{p* pe=punt[i];
-	if( (pe->ruolo_num== ruolo || ruolo < 0) && (pe->fazione == fazione || fazione < 0) && (pe->mistico == mistico || mistico<0) 			&& (pe->vivo==vivo || vivo <0)) 
-	return pe;
+	p* per[len];
+	for (int i=0; i<len; i++) per[i]=pers+i;
+	// vector<p*> punt;
+	// punt.assign (per, per + len);
+	// random_shuffle(punt.begin(), punt.end());
+	for (int i=0; i<len; i++)
+	{
+		int j=rand()%(len-i);
+		swap(per[i],per[i+j]);
+		p* pe=per[i];
+		if( (pe->ruolo_num== ruolo || ruolo < 0) && (pe->fazione == fazione || fazione < 0) && (pe->mistico == mistico || mistico<0) && (pe->vivo==vivo || vivo <0))
+			return pe;
 	};
-return NULL;
+	return NULL;
 };
 
 class cacciatore: public personaggio {
