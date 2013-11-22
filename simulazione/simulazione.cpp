@@ -1,3 +1,8 @@
+/*
+	Simulatore molto semplice di Lupus
+	Autore: Giove
+*/
+
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
@@ -151,7 +156,7 @@ int main(int argc, char *argv[]) {
 	// Stampa dei risultati
 	printf("Numero di simulazioni: %d\n", numsimulazioni);
 	printf("Numero di giocatori:\tBuoni %d\t\tCattivi %d\tNon-morti %d\t(totale: %d)\n", numgiocatori[0], numgiocatori[1], numgiocatori[2], numgiocatori[0]+numgiocatori[1]+numgiocatori[2]);
-	printf("Risultati:\t\tBuoni %.2lf%\tCattivi %.2lf%\tNon-morti %.2lf%\n", percentuali[0], percentuali[1], percentuali[2]);
+	printf("Risultati:\t\tBuoni %.2lf%%\tCattivi %.2lf%%\tNon-morti %.2lf%%\n", percentuali[0], percentuali[1], percentuali[2]);
 	printf("Durata media della partita: %.1lf giorni\n", ((double)(somma_durate))/numsimulazioni );
 	return 0;
 }
