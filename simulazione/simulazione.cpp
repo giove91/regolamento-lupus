@@ -16,7 +16,7 @@ using namespace std;
 #define NONMORTI 2
 
 int const default_sim = 500000;	// Numero di simulazioni di default
-int killer_night = 7;		// Notte dalla quale è disponibile lo spettro killerù
+int killer_night = 7;		// Notte dalla quale è disponibile lo spettro killer
 
 int somma_durate = 0;		// Somma delle durate delle partite
 
