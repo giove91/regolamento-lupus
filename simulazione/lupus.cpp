@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <list>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -11,6 +12,7 @@ using namespace std;
 #define lenght 31
 #define len 31
 #define hypno 14
+#define numero_critico 31
 
 //typedef basic_string<char> string;
 
@@ -20,7 +22,7 @@ typedef enum { CACCIATORE, CONTADINO, CUSTODE, ESORCISTA, GUARDIA, MAGO, STALKER
 
 class personaggio {	
 	public:
-		personaggio( bool bnfigo=0, int faz=0, int mst=0, string s="null", int rlnum=-1 ) : ruolo_num(rlnum), fazione_iniziale(faz), fazione(faz), vivo(1), mistico(mst), spettro(0), buonofigo(bnfigo), sequestrato(0), custodito(0), appenaagito(0), esorcizzato (0), occultato (0) {ruolo.assign(s);};
+		personaggio( bool bnfigo=0, int faz=0, int mst=0, string s="null", int rlnum=-1 ) : ruolo_num(rlnum), fazione_iniziale(faz), fazione(faz), vivo(1), mistico(mst), spettro(0), buonofigo(bnfigo), sequestrato(0), custodito(0), appenaagito(0), esorcizzato (0), occultato (0) {ruolo.assign(s); gente.push_back(this);};
 		int ruolo_num;
 		string ruolo;
 		int fazione_iniziale;
@@ -28,14 +30,14 @@ class personaggio {
 		bool vivo;
 		bool mistico;
 		bool spettro;
-		vector<personaggio*> gente;
+		list<personaggio*> gente;
 		bool buonofigo;
 		bool sequestrato;
 		bool custodito;
 		bool appenaagito;
 		bool esorcizzato;
 		bool occultato;
-		virtual int notte (personaggio* personaggio){ cout << "Sono un tizio generico!" << endl;
+		virtual int notte (personaggio** personaggi){ cout << "Sono un tizio generico!\n";
 		return 0;};
 };
 
@@ -47,6 +49,7 @@ vector<p*> notialdiavolo;
 p* killerevittima[2];
 p* uccisodallospettro;
 bool appenaspettrificato = 0;
+bool appenaucciso = 0;
 int numerospettri = 0;
 int uccisionisensate = 0;
 int misticiuccisi = 0;
@@ -57,7 +60,10 @@ int vittoriegrigi = 0;
 
 
 bool morto(p* persona){
-		return !(persona->vivo);
+		if(persona->vivo)
+			return false;
+		//cout << "è morto!\n";
+		return true;
 		};
 
 void inizializza(p* pers)
@@ -75,7 +81,7 @@ void inizializza(p* pers)
 
 void resetsessione(){
 	/*for (int i=0; i<len; i++)
-		inizializza(personaggi+i);*/
+		inizializza((*(punt_personaggi+i)));*/
 	numerospettri=0;
 	cattivinoti.erase(cattivinoti.begin(),cattivinoti.end());
 	misticinoti.erase(misticinoti.begin(),misticinoti.end());
@@ -83,14 +89,36 @@ void resetsessione(){
 	killerevittima[0]=NULL;
 	killerevittima[1]=NULL;
 	};
+	
+void distruggimorti(list<p*>* persone) {
+	list<p*>::iterator it,jt;
+	it=(*persone).begin();
+	jt=it;
+	while(it != (*persone).end()){
+		it++;
+		if(morto(*jt)){
+		//	cout << "eliminato! \n";
+			(*persone).erase(jt);
+		};
+	jt=it;
+	};		
+}	
 
-void reset(p* personaggi){
+void reset(p** punt_personaggi){
+	
 	for(int i=0; i<len; i++){
-		(personaggi+i)->sequestrato = 0;
-		(personaggi+i)->custodito = 0;
-		(personaggi+i)->esorcizzato = 0;
-		(personaggi+i)->occultato = 0;
-		(personaggi+i)->gente.erase(remove_if((personaggi+i)->gente.begin(),(personaggi+i)->gente.end(), morto),(personaggi+i)->gente.end());
+		((*(punt_personaggi+i)))->sequestrato = 0;
+		((*(punt_personaggi+i)))->custodito = 0;
+		((*(punt_personaggi+i)))->esorcizzato = 0;
+		((*(punt_personaggi+i)))->occultato = 0;
+		if(((*(punt_personaggi+i)))->ruolo_num==	VEGGENTE){
+		//	cout << "sto resettando il veggente!\n";
+		//	cout << "Reset: il veggente conosce " << ((*(punt_personaggi+i)))->gente.size() << " persone\n";
+		}
+		distruggimorti(&(((*(punt_personaggi+i)))->gente));
+		if(((*(punt_personaggi+i)))->ruolo_num==	VEGGENTE){
+		//	cout << "Reset: il veggente conosce " << ((*(punt_personaggi+i)))->gente.size() << " persone\n";
+		}
 	};
 	
 	uccisodallospettro=NULL;
@@ -99,31 +127,39 @@ void reset(p* personaggi){
 			
 };
 
-
-unsigned numerobianchi(p* personaggi){
+unsigned numerocustoditi(p** punt_personaggi) {
 	int counter=0;
 	for(int i=0; i<len; i++)
-		if((personaggi+i)->fazione == 0 && (personaggi+i)->vivo)
+		if(((*(punt_personaggi+i)))->custodito)
 			counter++;
-	//cout << "Ci sono " << counter << " bianchi" << endl;
+	//cout << "Ci sono " << counter << " custoditi\n";
+	return counter;
+}
+
+unsigned numerobianchi(p** punt_personaggi){
+	int counter=0;
+	for(int i=0; i<len; i++)
+		if(((*(punt_personaggi+i)))->fazione == 0 && ((*(punt_personaggi+i)))->vivo)
+			counter++;
+	//cout << "Ci sono " << counter << " bianchi\n";
 	return counter;
 };
 
-unsigned numeroneri(p* personaggi){
+unsigned numeroneri(p** punt_personaggi){
 	int counter=0;
 	for(int i=0; i<len; i++)
-		if((personaggi+i)->fazione == 1 && (personaggi+i)->vivo)
+		if(((*(punt_personaggi+i)))->fazione == 1 && ((*(punt_personaggi+i)))->vivo)
 			counter++;
-	//cout << "Ci sono " << counter << " neri" << endl;		
+	//cout << "Ci sono " << counter << " neri\n";		
 	return counter;
 };		
 
-unsigned numerogrigi(p* personaggi){
+unsigned numerogrigi(p** punt_personaggi){
 	int counter=0;
 	for(int i=0; i<len; i++)
-		if((personaggi+i)->fazione == 2 && (personaggi+i)->vivo)
+		if(((*(punt_personaggi+i)))->fazione == 2 && ((*(punt_personaggi+i)))->vivo)
 			counter++;
-	//cout << "Ci sono " << counter << " grigi" << endl;		
+	//cout << "Ci sono " << counter << " grigi\n";		
 	return counter;
 };
 
@@ -132,17 +168,17 @@ void kill (p* ucciso) {
 };
 
 
-unsigned numerovivi(p* personaggi)
+unsigned numerovivi(p** punt_personaggi)
 {int num=0;
 for( int i=0; i<len; i++)
-num += personaggi[i].vivo;
+num += (*((*(punt_personaggi+i)))).vivo;
 return num;
 };
 
-p* randtag(int ruolo, int fazione, int vivo, int mistico, p* pers) //i numeri negativi indicano "indifferente"
+p* randtag(int ruolo, int fazione, int vivo, int mistico, p** personaggi) //i numeri negativi indicano "indifferente"
 {
 	p* per[len];
-	for (int i=0; i<len; i++) per[i]=pers+i;
+	for (int i=0; i<len; i++) per[i]=*(personaggi+i);
 	// vector<p*> punt;
 	// punt.assign (per, per + len);
 	// random_shuffle(punt.begin(), punt.end());
@@ -160,10 +196,10 @@ p* randtag(int ruolo, int fazione, int vivo, int mistico, p* pers) //i numeri ne
 class cacciatore: public personaggio {
 	public:
 	cacciatore() : personaggio(0,0,0,"cacciatore",CACCIATORE) {};
-	int notte (p* personaggi)
+	int notte (p** punt_personaggi)
 		{
 		if(!(this->vivo))
-			randtag(-1, -1, 1, -1, personaggi)->vivo=0;
+			randtag(-1, -1, 1, -1, punt_personaggi)->vivo=0;
 		return 0;
 		};
 };
@@ -171,7 +207,7 @@ class cacciatore: public personaggio {
 class contadino: public personaggio {
 	public:
 	contadino(bool m=0) : personaggio(0,0,m,"contadino",CONTADINO) {};	
-	int notte (p* personaggi){
+	int notte (p** punt_personaggi){
 		return 0;
 		}
 	};
@@ -179,9 +215,10 @@ class contadino: public personaggio {
 class custode: public personaggio {
 	public:
 	custode() : personaggio(0,0,0,"custode",CUSTODE) {};
-	int notte (p* personaggi)
+	int notte (p** punt_personaggi)
 			{
-			randtag(-1, -1, 0, -1, personaggi)->custodito=1;
+			if(numerovivi(punt_personaggi)<len)
+			randtag(-1, -1, 0, -1, punt_personaggi)->custodito=1;
 			return 0;
 			};
 };
@@ -189,9 +226,9 @@ class custode: public personaggio {
 class esorcista: public personaggio {
 	public:
 	esorcista() : personaggio(0,0,1,"esorcista",ESORCISTA) {};
-	int notte (p* personaggi)
+	int notte (p** punt_personaggi)
 				{p* esorciz;
-				esorciz = randtag(-1, -1, 1, -1, personaggi);
+				esorciz = randtag(-1, -1, 1, -1, punt_personaggi);
 				esorciz->esorcizzato=1;
 				if(esorciz == uccisodallospettro)
 					esorciz->vivo= 1;
@@ -202,11 +239,11 @@ class esorcista: public personaggio {
 class guardia: public personaggio {
 		public:
 		guardia() : personaggio(1,0,0,"guardia",GUARDIA) {};
-		int notte (p* personaggi)
+		int notte (p** punt_personaggi)
 			{
 			if(killerevittima[0]==NULL || killerevittima[1]==NULL)
 			return 0;	
-			p* protetto = randtag(-1, -1, 1, -1, personaggi);
+			p* protetto = randtag(-1, -1, 1, -1, punt_personaggi);
 			if(killerevittima[1]==protetto)
 				killerevittima[1]->vivo=1;
 			return 1;
@@ -216,18 +253,17 @@ class guardia: public personaggio {
 class mago: public personaggio {
 	public:
 	mago() : personaggio(0,0,1,"mago",MAGO) {};
-	int notte (p* personaggi) {
-			vector<p*>::iterator it;
-			gente.erase(remove_if(gente.begin(),gente.end(), morto),gente.end());
-			if(gente.size()+1 >= numerovivi(personaggi))
+	int notte (p** punt_personaggi) {
+			if(gente.size()+1 >= numerovivi(punt_personaggi))
 				return 0;
 			p* scrutato;
-			//do
-			scrutato = randtag(-1, -1, 1, -1, personaggi);
-			//while (find(gente.begin(), gente.end(),scrutato)!=gente.end() && scrutato!=this);
+			do
+			scrutato = randtag(-1, -1, 1, -1, punt_personaggi);
+			while (find(gente.begin(), gente.end(),scrutato)!=gente.end() && scrutato!=this);
 			if(scrutato->mistico){
 				misticinoti.push_back(scrutato);
-				gente.push_back(scrutato);}
+			}
+				gente.push_back(scrutato);
 			return 0;
 			};
 };
@@ -235,17 +271,19 @@ class mago: public personaggio {
 class stalker: public personaggio {
 	public:
 	stalker() : personaggio(1,0,0,"stalker",STALKER) {};
-	int notte (p* personaggi) {
+	int notte (p** punt_personaggi) {
 			if (appenaagito) {
 				appenaagito = 0;
 				return 0;
 			};
 			appenaagito=1;
-			p* stalkato = randtag(-1, -1, 1, -1, personaggi);
+			p* stalkato = randtag(-1, -1, 1, -1, punt_personaggi);
 			if(stalkato == killerevittima[0])
-				if(!killerevittima[1]->vivo)
-					if(find(cattivinoti.begin(),cattivinoti.end(),killerevittima[0])==cattivinoti.end())
+				if(!(killerevittima[1]->vivo)){
+					//if(find(cattivinoti.begin(),cattivinoti.end(),killerevittima[0])==cattivinoti.end())
 						cattivinoti.push_back(killerevittima[0]);
+						//cout << "stalkato!\n";
+					}
 			return 0;
 		};
 };
@@ -253,16 +291,18 @@ class stalker: public personaggio {
 class voyeur: public personaggio {
 	public:
 	voyeur() : personaggio(1,0,0,"voyeur",VOYEUR) {};
-	int notte (p* personaggi) {
+	int notte (p** punt_personaggi) {
 			if (appenaagito) {
 				appenaagito = 0;
 				return 0;
 			};
 			appenaagito=1;
-			p* visto = randtag(-1, -1, 1, -1, personaggi);
-			if(visto == killerevittima[1] && !killerevittima[1]->vivo)
-				if(find(cattivinoti.begin(),cattivinoti.end(),killerevittima[0])==cattivinoti.end())
+			p* visto = randtag(-1, -1, 1, -1, punt_personaggi);
+			if(visto == killerevittima[1] && !(killerevittima[1]->vivo)){
+				//if(find(cattivinoti.begin(),cattivinoti.end(),killerevittima[0])==cattivinoti.end())
 					cattivinoti.push_back(killerevittima[0]);
+					//cout << "voyeurato!\n";
+				}
 			return 0;
 	};
 };
@@ -270,17 +310,32 @@ class voyeur: public personaggio {
 
 class veggente: public personaggio {
 	public:
-	veggente() : personaggio(1,0,0,"veggente",VEGGENTE) {};
-	int notte (p* personaggi){ //cout << "Ciao!" << endl;
-			if(gente.size()+1 >= numerovivi(personaggi))
+	veggente() : personaggio(1,0,0,"veggente",VEGGENTE) {
+		}
+	
+	int notte (p** punt_personaggi){ //cout << "Ciao!\n";
+			if(gente.size() >= numerovivi(punt_personaggi))
 				return 0;
 			p* scrutato;
-			//do
-				scrutato = randtag(-1, -1, 1, -1, personaggi);
-			//while (find(gente.begin(), gente.end(),scrutato)!=gente.end() && scrutato!=this);
-			if(scrutato->fazione == 1){ //cout << "cattivo!" << endl;
+			do
+				{scrutato = randtag(-1, -1, 1, -1, punt_personaggi);
+				//cout << "Cerco fra " << numerovivi(punt_personaggi) << " personaggi\n";
+				}
+			while (find(gente.begin(), gente.end(),scrutato)!=gente.end());
+			if(scrutato->fazione == 1){ 
+				//cout << "cattivo veggato!\n";
 				cattivinoti.push_back(scrutato);
-				gente.push_back(scrutato);}
+			};
+			gente.push_back(scrutato);
+			/*list<p*>::iterator it;
+			int dead=0;
+			for(it=gente.begin();it!=gente.end();it++){
+				dead+=morto(*it);
+				cout << (*it)->ruolo << " " << (*it) << endl;
+				
+			}
+			cout << "Il veggente ha scrutato " << dead << " morti!\n";
+			cout << gente.size() << endl;*/
 			return 0;
 			};
 };
@@ -288,15 +343,15 @@ class veggente: public personaggio {
 class lupo: public personaggio {
 	public:
 	lupo() : personaggio(0,1,0,"lupo",LUPO) {};
-	int notte (p* personaggi) {
+	int notte (p** punt_personaggi) {
 		return 0;
 	}
 };
 
-void lupi (p* personaggi) {
-	if(randtag(-1,0,1,-1,personaggi)==NULL && randtag(-1,2,1,-1,personaggi)==NULL)
+void lupi (p** punt_personaggi) {
+	if(randtag(-1,0,1,-1,punt_personaggi)==NULL && randtag(-1,2,1,-1,punt_personaggi)==NULL)
 		return;
-	p* killer = randtag(LUPO, -1, 1, -1, personaggi);
+	p* killer = randtag(LUPO, -1, 1, -1, punt_personaggi);
 	if(killer == NULL)
 		return;
 	p* vittima;
@@ -308,7 +363,7 @@ void lupi (p* personaggi) {
 			}
 	else {
 	do			
-		vittima = randtag(-1, -1,1,-1,personaggi);
+		vittima = randtag(-1, -1,1,-1,punt_personaggi);
 	while(vittima -> fazione == 1);
 	if((vittima->ruolo_num != NEGROMANTE) && (vittima->ruolo_num != IPNOTISTA || numerospettri==0))
 	kill(vittima);
@@ -320,21 +375,17 @@ void lupi (p* personaggi) {
 class diavolo: public personaggio {
 	public:
 	diavolo() : personaggio(0,1,1,"diavolo",DIAVOLO) {};
-	int notte (p* personaggi)
-			{for (unsigned i=0; i<gente.size(); i++){
-				if (gente[i]->vivo == 0)
-				gente.erase(gente.begin()+i);
-				};
-			if(gente.size()+1 >= numerovivi(personaggi))
+	int notte (p** punt_personaggi) {
+			if(gente.size()>= numerovivi(punt_personaggi))
 				return 0;
 			p* scrutato;
-			//do
-			scrutato = randtag(-1, -1, 1, -1, personaggi);
-			//while (find(gente.begin(), gente.end(),scrutato)!=gente.end() && scrutato!=this);
+			do
+			scrutato = randtag(-1, -1, 1, -1, punt_personaggi);
+			while (find(gente.begin(), gente.end(),scrutato)!=gente.end() && scrutato!=this);
 			if(scrutato->buonofigo){
 				notialdiavolo.push_back(scrutato);
+			};
 				gente.push_back(scrutato);
-			}
 			return 0;
 			};
 };
@@ -342,8 +393,8 @@ class diavolo: public personaggio {
 class sequestratore: public personaggio {
 	public:
 	sequestratore() : personaggio(0,1,0,"sequestratore", SEQUESTRATORE) {};
-	int notte (p* personaggi){
-		randtag(-1, -1, 1, -1, personaggi)->sequestrato=1;
+	int notte (p** punt_personaggi){
+		randtag(-1, -1, 1, -1, punt_personaggi)->sequestrato=1;
 		if (killerevittima[0]->sequestrato)
 			killerevittima[1]->vivo=1;
 		return 0;
@@ -353,7 +404,7 @@ class sequestratore: public personaggio {
 class indemoniato: public personaggio {
 	public:
 	indemoniato() : personaggio(0,1,0,"indemoniato",INDEMONIATO) {};
-	int notte (p* personaggi){
+	int notte (p** punt_personaggi){
 		return 0;
 	};
 };
@@ -361,16 +412,16 @@ class indemoniato: public personaggio {
 class medium: public personaggio {
 	public:
 	medium() : personaggio(0,2,1,"medium",MEDIUM) {};
-	int notte (p* personaggi){
+	int notte (p** punt_personaggi){
 		return 0;
 	};
 };
 	
 	
-void notte_ipnotista(p* personaggi, p* ipnotista, vector<p*>* ipnotizzati){
+void notte_ipnotista(p** punt_personaggi, p* ipnotista, list<p*>* ipnotizzati){
 		p* ipnotizzato_nuovo;
 		//do
-			ipnotizzato_nuovo=randtag(-1,-1,1,-1, personaggi);
+			ipnotizzato_nuovo=randtag(-1,-1,1,-1, punt_personaggi);
 		//while(ipnotizzato_nuovo-> fazione ==2 || find((*ipnotizzati).begin(), (*ipnotizzati).end(), ipnotizzato_nuovo)!=(*ipnotizzati).end());
 		(*ipnotizzati).push_back(ipnotizzato_nuovo);
 };	
@@ -378,17 +429,16 @@ void notte_ipnotista(p* personaggi, p* ipnotista, vector<p*>* ipnotizzati){
 class ipnotista: public personaggio { /*WARNING: LA STRATEGIA DELL'IPNOTISTA E' SCRITTA QUI!*/
 	public:
 	ipnotista() : personaggio(0,2,0,"ipnotista",IPNOTISTA) {};
-	int notte (p* personaggi){
-		if(gente.size() > 1 && rand()%2 == 0 && vivo && find(cattivinoti.begin(),cattivinoti.end(),(personaggio*) this)==cattivinoti.end())
-		cattivinoti.push_back(this);
-		vector<p*>::iterator it;
-		gente.erase(remove_if(gente.begin(),gente.end(), morto),gente.end());
+	int notte (p** punt_personaggi){
+		if(gente.size() > 1 && rand()%2 == 0 && vivo)
+			cattivinoti.push_back(this);
 		if (appenaagito) {
 				appenaagito = 0;
 				return 0;
 			};	
-		if(numerovivi(personaggi) < hypno)	
-		notte_ipnotista(personaggi, this, &gente);	
+		if(numerovivi(punt_personaggi) < hypno)	
+			notte_ipnotista(punt_personaggi, this, &gente);	
+		appenaagito=1;
 	return 0; 	
 	};		
 };		
@@ -396,28 +446,38 @@ class ipnotista: public personaggio { /*WARNING: LA STRATEGIA DELL'IPNOTISTA E' 
 class negromante: public personaggio {
 	public:
 	negromante() : personaggio(0,2,1,"negromante",NEGROMANTE) {};
-	int notte (p* personaggi) {
+	int notte (p** punt_personaggi) {
 		return 0;
 	};
 };		
 
-void notte_negromanti(p* personaggi) {
-if(numerospettri >= 4)
+void notte_negromanti(p** punt_personaggi) {
+if(numerospettri >= 4){
+	//cout << "I negromanti non stanno agendo!\n";
 	return;	
-if(len - numerovivi(personaggi) < 2)
+};
+if(len - numerovivi(punt_personaggi) < 2){
+	//cout << "I negromanti non stanno agendo!\n";
 	return;
+};
 if(appenaspettrificato){
+	//cout << "I negromanti non stanno agendo!\n";
 	appenaspettrificato = 0;
 	return;
 	};
+//cout << "I negromanti stanno agendo!\n";
+//cout << "Ci sono " << numerocustoditi(punt_personaggi) << " custoditi\n";
 p* futuro_spettro;
-if(randtag(-1,0,0,-1,personaggi)==NULL || randtag(-1,1,0,-1,personaggi))
-return;
+if(randtag(-1,0,0,-1,punt_personaggi)==NULL || randtag(-1,1,0,-1,punt_personaggi) == NULL){
+	//cout << "I negromanti non stanno agendo senza nessun motivo!\n";
+	return;
+};
 do
-		futuro_spettro=randtag(-1, -1, 0, -1, personaggi);
+		futuro_spettro=randtag(-1, -1, 0, -1, punt_personaggi);
 while(futuro_spettro->fazione == 2);
 if(futuro_spettro->ruolo_num == LUPO || futuro_spettro->custodito)
 			return;
+//cout << "I negromanti stanno agendo davvero!\n";
 numerospettri++;			
 appenaspettrificato=1;
 switch ( numerospettri) {
@@ -441,18 +501,22 @@ switch ( numerospettri) {
 return;
 };
 
-void spettro_morte (p* personaggi){
-		if(randtag(NEGROMANTE, -1, 1, -1, personaggi)==NULL)
+void spettro_morte (p** punt_personaggi){
+		if(randtag(NEGROMANTE, -1, 1, -1, punt_personaggi)==NULL)
 			return;
-		if(randtag(-1, 0, 1, -1, personaggi)==NULL && randtag(-1,1,1,-1,personaggi)==NULL)
+		if(randtag(-1, 0, 1, -1, punt_personaggi)==NULL && randtag(-1,1,1,-1,punt_personaggi)==NULL)
 			return;
+		if(appenaucciso){
+			appenaucciso=0;
+			return;
+		};
 		/*if(uccisodallospettro !=NULL)
 			{uccisodallospettro=NULL;
 			return;
 			};*/
 		p* vittima;	
 		do			
-			vittima = randtag(-1, -1,1,-1,personaggi);
+			vittima = randtag(-1, -1,1,-1,punt_personaggi);
 		while(vittima -> fazione == 2);	
 		if(vittima->ruolo_num!=LUPO){
 			kill(vittima);
@@ -462,32 +526,32 @@ void spettro_morte (p* personaggi){
 
 
 
-int vittoria(p* personaggi){ //ritorna la fazione che ha vinto, -1 se non ha vinto nessuno
-	if(randtag(NEGROMANTE, -1, 1, -1, personaggi)== NULL)
+int vittoria(p** punt_personaggi){ //ritorna la fazione che ha vinto, -1 se non ha vinto nessuno
+	if(randtag(NEGROMANTE, -1, 1, -1, punt_personaggi)== NULL)
 		for(int i=0; i<len; i++)
-			if((personaggi+i)->fazione== 2)
-				(personaggi+i)->vivo=0;
-	if(randtag(LUPO, -1, 1, -1, personaggi)==NULL)
+			if(((*(punt_personaggi+i)))->fazione== 2)
+				((*(punt_personaggi+i)))->vivo=0;
+	if(randtag(LUPO, -1, 1, -1, punt_personaggi)==NULL)
 		for(int i=0; i<len; i++)
-			if((personaggi+i)->fazione== 1)
-				(personaggi+i)->vivo=0;
-	if(randtag(NEGROMANTE, -1, 1, -1, personaggi)== NULL && randtag(LUPO, -1, 1, -1, personaggi)==NULL){
-		//cout << "Hanno vinto i popolani!" << endl;
+			if(((*(punt_personaggi+i)))->fazione== 1)
+				((*(punt_personaggi+i)))->vivo=0;
+	if(randtag(NEGROMANTE, -1, 1, -1, punt_personaggi)== NULL && randtag(LUPO, -1, 1, -1, punt_personaggi)==NULL){
+		//cout << "Hanno vinto i popolani!\n";
 		vittoriebianchi++;
 		return 0;
 	};
-	if(numeroneri(personaggi)*2>numerovivi(personaggi)) {
-		//cout << "Hanno vinto i cattivi!" << endl;
+	if(numeroneri(punt_personaggi)*2>numerovivi(punt_personaggi)) {
+		//cout << "Hanno vinto i cattivi!\n";
 		vittorieneri++;
 		return 1;
 	};
 	{/* CONDIZIONI DI VITTORIA DEI NON MORTI! */
 	int ipnotizzati = 0;
 	for(int i=0;i<len;i++)
-		if((personaggi+i)->ruolo_num==IPNOTISTA && (personaggi+i)->vivo)
-			ipnotizzati += (personaggi+i)->gente.size();
-	if((numerogrigi(personaggi)+ipnotizzati)*2>numerovivi(personaggi)){
-		//cout << "Hanno vinto i non-morti!" << endl;
+		if(((*(punt_personaggi+i)))->ruolo_num==IPNOTISTA && ((*(punt_personaggi+i)))->vivo)
+			ipnotizzati += ((*(punt_personaggi+i)))->gente.size();
+	if((numerogrigi(punt_personaggi)+ipnotizzati)*2>numerovivi(punt_personaggi)){
+		//cout << "Hanno vinto i non-morti!\n";
 		vittoriegrigi++;
 		return 2;
 	};
@@ -495,112 +559,116 @@ int vittoria(p* personaggi){ //ritorna la fazione che ha vinto, -1 se non ha vin
 	return -1;	
 }
 
-int nottevillagio(p** punt_personaggi,p* personaggi){
+int nottevillagio(p** punt_personaggi){
 	if(numerospettri>=4)
-		spettro_morte(personaggi);
-	notte_negromanti(personaggi);
+		spettro_morte(punt_personaggi);
+	notte_negromanti(punt_personaggi);
 	//cout << "numero spettri " << numerospettri << endl;
-	lupi(personaggi);
+	lupi(punt_personaggi);
 	for(int i=0; i<len; i++)
-		if((personaggi+i)->vivo)
-			(*(punt_personaggi+i))->notte(personaggi);
-	reset(personaggi);	
-	return vittoria(personaggi);		
+		if(((*(punt_personaggi+i)))->vivo && !(((*(punt_personaggi+i)))->sequestrato)) {
+			(*(punt_personaggi+i))->notte(punt_personaggi);
+		};
+	reset(punt_personaggi);	
+	return vittoria(punt_personaggi);		
 };
 
-int giornovillaggio(p* personaggi){
+int giornovillaggio(p** punt_personaggi){
 	if(cattivinoti.size()!=0){
+		//cout << "Ucciso un cattivo! \n";
+		//cout << numeroneri(punt_personaggi) << endl;
 		uccisionisensate ++;
 		kill(cattivinoti[0]);
+		//cout << numeroneri(punt_personaggi) << endl;
 		cattivinoti.erase(cattivinoti.begin());
 	}
 	else if(misticinoti.size()!=0){
 		int ran=rand()%5;
 		if(ran==0)
-			kill(randtag(-1,-1,1,-1,personaggi));
+			kill(randtag(-1,-1,1,-1,punt_personaggi));
 		else {
 			misticiuccisi++;
 			kill(misticinoti[0]);
 			misticinoti.erase(misticinoti.begin());
 		}
 	}
-	else
-		kill(randtag(-1,-1,1,-1,personaggi));
-	reset(personaggi);
-	return vittoria(personaggi);
+	else if(numerovivi(punt_personaggi)<numero_critico)
+		kill(randtag(-1,-1,1,-1,punt_personaggi));
+	reset(punt_personaggi);
+	return vittoria(punt_personaggi);
 };	
 			
 
-void listainiziale(personaggio** personaggi)
-{int cacciatori= 1, contadini= 10, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 1, stalkers= 1, veggenti= 1, voyeurs= 1, lupi= 3, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 1, ipnotisti= 1, negromanti= 3;
+void listainiziale(personaggio** punt_personaggi)
+{int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 3, diavoli= 2, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
 int i=0;
 int j=0;
 for (i=0;i<sequestratori;i++){
-	personaggi[j]=new sequestratore;
+	punt_personaggi[j]=new sequestratore;
 	j++;
 };
 for (i=0;i<guardie;i++){
-	personaggi[j]=new guardia;
+	punt_personaggi[j]=new guardia;
 	j++;
 };
 for (i=0;i<cacciatori;i++){
-	personaggi[j]=new cacciatore;
+	punt_personaggi[j]=new cacciatore;
 	j++;
 };
 for (i=0;i<contadini;i++){
-	personaggi[j]=new contadino(0);
+	punt_personaggi[j]=new contadino(0);
 	j++;
 };
 for (i=0;i<contadini_mistici;i++){
-	personaggi[j]=new contadino(1);
+	punt_personaggi[j]=new contadino(1);
 	j++;
 };
 for (i=0;i<custodi;i++){
-	personaggi[j]=new custode;
+	punt_personaggi[j]=new custode;
 	j++;
 };
 for (i=0;i<esorcisti;i++){
-	personaggi[j]=new esorcista;
+	punt_personaggi[j]=new esorcista;
 	j++;
 };
 for (i=0;i<maghi;i++){
-	personaggi[j]=new mago;
+	punt_personaggi[j]=new mago;
 	j++;
 };
 for (i=0;i<stalkers;i++){
-	personaggi[j]=new stalker;
+	punt_personaggi[j]=new stalker;
 	j++;
 };
 for (i=0;i<veggenti;i++){
-	personaggi[j]=new veggente;
+	punt_personaggi[j]=new veggente;
 	j++;
 };
 for (i=0;i<voyeurs;i++){
-	personaggi[j]=new voyeur;
+	punt_personaggi[j]=new voyeur;
 	j++;
 };
 for (i=0;i<lupi;i++){
-	personaggi[j]=new lupo;
+	punt_personaggi[j]=new lupo;
 	j++;
 };
 for (i=0;i<diavoli;i++){
-	personaggi[j]=new diavolo;
+	punt_personaggi[j]=new diavolo;
 	j++;
 };
 for (i=0;i<indemoniati;i++){
-	personaggi[j]=new indemoniato;
+	punt_personaggi[j]=new indemoniato;
 	j++;
 };
 for (i=0;i<mediums;i++){
-	personaggi[j]=new medium;
+	punt_personaggi[j]=new medium;
 	j++;
 };
 for (i=0;i<ipnotisti;i++){
-	personaggi[j]=new ipnotista;
+	punt_personaggi[j]=new ipnotista;
 	j++;
 };
 for (i=0;i<negromanti;i++){
-	personaggi[j]=new negromante;
+	punt_personaggi[j]=new negromante;
 	j++;
 };
 }
@@ -613,31 +681,31 @@ std::srand ( unsigned ( std::time(0) ) );
 int i=0;
 	for(i=0; i<10000; i++){
 		resetsessione();
-		personaggio personaggi[len];
 		p* punt_personaggi[len];
 		listainiziale(punt_personaggi);
-		for (int j=0; j<len; j++){
-			personaggi[j]=*(punt_personaggi[j]);
-			if(i==0)
-				cout << personaggi[j].fazione << endl;
-		};
 		while(true){	
-			if(giornovillaggio(personaggi)>=0)
+			if(giornovillaggio(punt_personaggi)>=0)
 			break;
-			//cout << i << endl;
-			if(nottevillagio(punt_personaggi, personaggi)>=0)
+			/*cout << "Ci sono " << numerobianchi(punt_personaggi) << " bianchi vivi\n";
+			cout << "Ci sono " << numeroneri(punt_personaggi) << " neri vivi\n";
+			cout << "Ci sono " << numerogrigi(punt_personaggi) << " grigi vivi\n";*/
+			if(nottevillagio(punt_personaggi)>=0)
 			break;
+			/*cout << "Ci sono " << numerobianchi(punt_personaggi) << " bianchi vivi\n";
+			cout << "Ci sono " << numeroneri(punt_personaggi) << " neri vivi\n";
+			cout << "Ci sono " << numerogrigi(punt_personaggi) << " grigi vivi\n";
+			cout << "Ci sono " << numerospettri << " spettri\n";*/
 			turni++;
 			//cout << i << endl;
 		};
 	};
 
-cout << "La partita è durata in media " << (float) turni/i << " turni." << endl;
-cout << "I buoni hanno vinto " << vittoriebianchi << " volte." << endl;
-cout << "I cattivi hanno vinto " << vittorieneri << " volte." << endl;
-cout << "I non-morti hanno vinto " << vittoriegrigi << " volte." << endl; 
-cout << "In media, sono stati uccisi " << (float) uccisionisensate/i << " cattivi noti." << endl;
-cout << "In media, sono stati uccisi " << (float) misticiuccisi/i << " mistici noti." << endl;
+cout << "La partita è durata in media " << (float) turni/i << " turni.\n";
+cout << "I buoni hanno vinto " << vittoriebianchi << " volte.\n";
+cout << "I cattivi hanno vinto " << vittorieneri << " volte.\n";
+cout << "I non-morti hanno vinto " << vittoriegrigi << " volte.\n"; 
+cout << "In media, sono stati uccisi " << (float) uccisionisensate/i << " cattivi noti.\n";
+cout << "In media, sono stati uccisi " << (float) misticiuccisi/i << " mistici noti.\n";
 return 0;	
 }
 
