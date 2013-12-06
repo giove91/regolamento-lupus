@@ -9,8 +9,8 @@
 
 using namespace std;
 
-#define lenght 31
-#define len 31
+int lenght=31;
+int len=31;
 #define hypno 14
 #define numero_critico 31
 
@@ -600,77 +600,80 @@ int giornovillaggio(p** punt_personaggi){
 			
 
 void listainiziale(personaggio** punt_personaggi)
-{int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 3, diavoli= 2, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
-int i=0;
-int j=0;
-for (i=0;i<sequestratori;i++){
-	punt_personaggi[j]=new sequestratore;
-	j++;
-};
-for (i=0;i<guardie;i++){
-	punt_personaggi[j]=new guardia;
-	j++;
-};
-for (i=0;i<cacciatori;i++){
-	punt_personaggi[j]=new cacciatore;
-	j++;
-};
-for (i=0;i<contadini;i++){
-	punt_personaggi[j]=new contadino(0);
-	j++;
-};
-for (i=0;i<contadini_mistici;i++){
-	punt_personaggi[j]=new contadino(1);
-	j++;
-};
-for (i=0;i<custodi;i++){
-	punt_personaggi[j]=new custode;
-	j++;
-};
-for (i=0;i<esorcisti;i++){
-	punt_personaggi[j]=new esorcista;
-	j++;
-};
-for (i=0;i<maghi;i++){
-	punt_personaggi[j]=new mago;
-	j++;
-};
-for (i=0;i<stalkers;i++){
-	punt_personaggi[j]=new stalker;
-	j++;
-};
-for (i=0;i<veggenti;i++){
-	punt_personaggi[j]=new veggente;
-	j++;
-};
-for (i=0;i<voyeurs;i++){
-	punt_personaggi[j]=new voyeur;
-	j++;
-};
-for (i=0;i<lupi;i++){
-	punt_personaggi[j]=new lupo;
-	j++;
-};
-for (i=0;i<diavoli;i++){
-	punt_personaggi[j]=new diavolo;
-	j++;
-};
-for (i=0;i<indemoniati;i++){
-	punt_personaggi[j]=new indemoniato;
-	j++;
-};
-for (i=0;i<mediums;i++){
-	punt_personaggi[j]=new medium;
-	j++;
-};
-for (i=0;i<ipnotisti;i++){
-	punt_personaggi[j]=new ipnotista;
-	j++;
-};
-for (i=0;i<negromanti;i++){
-	punt_personaggi[j]=new negromante;
-	j++;
-};
+{
+	int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
+	int i=0;
+	int j=0;
+	for (i=0;i<sequestratori;i++){
+		punt_personaggi[j]=new sequestratore;
+		j++;
+	};
+	for (i=0;i<guardie;i++){
+		punt_personaggi[j]=new guardia;
+		j++;
+	};
+	for (i=0;i<cacciatori;i++){
+		punt_personaggi[j]=new cacciatore;
+		j++;
+	};
+	for (i=0;i<contadini;i++){
+		punt_personaggi[j]=new contadino(0);
+		j++;
+	};
+	for (i=0;i<contadini_mistici;i++){
+		punt_personaggi[j]=new contadino(1);
+		j++;
+	};
+	for (i=0;i<custodi;i++){
+		punt_personaggi[j]=new custode;
+		j++;
+	};
+	for (i=0;i<esorcisti;i++){
+		punt_personaggi[j]=new esorcista;
+		j++;
+	};
+	for (i=0;i<maghi;i++){
+		punt_personaggi[j]=new mago;
+		j++;
+	};
+	for (i=0;i<stalkers;i++){
+		punt_personaggi[j]=new stalker;
+		j++;
+	};
+	for (i=0;i<veggenti;i++){
+		punt_personaggi[j]=new veggente;
+		j++;
+	};
+	for (i=0;i<voyeurs;i++){
+		punt_personaggi[j]=new voyeur;
+		j++;
+	};
+	for (i=0;i<lupi;i++){
+		punt_personaggi[j]=new lupo;
+		j++;
+	};
+	for (i=0;i<diavoli;i++){
+		punt_personaggi[j]=new diavolo;
+		j++;
+	};
+	for (i=0;i<indemoniati;i++){
+		punt_personaggi[j]=new indemoniato;
+		j++;
+	};
+	for (i=0;i<mediums;i++){
+		punt_personaggi[j]=new medium;
+		j++;
+	};
+	for (i=0;i<ipnotisti;i++){
+		punt_personaggi[j]=new ipnotista;
+		j++;
+	};
+	for (i=0;i<negromanti;i++){
+		punt_personaggi[j]=new negromante;
+		j++;
+	};
+	len=j;
+	lenght=j;
 }
 
 
