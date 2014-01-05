@@ -4,12 +4,53 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
-\usepackage[dvips]{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{fancyhdr}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+
+\usepackage{makeidx}
+
+% * define a `\twoidxcolumn` based on `\twocolumn`:
+\def\twoidxcolumn{%
+%\clearpage
+\global\columnwidth\textwidth
+\global\advance\columnwidth-\columnsep
+\global\divide\columnwidth\tw@
+\global\hsize\columnwidth
+\global\linewidth\columnwidth
+\global\@twocolumntrue
+\global\@firstcolumntrue
+\col@number \tw@
+%\@ifnextchar [\@topnewpage
+\@floatplacement
+}
+
+
+\makeatletter
+\def\@wrindex#1{%
+   \protected@write\@indexfile{}%
+      {\string\indexentry{#1}{\theenumi}}
+      \endgroup
+      \@esphack}
+
+\makeatletter
+\renewenvironment{theindex}
+               {\twocolumn[\section*{Indice dei ruoli presenti nella Sezione \ref{faq}}]%
+                \@mkboth{\MakeUppercase\indexname}%
+                        {\MakeUppercase\indexname}%
+                \thispagestyle{plain}\parindent\z@
+                \parskip\z@ \@plus .3\p@\relax
+                \columnseprule \z@
+                \columnsep 35\p@
+                \let\item\@idxitem}
+               {}
+\makeatother
+
+\makeindex
+% [title=Indice dei ruoli presenti nella Sezione \ref{faq},columns=3]
+
 
 \topmargin -1cm
 \oddsidemargin -0.5cm
@@ -389,45 +430,79 @@ Ogni giorno, oltre a votare per mettere qualcuno al rogo, ogni abitante del vill
 Le regole spiegate fino a questo punto sono più che sufficienti per poter giocare. Tuttavia possono accadere eventi piuttosto strani (ad esempio, cosa succede se due Sequestratori si sequestrano a vicenda?). In tutti questi casi, il GM decide in modo inappellabile cosa accade; ai giocatori è sempre permesso chiedergli cosa accade in una di queste combinazioni.
 
 Segue una lista (verosimilmente non esaustiva) di eventualità bizzarre con le corrispettive spiegazioni.
+Per rendere questo elenco più facilmente consultabile, segue un indice con la lista dei ruoli e dei punti in cui essi compaiono.
 
-\begin{itemize}
+\begin{enumerate}
 %  \item Un Negromante che utilizza la propria azione notturna per ricercare un nuovo potere e contemporaneamente viene sequestrato, fallisce. Potrà nuovamente provare a ricercare quel potere soprannaturale nelle notti successive.
  
  \item In caso di contraddizione nell'utilizzo dei poteri, viene scelto casualmente un personaggio (o più di uno, se necessario), che non utilizza il proprio potere e riceve la consueta notifica di fallimento (questo è il fallimento ``di terza categoria'', vedi Sezione \ref{fallimento}).
  
  Ad esempio, se un Esorcista, un Sequestratore e uno Spettro con il potere dell'Occultamento agiscono simultaneamente sull'Esorcista, si verifica facilmente (esercizio) che non c'è alcun modo coerente di risolvere le azioni.
+ \index{Esorcista}
+ \index{Sequestratore}
+ \index{Spettro!Occultamento}
  
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sulla stessa persona (morta), quella persona viene resuscitata dal Messia e non risvegliata come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
+ \index{Messia}
+ \index{Negromante}
 
  \item Se un Necrofilo usa il proprio potere su uno Spettro, copia il potere speciale che quel personaggio aveva prima di essere risvegliato come Spettro.
  Se un Necrofilo usa il proprio potere su un Necrofilo morto che aveva già acquisito un nuovo potere, egli acquisisce a sua volta quello stesso potere.
+ \index{Necrofilo}
+ \index{Spettro}
  
  \item I Negromanti non possono nemmeno provare a usare il proprio potere se durante la notte precedente è stato creato uno Spettro.
+ \index{Negromante}
  
  \item Se più Negromanti cercano di creare degli Spettri, falliscono come succede nel caso dei Lupi, a meno che scelgano tutti la stessa persona e selezionino tutti lo stesso potere soprannaturale.
+ \index{Negromante}
 
  \item Se un Ipnotista morto viene resuscitato dal Messia, tutti coloro che si trovavano sotto il controllo dell'Ipnotista al momento della sua morte sono nuovamente sotto il suo controllo, a meno che nel frattempo la loro mente sia stata controllata da un altro Ipnotista.
  
  Se una persona sotto il controllo di un Ipnotista muore e viene successivamente resuscitata, torna ad essere sotto il controllo dell'ultimo Ipnotista ad aver agito su di essa.
+ \index{Ipnotista}
+ \index{Messia}
+ 
+ \item Se una persona smette di essere sotto il controllo di un Ipnotista (ad esempio perché un altro Ipnotista usa il suo potere su di lei), l'Ipnotista non riceve alcuna notifica.
+ \index{Ipnotista}
  
  \item Se più Ipnotisti agiscono sulla stessa persona durante la stessa notte, la mente di quest'ultima viene controllata da tutti gli Ipnotisti in un ordine casuale, e perciò risulterà infine essere sotto il controllo soltanto dell'ultimo ad aver agito. Gli altri Ipnotisti non ricevono alcuna notifica di fallimento.
+ \index{Ipnotista}
  
  \item Se uno Spettro con il potere dell'Ombra fa comparire l'ombra di un personaggio in una casa dove agiscono anche quel personaggio e il Voyeur, il Voyeur vede comunque solo una volta quel personaggio. Se tuttavia il personaggio scelto coincide con il Voyeur, questi compare nella lista dei personaggi visti.
+ \index{Spettro!Ombra}
+ \index{Voyeur}
 
  \item Se l'Esorcista e lo Spettro con il potere dell'Occultamento agiscono sulla stessa persona, lo Spettro viene bloccato dall'Esorcista e non viceversa.
+ \index{Esorcista}
+ \index{Spettro!Occultamento}
  
  \item Se lo Stalker o il Voyeur si recano a casa di un personaggio che sta usando il proprio potere su sé stesso, ricevono informazioni come se quel personaggio non avesse agito.
+ \index{Stalker}
+ \index{Voyeur}
  
  \item La Guardia del corpo protegge la persona scelta solamente dall'attacco dei Lupi. Il Cacciatore, lo Spettro con il potere della Morte ed eventuali altri effetti che uccidono la persona scelta non sono influenzati dal potere della Guardia del corpo.
+ \index{Guardia del corpo}
+ \index{Lupo}
+ \index{Cacciatore}
+ \index{Spettro!Morte}
  
  \item Se un personaggio muore, viene risvegliato come Spettro, resuscitato dal Messia e la sua anima viene letta dal Diavolo, il Diavolo scopre che il personaggio è uno Spettro, ma non scopre che potere soprannaturale ha.
+ \index{Spettro}
+ \index{Messia}
+ \index{Diavolo}
  
  \item Se più Fattucchiere agiscono sulla stessa persona, ciascuna inverte il colore dell'aura. Pertanto, l'aura percepita durante quella notte è quella corretta se le Fattucchiere in questione sono in numero pari, mentre è quella opposta se le Fattucchiere sono in numero dispari.
+ \index{Fattucchiera}
  
  \item Se al momento della morte del Fantasma non sono più disponibili poteri soprannaturali, il Fantasma non diventa uno Spettro.
  I Negromanti hanno sempre la priorità sui Fantasmi morti di notte: prima avviene l'eventuale risveglio di un morto come Spettro ad opera dei Negromanti, e poi i Fantasmi appena morti ottengono casualmente uno dei poteri soprannaturali ancora disponibili (se ve ne sono).
  Se più Fantasmi muoiono contemporaneamente e non sono disponibili abbastanza poteri soprannaturali per assegnarne a ciascuno di essi, vengono scelti casualmente i Fantasmi che diventano effettivamente degli Spettri e ottengono un potere soprannaturale.
-\end{itemize}
+ \index{Fantasma}
+ \index{Negromante}
+\end{enumerate}
+
+\printindex
 
 
 
