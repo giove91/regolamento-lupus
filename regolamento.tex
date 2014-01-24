@@ -301,7 +301,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 \begin{itemize}
 
  \item {\bf Negromanti} (aura bianca, mistici). %Ogni due notti, i Negromanti possono scegliere un personaggio e tentare di risvegliarlo come Spettro.
- Se la notte precedente nessun personaggio è stato risvegliato come Spettro, ciascun Negromante può scegliere un personaggio e selezionare un potere soprannaturale (per la lista dei possibili poteri, vedere oltre).
+ Se la notte precedente nessun personaggio è stato risvegliato come Spettro, ciascun Negromante può scegliere un personaggio morto e selezionare un potere soprannaturale (per la lista dei possibili poteri, vedere oltre).
  Se tutti i Negromanti che decidono di usare il proprio potere speciale scelgono lo stesso personaggio e selezionano lo stesso potere soprannaturale, il personaggio scelto diventa uno Spettro e ottiene il potere selezionato.
  Da quel momento in poi, egli appartiene alla Fazione dei Negromanti. Gli viene inoltre comunicata l'identità dei Negromanti che lo hanno risvegliato come Spettro.
  Se almeno due Negromanti scelgono personaggi diversi o selezionano poteri soprannaturali diversi, il loro potere speciale non ha effetto e nessun personaggio viene risvegliato come Spettro.
@@ -359,7 +359,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  
  L'Esorcista impedisce l'utilizzo di questo potere agendo sulla casa del personaggio di cui viene creata l'illusione, ma non agendo sulla casa verso cui l'illusione si dirige. 
  
- \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e ucciderlo. Questo potere non può essere usato sui Lupi.
+ \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e ucciderlo. Questo potere non ha effetto sui Lupi.
  
  \item {\bf Occultamento}. Ogni notte, lo Spettro può scegliere un personaggio vivo o morto, e creare attorno alla sua casa una fittissima nebbia magica. Per quella notte, nessun altro, eccetto eventualmente l'Esorcista, può usare il proprio potere su quel personaggio.
  
@@ -371,7 +371,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  
  L'Esorcista impedisce l'utilizzo di questo potere agendo sulla casa dove compare l'ombra, ma non agendo sulla casa del personaggio di cui è stata generata l'ombra stessa.
 
-  \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e vederne l'aura. Scopre il colore della sua aura. Scopre inoltre se quel personaggio appartiene alla Fazione dei Negromanti.
+  \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e sondare i suoi pensieri. Ne scopre la fazione di appartenenza.
  
 %  \item {\bf Confusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo. Il giorno successivo, il suo voto per il rogo viene sostituito da un voto casuale (per una persona viva diversa da sé stessa). Ciò accade anche se il personaggio scelto è sotto il controllo dell'Ipnotista: invece di votare come l'Ipnotista, vota a caso.
 %  
@@ -443,6 +443,7 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Esorcista}
  \index{Sequestratore}
  \index{Spettro!Occultamento}
+ \index{Fallimento dei poteri}
  
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sulla stessa persona (morta), quella persona viene resuscitata dal Messia e non risvegliata come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
  \index{Messia}
@@ -489,7 +490,7 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Cacciatore}
  \index{Spettro!Morte}
  
- \item Se un personaggio muore, viene risvegliato come Spettro, resuscitato dal Messia e la sua anima viene letta dal Diavolo, il Diavolo scopre che il personaggio è uno Spettro, ma non scopre che potere soprannaturale ha.
+ \item Se in notti diverse un personaggio muore, viene risvegliato come Spettro, resuscitato dal Messia e la sua anima viene letta dal Diavolo, il Diavolo scopre che il personaggio è uno Spettro, ma non scopre che potere soprannaturale ha.
  \index{Spettro}
  \index{Messia}
  \index{Diavolo}
@@ -503,9 +504,30 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Fantasma}
  \index{Negromante}
  
- \item Un personaggio può votare sè stesso, sia per la condanna a morte sul rogo che per l'elezione del Sindaco.
+ \item Un personaggio può votare sé stesso, sia per la condanna a morte sul rogo che per l'elezione del Sindaco.
  \index{Votazione per il rogo}
  \index{Elezione del Sindaco}
+ 
+ \item Se più persone ottengono il massimo numero di voti per il rogo e quella scelta casualmente per essere uccisa è stata protetta dall'Avvocato del Diavolo, nessuna muore e non viene resa pubblica l'identità della persona protetta dall'Avvocato.
+ \index{Avvocato del Diavolo}
+ \index{Votazione per il rogo}
+ 
+ \item Se durante lo stesso giorno un personaggio viene eletto Sindaco e condannato a morte sul rogo, immediatamente dopo viene nominato casualmente un nuovo Sindaco (non vi è stato tempo per la nomina di un successore).
+ \index{Sindaco}
+ 
+ \item Il potere dell'Ipnotista e i poteri soprannaturali dell'Amnesia e della Duplicazione non hanno effetto sull'elezione del sindaco, solo sul voto per il rogo.
+ \index{Ipnotista}
+ \index{Spettro!Amnesia}
+ \index{Spettro!Duplicazione}
+ \index{Elezione del Sindaco}
+ 
+ \item Se lo Spettro con il potere dell'Amnesia e lo Spettro con il potere della Duplicazione agiscono contemporaneamente su di un personaggio, il voto di quel personaggio è comunque annullato. In altre parole, il potere dell'Amnesia annulla il potere della Duplicazione.
+ \index{Spettro!Amnesia}
+ \index{Spettro!Duplicazione}
+ 
+%  \item Cercare di uccidere un personaggio che nella stessa notte muore anche per altri motivi non costituisce di per sé una causa di fallimento.
+%  Per esempio, se contemporaneamente un Lupo e lo Spettro con il potere della Morte utilizzano il proprio potere su di uno stesso personaggio, nessuno dei due ha precedenza sull'altro
+ 
 \end{enumerate}
 
 \printindex
