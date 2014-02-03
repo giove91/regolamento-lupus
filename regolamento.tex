@@ -353,7 +353,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 
  \item {\bf Duplicazione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e assumerne l'aspetto. Il giorno successivo, il suo voto per il rogo conta doppio. Non risulta, però, che il personaggio abbia votato due volte; semplicemente, la persona per cui vota riceve un voto in più.
 
- \item {\bf Illusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e crearne un'illusione, quindi dirigerla verso un altro personaggio, vivo o morto.
+ \item {\bf Illusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e crearne un'illusione, quindi dirigerla verso un qualsiasi personaggio, vivo o morto.
  Agli occhi dello Stalker, è come se il personaggio scelto abbia agito sul personaggio verso cui si è diretta l'illusione (a prescindere da dove eventualmente si rechi il personaggio scelto).
  Questo potere non ha effetto sul Voyeur.
  
@@ -418,6 +418,8 @@ In qualsiasi momento il Sindaco può designare un successore: se il Sindaco muor
 
 Ogni giorno, oltre a votare per mettere qualcuno al rogo, ogni abitante del villaggio può votare per l'elezione di un nuovo Sindaco. Se alla fine della giornata un personaggio ha ricevuto il voto di almeno il 50\% dei personaggi vivi, riceve la carica di Sindaco (e il Sindaco precedente la perde).
 
+L'eventuale elezione di un nuovo Sindaco ha effetto prima della condanna a morte sul rogo: in caso di parità conta il voto del nuovo Sindaco, non di quello vecchio.
+
 
 
 \pagebreak
@@ -444,7 +446,7 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Sequestratore}
  \index{Spettro!Occultamento}
  \index{Fallimento dei poteri}
- 
+  
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sulla stessa persona (morta), quella persona viene resuscitata dal Messia e non risvegliata come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
  \index{Messia}
  \index{Negromante}
@@ -525,8 +527,18 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Spettro!Amnesia}
  \index{Spettro!Duplicazione}
  
-%  \item Cercare di uccidere un personaggio che nella stessa notte muore anche per altri motivi non costituisce di per sé una causa di fallimento.
-%  Per esempio, se contemporaneamente un Lupo e lo Spettro con il potere della Morte utilizzano il proprio potere su di uno stesso personaggio, nessuno dei due ha precedenza sull'altro
+ \item Quando lo Spettro con il potere della Duplicazione agisce, il villaggio non viene messo al corrente dell'identità della persona che ha beneficiato del potere. Per esempio, se il personaggio X viene votato da A, B e C, e durante la notte precedente lo Spettro aveva usato il suo potere su C, allora il server riporterà un messaggio simile a ``X è stato votato da A, B e C, ricevendo un totale di 4 voti''.
+ \index{Votazione per il rogo}
+ \index{Spettro!Duplicazione}
+ 
+ \item Lo Spettro con il potere dell'Illusione che agisce su un personaggio X può dirigere l'illusione da X stesso. In questo caso, un eventuale Stalker che utilizzi a sua volta il suo potere su X verrebbe a sapere che X non è uscito di casa.
+ \index{Spettro!Illusione}
+ 
+ \item Cercare di uccidere un personaggio che nella stessa notte muore anche per altri motivi non costituisce di per sé una causa di fallimento.
+ Per esempio, se contemporaneamente un Lupo e lo Spettro con il potere della Morte utilizzano il proprio potere su di uno stesso personaggio, hanno entrambi successo (a meno che non intervengano cause di fallimento, come spiegato nella Sezione \ref{fallimento}).
+ \index{Morte}
+ \index{Fallimento dei poteri}
+ 
  
 \end{enumerate}
 
