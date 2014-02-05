@@ -153,7 +153,7 @@ Se una fazione ha chiaramente vinto prima che le condizioni di vittoria preceden
 \subsection{Svolgimento del giorno e votazioni}
 
 L'inizio del giorno è annunciato sul sito web, insieme a tutte le informazioni ottenute da ciascun giocatore in seguito agli avvenimenti della notte appena trascorsa.
-Ogni giorno, il Villaggio convoca un'assemblea per stabilire chi condannare a morte.
+Ogni giorno, il Villaggio convoca un'assemblea per stabilire chi condannare a morte sul rogo.
 I personaggi vivi hanno il diritto di votare entro le ore 22 un abitante del villaggio da condannare a morte. Dopo le ore 22, viene pubblicata la lista dei votanti insieme alla preferenza espressa da ciascuna persona.
 Il voto è ritenuto valido se almeno il 50\% dei vivi ha votato; in caso contrario, nessuno viene condannato. Il personaggio che ha ricevuto più voti di tutti muore.
 In caso di parità tra due o più personaggi, fra questi viene condannato quello eventualmente votato dal Sindaco; se nessuno di questi è stato votato dal Sindaco, ne muore uno a caso.
@@ -170,7 +170,7 @@ Alcuni personaggi hanno un potere attivabile ogni due notti: si intende che tale
 
 \subsection{Morte}
 
-Molti dei personaggi non resteranno vivi sino alla fine della partita. Un personaggio può morire in diversi modi: condannato dall'assemblea, sbranato dai Lupi, oppure ucciso da uno Spettro o da un Cacciatore.
+Molti dei personaggi non resteranno vivi sino alla fine della partita. Un personaggio può morire in diversi modi: condannato al rogo, sbranato dai Lupi, oppure ucciso da uno Spettro o da un Cacciatore.
 I personaggi morti possono continuare a giocare e aiutare la propria fazione, se vogliono. Se una fazione vince, tutti i componenti di quella fazione vincono, indipendentemente dal fatto che siano vivi o morti.
 
 Un personaggio morto non può votare, né usare il proprio potere speciale, se ne ha uno. Può interagire con gli altri personaggi in tutti i modi non vietati dal regolamento, per esempio rivelando informazioni in suo possesso. Può inoltre essere riportato in vita dal Messia o risvegliato come Spettro, se si verificano le opportune condizioni.
@@ -238,8 +238,8 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 %  \item {\bf Nipote di Mubarak} (aura nera). Ha un potere speciale passivo: se la Nipote di Mubarak viene messa al rogo dal villaggio, non muore.
 
  \item {\bf Necrofilo} (aura bianca). Una sola volta durante l'arco della partita, il Necrofilo può scegliere un personaggio morto e rubarne il potere. 
- Se il personaggio scelto ha un potere speciale attivabile una volta ogni una o due notti, il Necrofilo lo scopre ed ottiene tale potere.
- Se il personaggio scelto non aveva un potere speciale di questo tipo, il potere del Necrofilo non ha effetto.
+ Se il personaggio scelto ha un potere speciale attivabile una volta ogni una o due notti, il Necrofilo lo scopre ed ottiene tale potere; altrimenti, il potere del Necrofilo non ha effetto.
+ 
  Se il personaggio scelto è un Lupo, un Negromante o un Fantasma, il potere del Necrofilo non ha effetto.
  Se il personaggio scelto è uno Spettro, il Necrofilo ottiene il potere che quel personaggio aveva prima di diventare Spettro.
  
@@ -323,8 +323,11 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  Al Fantasma non può venire assegnato il potere soprannaturale della Morte.
  
  \item {\bf Ipnotista} (aura bianca). Ogni due notti, l'Ipnotista può scegliere un personaggio vivo e controllarne la mente.
- Da quel momento in poi il voto di quel personaggio è considerato uguale a quello dell'Ipnotista, indipendentemente dall'eventuale voto espresso; questo è vero anche se l'Ipnotista non vota.
- Il personaggio scelto non viene informata di essere sotto il controllo dell'Ipnotista.
+ Da quel momento in poi il voto per il rogo di quel personaggio è considerato uguale a quello espresso dall'Ipnotista; questo è vero anche se l'Ipnotista non vota.
+ Il personaggio scelto non viene informato di essere sotto il controllo dell'Ipnotista.
+ 
+ L'Ipnotista è immune al potere degli altri Ipnotisti. Se un Ipnotista tenta di controllare la mente di un altro Ipnotista, il suo potere non ha effetto.
+ L'Ipnotista è immune al potere dell'Amnesia. Se tale Spettro tenta di ottenebrare i ricordi dell'Ipnotista, il suo potere non ha effetto.
 
  Se un Ipnotista è morto, i personaggi sotto il suo controllo votano secondo il proprio volere.
  Un personaggio può essere sotto il controllo di un solo Ipnotista per volta, e precisamente l'ultimo ad aver agito su di esso.
@@ -351,7 +354,9 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 \paragraph{Poteri soprannaturali degli Spettri}
 
 \begin{itemize}
- \item {\bf Amnesia}. Ogni notte, lo Spettro può scegliere un personaggio vivo e ottenebrarne i ricordi. Il giorno successivo, il suo eventuale voto per l'assemblea viene ignorato: a tutti gli effetti è come se non avesse votato. Ciò accade anche se il personaggio scelto è sotto il controllo dell'Ipnotista: invece di votare come l'Ipnotista, non vota affatto.
+ \item {\bf Amnesia}. Ogni notte, lo Spettro può scegliere un personaggio vivo e ottenebrarne i ricordi. Il giorno successivo, il suo eventuale voto per il rogo viene ignorato: a tutti gli effetti è come se non avesse votato. Ciò accade anche se il personaggio scelto è sotto il controllo dell'Ipnotista: invece di votare come l'Ipnotista, non vota affatto.
+ 
+ L'Ipnotista è immune al potere dell'Amnesia. Se lo Spettro tenta di ottenebrare i ricordi dell'Ipnotista, il suo potere non ha effetto.
  
  Questo potere non può essere usato per due notti consecutive sullo stesso personaggio.
 
@@ -482,10 +487,6 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Esorcista}
  \index{Spettro!Occultamento}
  
- \item Se lo Stalker o il Voyeur agiscono su di un personaggio che sta usando il proprio potere su sé stesso, ricevono informazioni come se quel personaggio non avesse agito.
- \index{Stalker}
- \index{Voyeur}
- 
  \item La Guardia del corpo protegge il personaggio scelto solamente dall'attacco dei Lupi. Il Cacciatore, lo Spettro con il potere della Morte ed eventuali altri effetti che uccidono il personaggio scelto non sono influenzati dal potere della Guardia del corpo.
  \index{Guardia del corpo}
  \index{Lupo}
@@ -497,7 +498,7 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Messia}
  \index{Diavolo}
  
- \item Se più Fattucchiere agiscono sulla stessa persona, ciascuna cambia il colore dell'aura. Pertanto, il colore dell'aura percepitoa durante quella notte è quello corretto se le Fattucchiere in questione sono in numero pari, mentre è quello sbagliato se le Fattucchiere sono in numero dispari.
+ \item Se più Fattucchiere agiscono sulla stessa persona, ciascuna cambia il colore dell'aura. Pertanto, il colore dell'aura percepito durante quella notte è quello corretto se le Fattucchiere in questione sono in numero pari, mentre è quello sbagliato se le Fattucchiere sono in numero dispari.
  \index{Fattucchiera}
  
  \item Se al momento della morte del Fantasma non sono più disponibili poteri soprannaturali, il Fantasma non diventa uno Spettro.
