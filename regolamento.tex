@@ -116,7 +116,7 @@ Le notti di gioco si estendono dalle 22:00 (circa) alle 8:00 di domenica, luned�
 
 
 
-\subsection{Comunicazioni GM-giocatori, votazioni, attivazioni dei poteri}
+\subsection{Comunicazioni tra GM e giocatori, votazioni, attivazioni dei poteri}
 
 All'inizio della partita, ciascun giocatore riceve le credenziali per accedere all'interfaccia web di Lupus 4, il cui indirizzo è \verb|http://uz.sns.it/lupus/|.
 Le votazioni durante il giorno e le attivazioni dei poteri avvengono tutte tramite l'interfaccia web. Le informazioni sulle votazioni del giorno e sugli avvenimenti della notte compaiono a loro volta sull'interfaccia web (le informazioni pubbliche possono essere visualizzate senza bisogno di autenticazione, mentre quelle private sono accessibili solo dopo il login).
@@ -128,7 +128,7 @@ Le medesime regole si applicano alla lettera personale che viene data a ciascun 
 La violazione di queste regole può portare alla squalifica del giocatore o, nei casi più gravi, dell'intera fazione.
 
 
-\subsection{Comunicazioni giocatori-giocatori}
+\subsection{Comunicazioni tra i giocatori}
 
 I giocatori possono comunicare tra di loro con qualsiasi mezzo. Possono dirsi qualsiasi cosa.
 L’unica cosa illecita è utilizzare truffaldinamente le e-mail per capire i ruoli delle altre persone: mostrare ad un altro giocatore le informazioni che si sono ricevute dal GM (via interfaccia web, via e-mail o con qualsiasi altro mezzo) è vietato; pressioni come ``fammi vedere la tua casella di posta da lontano, per vedere quante mail ricevi sul gioco'' sono vietate; mandare email che sembrano provenire da un indirizzo di posta diverso dal proprio per imbrogliare il destinatario è vietato; qualunque cosa che assomigli alle precedenti è vietata. La violazione di queste regole può portare alla squalifica del giocatore o, nei casi più gravi, dell'intera fazione.
@@ -157,7 +157,6 @@ Ogni giorno, il Villaggio convoca un'assemblea per stabilire chi condannare a mo
 I personaggi vivi hanno il diritto di votare entro le ore 22 un abitante del villaggio da condannare a morte. Dopo le ore 22, viene pubblicata la lista dei votanti insieme alla preferenza espressa da ciascuna persona.
 Il voto è ritenuto valido se almeno il 50\% dei vivi ha votato; in caso contrario, nessuno viene condannato. Il personaggio che ha ricevuto più voti di tutti muore.
 In caso di parità tra due o più personaggi, fra questi viene condannato quello eventualmente votato dal Sindaco; se nessuno di questi è stato votato dal Sindaco, ne muore uno a caso.
-%Se due o più persone hanno ricevuto lo stesso numero di voti, che è superiore a quello dei voti ricevuti da chiunque altro, muore quella che è stata votata dal Sindaco (vedi Sezione \ref{sindaco}); se nessuna delle due è stata votata dal Sindaco, ne muore una a caso.
 
 Di giorno è anche possibile votare per eleggere un nuovo Sindaco, come è spiegato più dettagliatamente nella Sezione \ref{sindaco}.
 
@@ -175,12 +174,6 @@ I personaggi morti possono continuare a giocare e aiutare la propria fazione, se
 
 Un personaggio morto non può votare, né usare il proprio potere speciale, se ne ha uno. Può interagire con gli altri personaggi in tutti i modi non vietati dal regolamento, per esempio rivelando informazioni in suo possesso. Può inoltre essere riportato in vita dal Messia o risvegliato come Spettro, se si verificano le opportune condizioni.
 Se un personaggio morto viene risvegliato come Spettro, resta morto, ma può usare il suo nuovo potere soprannaturale. Il funzionamento degli Spettri è spiegato nella Sezione \ref{spettri}, sotto la voce ``Negromanti''.
-
-% \subsubsection{Suicidio}
-% 
-% Ogni personaggio ha un potere attivabile di notte: il suicidio.
-% Se un personaggio si suicida, viene trovato morto la mattina seguente. Quando qualcuno muore di notte, il villaggio sa solo che è morto, non come ciò sia accaduto.
-% Questa regola è stata introdotta principalmente per permettere a chi decide di uscire dal gioco di farlo quando desidera, ma è ovviamente possibile suicidarsi come strategia di gioco, e continuare la partita.
 
 
 \subsection{Composizione del villaggio}
@@ -207,7 +200,6 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  \item {\bf Contadino} (aura bianca). Il Contadino non ha alcun potere speciale.
 
  \item {\bf Cacciatore} (aura bianca). Ogni notte, il Cacciatore può scegliere un personaggio vivo e puntarlo col fucile. Se il Cacciatore viene ucciso durante la notte, il personaggio scelto muore, ucciso dal Cacciatore.
-%  Il potere speciale del Cacciatore non si attiva come conseguenza del proprio suicidio.
  
  \item {\bf Custode del cimitero} (aura bianca). Ogni notte, il Custode del cimitero può scegliere un personaggio morto e custodirne la tomba. Per quella notte, se uno o più Negromanti tentano di risvegliare come Spettro il personaggio scelto dal Custode del cimitero, il loro potere non ha effetto.
  
@@ -221,7 +213,6 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  Per quella notte, se uno Spettro tenta di utilizzare il proprio potere sul personaggio scelto dall'Esorcista, il suo potere non ha effetto.
  
  L'Esorcista può usare il suo potere speciale su sé stesso.
- %  Quando uno Spettro tenta di usare un potere su qualcuno schermato dall'Esorcista, viene a sapere che il suo potere non ha funzionato.
  
  \item {\bf Espansivo} (aura bianca). Ogni due notti, l'Espansivo può scegliere un personaggio vivo, e andare a trovarlo. Questo personaggio scopre l'identità dell'Espansivo.
 
@@ -234,8 +225,6 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  \item {\bf Massone} (aura bianca). Il Massone non ha alcun potere speciale. Il Massone conosce gli altri Massoni.
  
  \item {\bf Messia} (aura bianca, mistico). Una sola volta durante l'arco della partita, il Messia può scegliere un pergonaggio morto e resuscitarlo. Quel personaggio ritornerà in vita all'inizio del giorno seguente, riacquistando i suoi poteri speciali.
-
-%  \item {\bf Nipote di Mubarak} (aura nera). Ha un potere speciale passivo: se la Nipote di Mubarak viene messa al rogo dal villaggio, non muore.
 
  \item {\bf Necrofilo} (aura bianca). Una sola volta durante l'arco della partita, il Necrofilo può scegliere un personaggio morto e rubarne il potere. 
  Se il personaggio scelto ha un potere speciale attivabile una volta ogni una o due notti, il Necrofilo lo scopre ed ottiene tale potere; altrimenti, il potere del Necrofilo non ha effetto.
@@ -271,9 +260,8 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 
  \item {\bf Avvocato del diavolo} (aura nera). Ogni due notti, l'Avvocato del diavolo può scegliere un personaggio vivo e scrivere per lui una missiva di rilascio.
  Durante il giorno successivo, se l'assemblea decide, tramite la votazione, di uccidere il personaggio scelto dall'Avvocato del diavolo, questi non muore.
-  %Se questa persona sarà quella che, il giorno dopo, avrà ricevuto più voti, non morirà (grazie ad una legge ad personam), e morirà invece la persona con il secondo numero più alto di voti.
-  
-  L'Avvocato del Diavolo conosce i Diavoli e gli eventuali altri Avvocati del Diavolo.
+ 
+ L'Avvocato del Diavolo conosce i Diavoli e gli eventuali altri Avvocati del Diavolo.
 
  \item {\bf Diavolo} (aura nera, mistico). Ogni notte, il Diavolo può scegliere un personaggio vivo e leggere nella sua anima. Scopre il ruolo del personaggio scelto. Scopre inoltre il ruolo che questi aveva all'inizio della partita, se diverso.
  
@@ -289,9 +277,6 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 
  \item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può scegliere un personaggio vivo e rapirlo. Per quella notte, se il personaggio scelto agisce, il suo potere non ha effetto.
  Stalker e Voyeur ricevono informazioni come se quel personaggio non avesse agito.
- %Se questa persona cerca di uscire di casa per utilizzare il proprio potere su qualcuno, fallisce. Se si tratta di un Lupo, ed è l'unico che va ad uccidere, non muore nessuno. Se si tratta di un personaggio che usa un potere (ad esempio l'Espansivo, o il Messia), il potere di quel personaggio è sprecato.
- %Il Sequestratore non sa se la persona ha provato ad uscire di casa oppure no, e la persona non sa chi l'ha sequestrata (ma viene a sapere che il suo potere non ha funzionato).
- %Il Sequestratore non può rapire la stessa persona per due notti consecutive. Se prova a farlo, si sposta come se avesse agito, ma il suo potere non ha effetto.
  
  Questo potere speciale non può essere usato per due notti consecutive sullo stesso personaggio.
  
@@ -304,7 +289,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
 \label{spettri}
 \begin{itemize}
 
- \item {\bf Negromanti} (aura bianca, mistici). %Ogni due notti, i Negromanti possono scegliere un personaggio e tentare di risvegliarlo come Spettro.
+ \item {\bf Negromanti} (aura bianca, mistici).
  Se la notte precedente nessun personaggio è stato risvegliato come Spettro, ciascun Negromante può scegliere un personaggio morto e selezionare un potere soprannaturale (per la lista dei possibili poteri, vedere oltre).
  Se tutti i Negromanti che decidono di usare il proprio potere speciale scelgono lo stesso personaggio e selezionano lo stesso potere soprannaturale, il personaggio scelto diventa uno Spettro e ottiene il potere selezionato.
  Da quel momento in poi, egli appartiene alla Fazione dei Negromanti. Gli viene inoltre comunicata l'identità dei Negromanti che lo hanno risvegliato come Spettro.
@@ -312,7 +297,7 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  
  Una volta che un potere soprannaturale viene assegnato ad uno Spettro (compreso il Fantasma), questo non può più essere scelto per i nuovi Spettri. Appena viene creato uno Spettro con il potere della Morte, tutti i Negromanti perdono il potere di creare Spettri.
  
- I Lupi, le Fattucchiere e tutti i personaggi che appartengono già alla Fazione dei Negromanti non possono essere risvegliati come Spettri. % Se un Negromante cerca di risvegliare come Spettro uno di questi personaggi, fallisce.
+ I Lupi, le Fattucchiere e tutti i personaggi che appartengono già alla Fazione dei Negromanti non possono essere risvegliati come Spettri.
 
  I Negromanti non possono essere uccisi dai Lupi. Se i Lupi tentano di uccidere un Negromante, il loro potere non ha effetto.
 
@@ -346,8 +331,6 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  
  Se uno Spettro viene resuscitato dal Messia, continua a giocare per la Fazione dei Negromanti, perde per sempre il suo potere soprannaturale da Spettro, non riottiene i poteri speciali eventualmente posseduti prima di essere stato risvegliato come Spettro, e mantiene la sua aura.
  
-%  Gli Spettri perdono la possibilità di utilizzare il proprio potere soprannaturale se muoiono tutti i Negromanti.
-%  Nel caso in cui un Negromante venga resuscitato dal Messia, gli Spettri riacquistano nuovamente la facoltà di utilizzare il proprio potere soprannaturale.
 \end{itemize}
 
 
@@ -380,12 +363,8 @@ Per ciascuno di essi è indicata tra parentesi l'aura, che può essere bianca op
  
  L'Esorcista annulla l'effetto di questo potere agendo sul personaggio nella cui casa compare l'ombra, ma non agendo sul personaggio di cui è stata generata l'ombra stessa.
 
-  \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e sondare i suoi pensieri. Ne scopre la fazione di appartenenza.
+ \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e sondare i suoi pensieri. Ne scopre la fazione di appartenenza.
  
-%  \item {\bf Confusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo. Il giorno successivo, il suo voto per il rogo viene sostituito da un voto casuale (per una persona viva diversa da sé stessa). Ciò accade anche se il personaggio scelto è sotto il controllo dell'Ipnotista: invece di votare come l'Ipnotista, vota a caso.
-%  
-%   Questo potere non può essere usato per due notti consecutive sullo stesso personaggio.
-
 \end{itemize}
 
 
@@ -410,12 +389,10 @@ Ci sono essenzialmente tre possibili ragioni per cui il potere può non avere ef
 
 Nel caso in cui un personaggio cerchi di utilizzare il proprio potere e fallisca, riceve una notifica di fallimento. Tale notifica non precisa la ragione del fallimento.
 
-%Se il potere è unico o attivabile ogni due notti, l'utilizzo conta anche in caso di fallimento. Per esempio, un Necrofilo che usa il suo potere su un Lupo, fallisce e perde il potere per sempre.
 
 \subsection{Lo status di Sindaco}
 \label{sindaco}
 
-% Il voto del Sindaco vale 1,5 voti per stabilire chi muore dopo una votazione di giorno (ma non per stabilire se una votazione è valida).
 Se durante l'assemblea si scopre che non vi è un personaggio che ha ricevuto strettamente più voti di ogni altro, tra i personaggi che hanno ricevuto il maggior numero di voti, viene condannato quello eventualmente votato dal Sindaco.
 Il Sindaco è scelto casualmente all'inizio della partita dal GM (in modo scorrelato dalla Fazione di appartenenza).
 
@@ -442,7 +419,6 @@ Segue una lista (verosimilmente non esaustiva) di eventualità bizzarre con le c
 Per rendere questo elenco più facilmente consultabile, più avanti vi è un indice analitico con la lista dei ruoli (o altre parole chiave) e dei punti in cui essi compaiono.
 
 \begin{enumerate}
-%  \item Un Negromante che utilizza la propria azione notturna per ricercare un nuovo potere e contemporaneamente viene sequestrato, fallisce. Potrà nuovamente provare a ricercare quel potere soprannaturale nelle notti successive.
  
  \item In caso di contraddizione nell'utilizzo dei poteri, viene scelto casualmente un personaggio (o più di uno, se necessario), che non utilizza il proprio potere e riceve la consueta notifica di fallimento (questo è il fallimento ``di terza categoria'', vedi Sezione \ref{fallimento}).
  

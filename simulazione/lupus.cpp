@@ -9,10 +9,10 @@
 
 using namespace std;
 
-int lenght=31;
-int len=31;
+int lenght=1000;
+int len=1000;
 #define hypno 14
-#define numero_critico 31
+#define numero_critico 100
 
 //typedef basic_string<char> string;
 
@@ -169,10 +169,14 @@ void kill (p* ucciso) {
 
 
 unsigned numerovivi(p** punt_personaggi)
-{int num=0;
-for( int i=0; i<len; i++)
-num += (*((*(punt_personaggi+i)))).vivo;
-return num;
+{
+	int num=0;
+	for( int i=0; i<len; i++) {
+		//printf("Sono qua!\n");
+		num += (*((*(punt_personaggi+i)))).vivo;
+	}
+	//printf("Questo è un num: %d\n", num);
+	return num;
 };
 
 p* randtag(int ruolo, int fazione, int vivo, int mistico, p** personaggi) //i numeri negativi indicano "indifferente"
@@ -601,7 +605,7 @@ int giornovillaggio(p** punt_personaggi){
 
 void listainiziale(personaggio** punt_personaggi)
 {
-	int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
+	int cacciatori= 1, contadini= 14, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 3, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 2, indemoniati= 2, mediums= 1, ipnotisti= 1, negromanti= 2;
 	int i=0;
 	int j=0;
 	for (i=0;i<sequestratori;i++){
