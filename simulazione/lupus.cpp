@@ -12,7 +12,12 @@ using namespace std;
 int lenght=1000;
 int len=1000;
 #define hypno 14
+<<<<<<< HEAD
+#define numero_critico 31
+int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
+=======
 #define numero_critico 100
+>>>>>>> 2f0424fcb4a8b3df044b0c7fece183ddfa1442ae
 
 //typedef basic_string<char> string;
 
@@ -605,7 +610,10 @@ int giornovillaggio(p** punt_personaggi){
 
 void listainiziale(personaggio** punt_personaggi)
 {
+<<<<<<< HEAD
+=======
 	int cacciatori= 1, contadini= 14, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 3, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 2, indemoniati= 2, mediums= 1, ipnotisti= 1, negromanti= 2;
+>>>>>>> 2f0424fcb4a8b3df044b0c7fece183ddfa1442ae
 	int i=0;
 	int j=0;
 	for (i=0;i<sequestratori;i++){
