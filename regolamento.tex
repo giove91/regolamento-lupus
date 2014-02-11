@@ -386,9 +386,9 @@ oppure nera, ed è eventualmente indicato l'attributo ``mistico''.
 \begin{itemize}
  \item {\bf Contadino} (aura bianca). Il Contadino non ha alcun potere speciale.
 
- \item {\bf Cacciatore} (aura nera). Una sola volta durante l'arco della
+ \item {\bf Cacciatore} (aura bianca). Una sola volta durante l'arco della
 partita, il Cacciatore può scegliere un personaggio vivo e puntarlo col fucile.
- Se il personaggio scelto non agisce durante la notte, il Cacciatore lo uccide.
+ Se il Cacciatore muore durante la notte, uccide il personaggio scelto.
  % Ricontrollare questa cosa
  
  \item {\bf Custode del cimitero} (aura bianca). Ogni notte, il Custode del
@@ -407,7 +407,7 @@ due sono vere ed esattamente due sono false.
  Il modo in cui queste quattro frasi sono state generate è a discrezione dei GM,
 e non è noto ai giocatori.
 
- \item {\bf Esorcista} (aura bianca, mistico). Ogni notte, l'Esorcista può
+ \item {\bf Esorcista} (aura bianca, mistico). Ogni due notti, l'Esorcista può
 scegliere un personaggio, vivo o morto, e benedire la sua casa.
  Per quella notte, se uno Spettro tenta di utilizzare il proprio potere sul
 personaggio scelto dall'Esorcista, il suo potere non ha effetto.
@@ -641,41 +641,26 @@ vivo e assumerne l'aspetto. Il giorno successivo, il suo voto per il rogo conta
 doppio. Non risulta, però, che il personaggio abbia votato due volte;
 semplicemente, il personaggio per cui vota riceve un voto in più.
 
- \item {\bf Illusione}. Ogni notte, lo Spettro può scegliere un personaggio vivo
-e crearne un'illusione, quindi dirigerla verso un qualsiasi personaggio, vivo o
-morto.
- Agli occhi dello Stalker, è come se il personaggio scelto abbia agito sul
-personaggio verso cui si è diretta l'illusione (a prescindere da dove
-eventualmente si rechi il personaggio scelto).
- Questo potere non ha effetto sul Voyeur.
- 
- L'Esorcista annulla l'effetto di questo potere agendo sul personaggio di cui
-viene creata l'illusione, ma non agendo su quello verso cui l'illusione si
-dirige. 
-
- \item {\bf Mistificazione}. Ogni notte, lo Spettro può scegliere un personaggio
-e creare un'aura magica nella sua casa. Per quella notte, il personaggio scelto
-è considerato mistico. 
+ \item {\bf Mistificazione}. Ogni notte, lo Spettro può scegliere un personaggio,
+vivo o morto, e creare un'aura magica nella sua casa. Per quella notte, il
+personaggio scelto è considerato mistico. 
  
  \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo
-e ucciderlo. Questo potere non ha effetto sui Lupi.
+e ucciderlo.
+ Lo Spettro non può uccidere i Lupi. Se lo Spettro tenta di uccidere un Lupo,
+il suo potere non ha effetto.
  
  \item {\bf Occultamento}. Ogni notte, lo Spettro può scegliere un personaggio
 vivo o morto, e creare attorno alla sua casa una fittissima nebbia magica. Per
 quella notte, se un qualsiasi altro personaggio, eccetto l'Esorcista, agisce sul
 personaggio scelto dallo Spettro, il suo potere non ha effetto.
  
- \item {\bf Ombra}. Ogni notte, lo Spettro può scegliere un personaggio vivo,
-quindi generare un'ombra di un altro personaggio vivo. L'ombra compare nella
+ \item {\bf Ombra}. Ogni notte, lo Spettro può scegliere un personaggio, vivo o
+morto, quindi generare un'ombra di un personaggio vivo. L'ombra compare nella
 casa del personaggio scelto.
- Agli occhi del Voyeur, è come se il personaggio di cui è stata generata l'ombra
-avesse agito sul personaggio scelto.
- Questo potere non ha effetto sullo Stalker.
+ Agli occhi dello Stalker e del Voyeur, è come se il personaggio di cui è stata
+generata l'ombra avesse agito sul personaggio scelto.
  
- L'Esorcista annulla l'effetto di questo potere agendo sul personaggio nella cui
-casa compare l'ombra, ma non agendo sul personaggio di cui è stata generata
-l'ombra stessa.
-
  \item {\bf Visione}. Ogni notte, lo Spettro può scegliere un personaggio vivo e
 scrutare nei suoi pensieri. Ne scopre la fazione di appartenenza.
  
@@ -922,10 +907,20 @@ totale di 4 voti''.
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Spettro!Duplicazione}
  
- \item Lo Spettro con il potere dell'Illusione che agisce su un personaggio X
-può dirigere l'illusione da X stesso. In questo caso, un eventuale Stalker che
-utilizzi a sua volta il suo potere su X verrebbe a sapere che X non ha agito.
- \index{Spettro!Illusione}
+ \item Lo Spettro con il potere dell'Ombra che agisce su un personaggio può
+dirigere l'ombra dal personaggio stesso. In questo caso, un eventuale Stalker
+che utilizzi a sua volta il suo potere sullo stesso personaggio verrebbe a
+sapere che tale personaggio non ha agito.
+ \index{Spettro!Ombra}
+ \index{Stalker}
+ 
+ \item  Se lo Spettro con il potere dell'Ombra decide di dirigere l'ombra 
+nella casa del personaggio su cui ha agito anche un Esorcista, il suo potere
+non ha effetto.
+ Se invece lo Spettro decide di generare l'ombra di un personaggio su cui ha
+agito anche un Esorcista, il suo potere funziona normalmente.
+ \index{Esorcista}
+ \index{Spettro!Ombra}
  
  \item Cercare di uccidere un personaggio che nella stessa notte muore anche per
 altri motivi non costituisce di per sé una causa di fallimento.
