@@ -12,18 +12,14 @@ using namespace std;
 int lenght=1000;
 int len=1000;
 #define hypno 14
-<<<<<<< HEAD
-#define numero_critico 31
-int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2;
-=======
 #define numero_critico 100
->>>>>>> 2f0424fcb4a8b3df044b0c7fece183ddfa1442ae
+int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, wolves= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2, profanatori=0;
+
 
 //typedef basic_string<char> string;
 
 
-
-typedef enum { CACCIATORE, CONTADINO, CUSTODE, ESORCISTA, GUARDIA, MAGO, STALKER, VEGGENTE, VOYEUR, LUPO, DIAVOLO, SEQUESTRATORE, INDEMONIATO, MEDIUM, IPNOTISTA, NEGROMANTE, SPETTRO, SPETTRO_MORTE, SPETTRO_OCCULTAMENTO} ruolo_t;
+typedef enum { CACCIATORE, CONTADINO, CUSTODE, ESORCISTA, GUARDIA, MAGO, STALKER, VEGGENTE, VOYEUR, LUPO, DIAVOLO, SEQUESTRATORE, INDEMONIATO, MEDIUM, IPNOTISTA, NEGROMANTE, SPETTRO, SPETTRO_MORTE, SPETTRO_OCCULTAMENTO, PROFANATORE} ruolo_t;
 
 class personaggio {	
 	public:
@@ -62,6 +58,8 @@ int turni = 0;
 int vittorieneri = 0;
 int vittoriebianchi = 0;
 int vittoriegrigi = 0;
+bool nebbiaprofanata = 0;
+bool morteprofanata = 0;
 
 
 bool morto(p* persona){
@@ -182,6 +180,11 @@ unsigned numerovivi(p** punt_personaggi)
 	}
 	//printf("Questo è un num: %d\n", num);
 	return num;
+};
+
+unsigned numeromorti(p** punt_personaggi)
+{
+	return (len-numerovivi(punt_personaggi));
 };
 
 p* randtag(int ruolo, int fazione, int vivo, int mistico, p** personaggi) //i numeri negativi indicano "indifferente"
@@ -374,7 +377,7 @@ void lupi (p** punt_personaggi) {
 	do			
 		vittima = randtag(-1, -1,1,-1,punt_personaggi);
 	while(vittima -> fazione == 1);
-	if((vittima->ruolo_num != NEGROMANTE) && (vittima->ruolo_num != IPNOTISTA || numerospettri==0))
+	if((vittima->ruolo_num != NEGROMANTE) && (nebbiaprofanata || (vittima->ruolo_num != IPNOTISTA || numerospettri==0)))
 	kill(vittima);
 	};
 	killerevittima[1]= vittima;
@@ -510,6 +513,30 @@ switch ( numerospettri) {
 return;
 };
 
+class profanatore: public personaggio{
+	public:
+	profanatore() : personaggio(0,1,0,"profanatore",PROFANATORE) {};
+	int notte (p** punt_personaggi) { /* implementazione stupida: prende un morto a caso e a caso è uno spettro oppure no */
+		if (numerospettri == 0)
+			return 0;
+		if (numerospettri >=1 && numerospettri < 4)
+			{
+			if(rand()%numeromorti(punt_personaggi)== 0)
+				nebbiaprofanata = 1;
+			}
+			return 0;
+		if (numerospettri >=4)
+			{
+			if(rand()%numeromorti(punt_personaggi)== 0)
+				nebbiaprofanata = 1;
+			if(rand()%numeromorti(punt_personaggi)== 1)
+				morteprofanata = 1;
+			return 0;
+			}
+		return 0;
+	};
+};		
+
 void spettro_morte (p** punt_personaggi){
 		if(randtag(NEGROMANTE, -1, 1, -1, punt_personaggi)==NULL)
 			return;
@@ -569,7 +596,7 @@ int vittoria(p** punt_personaggi){ //ritorna la fazione che ha vinto, -1 se non 
 }
 
 int nottevillagio(p** punt_personaggi){
-	if(numerospettri>=4)
+	if(numerospettri>=4 && !morteprofanata)
 		spettro_morte(punt_personaggi);
 	notte_negromanti(punt_personaggi);
 	//cout << "numero spettri " << numerospettri << endl;
@@ -579,7 +606,9 @@ int nottevillagio(p** punt_personaggi){
 			(*(punt_personaggi+i))->notte(punt_personaggi);
 		};
 	reset(punt_personaggi);	
-	return vittoria(punt_personaggi);		
+	return vittoria(punt_personaggi);
+	morteprofanata = 0;
+	nebbiaprofanata = 0;		
 };
 
 int giornovillaggio(p** punt_personaggi){
@@ -610,10 +639,6 @@ int giornovillaggio(p** punt_personaggi){
 
 void listainiziale(personaggio** punt_personaggi)
 {
-<<<<<<< HEAD
-=======
-	int cacciatori= 1, contadini= 14, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 3, stalkers= 1, veggenti= 2, voyeurs= 1, lupi= 4, diavoli= 1, sequestratori= 2, indemoniati= 2, mediums= 1, ipnotisti= 1, negromanti= 2;
->>>>>>> 2f0424fcb4a8b3df044b0c7fece183ddfa1442ae
 	int i=0;
 	int j=0;
 	for (i=0;i<sequestratori;i++){
@@ -660,7 +685,7 @@ void listainiziale(personaggio** punt_personaggi)
 		punt_personaggi[j]=new voyeur;
 		j++;
 	};
-	for (i=0;i<lupi;i++){
+	for (i=0;i<wolves;i++){
 		punt_personaggi[j]=new lupo;
 		j++;
 	};
@@ -682,6 +707,10 @@ void listainiziale(personaggio** punt_personaggi)
 	};
 	for (i=0;i<negromanti;i++){
 		punt_personaggi[j]=new negromante;
+		j++;
+	};
+	for (i=0;i<profanatori;i++){
+		punt_personaggi[j]=new profanatore;
 		j++;
 	};
 	len=j;
