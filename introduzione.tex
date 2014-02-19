@@ -1,0 +1,89 @@
+\documentclass[a4paper,10pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[parfill]{parskip}
+
+\topmargin -1cm
+\oddsidemargin -0.5cm
+%\evensidemargin	-1cm
+\textwidth 17cm
+
+
+\newcommand{\smallspace}{\vskip0.3cm}
+
+% Title Page
+\title{Introduzione a Lupus in tempo reale}
+\author{Alessandro Iraci, Giovanni Paolini, Leonardo Tolomeo}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Regole del gioco}
+
+All'inizio del gioco, ad ogni giocatore viene segretamente assegnato un ruolo,
+che determina anche la fazione di cui farà parte.
+Ci sono tre fazioni: i Popolani, i Lupi e i Negromanti. Un giocatore vince se
+vince la sua fazione, a prescindere dal fatto che sia vivo o morto
+al termine della partita.
+
+I turni di gioco sono divisi in giorni e notti. Durante il giorno, ciascuno
+ha il diritto di votare un giocatore da mandare al rogo. 
+Al termine del giorno, salvo eccezioni, muore il giocatore con più voti.
+Durante la notte i giocatori hanno diritto ad usare i loro poteri
+speciali, che dipendono dal ruolo. Un elenco dei ruoli e dei rispettivi
+poteri speciali è disponibile nel regolamento.
+
+Quella che segue è una descrizione sommaria delle fazioni.
+\begin{itemize}
+ \item I Lupi si accordano fra loro per uccidere un personaggio a loro scelta. 
+    I loro obiettivi principali sono i Popolani con poteri che potrebbero farli scoprire,
+    ma qualunque avversario in meno li avvicina alla vittoria.
+    Gli altri giocatori della loro fazione li aiutano ad
+    ottenere informazioni, costruirsi una copertura credibile e rallentare le indagini dei Popolani.
+ \item I Negromanti possono, ogni due notti, scegliere un personaggio morto e trasformarlo in uno Spettro.
+    Questi si aggiungerà alla loro fazione e otterrà un nuovo potere speciale.
+    Gli Spettri, così come gli altri membri della fazione, aiutano i Negromanti a mescolarsi nel villaggio
+    e a manipolare le votazioni del giorno.
+    I Negromanti non avranno abbastanza tempo per creare tutti gli Spettri disponibili, e devono valutare
+    con attenzione il momento in cui dare vita all'ultimo Spettro, che ha il potere di uccidere.
+ \item I Popolani sono la fazione più numerosa, ma anche la più disorganizzata. All'inizio della 
+    partita non si conoscono fra loro, e molti dei loro poteri servono a ottenere informazioni sugli 
+    altri giocatori. Altri personaggi, invece, proteggono il villaggio dalla furia omicida dei Lupi
+    e dai poteri degli Spettri e dei Negromanti.
+    I Popolani devono puntare a scoprire quante più informazioni possibile, organizzare
+    controlli a tappeto sugli altri giocatori e uccidere dei nemici con le votazioni ogni
+    qualvolta ne hanno l'occasione. Spesso conviene uccidere qualcuno anche sulla base di
+    semplici sospetti, perché non farlo, di fatto, permette ai Lupi di uccidere un Popolano
+    in più.
+\end{itemize}
+
+La partita termina quando rimane una sola fazione in gioco, che viene dichiarata vincitrice.
+
+\section{Strategie}
+
+Ogni giocatore è libero di rivelare il proprio ruolo, ma gli altri non hanno
+alcun modo di sapere se stia mentendo. 
+In generale non è un'idea saggia:
+un giocatore della fazione dei Lupi o dei Negromanti che viene scoperto, solitamente
+viene ucciso di giorno; d'altra parte, un giocatore che dichiara di essere un Popolano,
+se ha un potere abbastanza forte, potrebbe essere preso di mira dai Lupi o dai Negromanti.
+Nonostante ciò, soprattutto per i Popolani, potrebbe essere necessario uscire allo
+scoperto per rivelare le informazioni in proprio possesso, ottenute durante la notte,
+oppure per permettere ai propri alleati di organizzare dei controlli su dei giocatori
+sospetti.
+
+In generale, in questo gioco è fondamentale la capacità di mentire, di crearsi una copertura
+perfetta e di coordinare le azioni della propria fazione. L'interazione con gli altri
+giocatori è importantissima e rende divertente il gioco.
+
+\end{document}
