@@ -13,7 +13,7 @@ int lenght=1000;
 int len=1000;
 #define hypno 14
 #define numero_critico 100
-int cacciatori= 1, contadini= 9, contadini_mistici= 2, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 2, voyeurs= 1, wolves= 4, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 0, ipnotisti= 1, negromanti= 2, profanatori=0;
+int cacciatori= 0, contadini= 7, contadini_mistici= 3, custodi= 1, esorcisti= 1, guardie= 1, maghi= 2, stalkers= 1, veggenti= 1, voyeurs= 1, wolves= 3, diavoli= 1, sequestratori= 1, indemoniati= 1, mediums= 1, ipnotisti= 1, negromanti= 2, profanatori=0;
 
 
 //typedef basic_string<char> string;
