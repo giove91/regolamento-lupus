@@ -208,8 +208,8 @@ il nero.
  \item Molti ruoli sono stati creati, eliminati o modificati. A chi è abituato
 al regolamento della terza edizione raccomandiamo di controllare con particolare
 attenzione i seguenti ruoli, che hanno subito i cambiamenti più rilevanti:
-Cacciatore, Custode del cimitero, Esorcista, Investigatore, Rinnegato, Profanatore di tombe, Negromante, Fantasma,
-Ipnotista, Medium, Spettro.
+Cacciatore, Custode del cimitero, Esorcista, Investigatore, Rinnegato, Sciamano, Negromante, Fantasma,
+Ipnotista, Medium, Spettro, Scrutatore, Trasformista.
  \item Le comunicazioni di gioco (votazione, utilizzo dei poteri, resoconto
 dell'alba e del tramonto) avvengono attraverso un'interfaccia web e non più via
 e-mail.
@@ -220,18 +220,19 @@ e-mail.
 Proposte accettate, ma ancora da implementare.
 
 \begin{itemize}
-\item Introdotto il Turlupinatore.
+\item Introdotto lo Scrutatore.
 \item Abolito lo Spettro della Duplicazione.
 % \item Lo Spettro della Mistificazione inverte la misticità invece di renderla vera.
 \item L'ultimo Ipnotista, quando muore, diventa uno Spettro
   dell'Ipnosi.
-\item La Spettro dell'Ipnosi non viene fatto se è già stato fatto lo
+\item Lo Spettro dell'Ipnosi non viene fatto se è già stato fatto lo
   Spettro della Morte. Lo Spettro dell'Ipnosi viene creato se l'ultimo
   Ipnotista muore la stessa notte in cui viene creato lo Spettro della
   Morte.
 \item Il Profanatore di Tombe è trasferito alla fazione dei
-  Popolani. Rimane con aura nera.
-\item Il Necrofilo è rinominato in ???.
+  Popolani ed è stato rinominato in Sciamano. 
+  Rimane con aura nera, ma diventa mistico.
+\item Il Necrofilo è rinominato in Trasformista.
 \end{itemize}
 
 
@@ -500,20 +501,24 @@ partita, il Messia può scegliere un personaggio morto e resuscitarlo. Quel
 personaggio ritornerà in vita all'inizio del giorno seguente, riacquistando i
 suoi poteri speciali.
 
- \item {\bf Necrofilo} (aura bianca). Una sola volta durante l'arco della
-partita, il Necrofilo può scegliere un personaggio morto e rubarne il potere. 
+ \item {\bf Trasformista} (aura bianca). Una sola volta durante l'arco della
+partita, il Trasformista può scegliere un personaggio morto e rubarne il potere. 
  Se il personaggio scelto ha un potere speciale attivabile una volta ogni una o
-due notti, il Necrofilo lo scopre ed ottiene tale potere; altrimenti, il potere
-del Necrofilo non ha effetto.
+due notti, il Trasformista lo scopre ed ottiene tale potere; altrimenti, il potere
+del Trasformista non ha effetto.
  
  Se il personaggio scelto è un Lupo, un Negromante o un Fantasma, il potere del
-Necrofilo non ha effetto.
- Se il personaggio scelto è uno Spettro, il Necrofilo ottiene il potere che quel
+Trasformista non ha effetto.
+ Se il personaggio scelto è uno Spettro, il Trasformista ottiene il potere che quel
 personaggio aveva prima di diventare Spettro.
  
- Nel momento in cui il Necrofilo ottiene il potere speciale di un altro
+ Nel momento in cui il Trasformista ottiene il potere speciale di un altro
 personaggio, acquisisce anche il ruolo, l'aura e la proprietà di essere mistico
 del personaggio in questione, ma continua a giocare con la Fazione dei Popolani.
+
+ \item{\bf Sciamano} (aura nera, mistico). Ogni due notti, lo Sciamano
+può scegliere un personaggio morto e acquietarne lo spirito.
+Se il personaggio scelto è uno Spettro, e questi agisce, il suo potere non ha effetto.
 
  \item {\bf Stalker} (aura bianca). Ogni due notti, lo Stalker può scegliere un
 personaggio vivo e pedinarlo. Scopre se quel personaggio ha agito su altri
@@ -575,15 +580,9 @@ del personaggio scelto risulta diverso da quello effettivo.
  La Fattucchiera può usare il suo potere speciale su sé stessa.
  
  La Fattucchiera conosce i Lupi e le eventuali altre Fattucchiere.
- 
- \item{\bf Profanatore di tombe} (aura nera). Ogni due notti, il Profanatore di tombe
-può scegliere un personaggio morto e profanarne la tomba. Se il personaggio scelto è
-uno Spettro, e questi agisce, il suo potere non ha effetto.
-
-Il Profanatore di tombe conosce i Rinnegati, i Sequestratori e gli eventuali altri Profanatori di tombe.
- 
+  
  \item {\bf Rinnegato} (aura bianca). Il Rinnegato non ha alcun potere speciale.
-Il Rinnegato conosce i Profanatori di tombe, i Sequestratori e gli eventuali altri Rinnegati.
+Il Rinnegato conosce i Sequestratori e gli eventuali altri Rinnegati.
 
  \item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può
 scegliere un personaggio vivo e rapirlo. Per quella notte, se il personaggio
@@ -594,7 +593,7 @@ agito.
  Questo potere speciale non può essere usato per due notti consecutive sullo
 stesso personaggio.
  
- Il Sequestratore conosce i Profanatori di tombe, i Rinnegati e gli eventuali altri Sequestratori.
+ Il Sequestratore conosce i Rinnegati e gli eventuali altri Sequestratori.
 
 
 \end{itemize}
@@ -616,6 +615,7 @@ Spettro.
  Se almeno due Negromanti scelgono personaggi diversi o selezionano poteri
 soprannaturali diversi, il loro potere speciale non ha effetto e nessun
 personaggio viene risvegliato come Spettro.
+I Negromanti non possono mai selezionare il potere sovrannaturale dell'Ipnosi.
  
  Una volta che un potere soprannaturale viene assegnato ad uno Spettro (compreso
 il Fantasma), questo non può più essere scelto per i nuovi Spettri. Appena viene
@@ -656,20 +656,23 @@ proprio volere.
  Un personaggio può essere sotto il controllo di un solo Ipnotista per volta, e
 precisamente l'ultimo ad aver agito su di esso.
 
+Nel momento in cui l'ultimo Ipnotista vivo (e appartenente alla Fazione dei Negromanti)
+muore, costui assume automaticamente il potere dell'Ipnosi. Questo non avviene se 
+un  personaggio è già stato risvegliato come Spettro con il potere della Morte.
+
  L'Ipnotista conosce i Medium e gli eventuali altri Ipnotisti.
 
  \item {\bf Medium} (aura bianca, mistico). Ogni notte, il Medium può scegliere
-un personaggio morto e contattarne lo spirito. Scopre il colore della sua aura e
+un personaggio morto e contattarne lo spirito. Scopre il ruolo del personaggio e
 se tale personaggio è diventato o meno uno Spettro.
 
  Il Medium conosce gli Ipnotisti e gli eventuali altri Medium.
  
- \item {\bf Turlupinatore} (aura bianca). Ogni notte, il Turlupinatore può scegliere
- un personaggio vivo e copiarne la scheda elettorale. Scrive inoltre il nome di
- un altro personaggio vivo sulla scheda.
+ \item {\bf Scrutatore} (aura bianca). Ogni notte, lo Scrutatore può scegliere
+ un personaggio vivo e aggiugere segretamente un suo voto nell'urna della votazione per il rogo
+ del giorno seguente. Seleziona anche un personaggio vivo a cui questo voto sarà diretto.
  Il giorno seguente, al momento della pubblicazione dei voti, risulta che il
- personaggio scelto ha votato \emph{anche} per il personaggio il cui nome è stato scritto
- sulla scheda.
+ personaggio scelto ha votato \emph{anche} per il personaggio selezionato.
  
 
  \item {\bf Spettri}. Gli Spettri non sono presenti all'inizio della partita: i
@@ -688,7 +691,8 @@ non viene informato del suo risveglio.
 occhi del Voyeur.
  
  Se uno Spettro viene resuscitato dal Messia, continua a giocare per la Fazione
-dei Negromanti, ma perde per sempre il suo potere soprannaturale. Non riottiene i poteri speciali eventualmente
+dei Negromanti, ma perde per sempre il suo potere soprannaturale. 
+Non riottiene i poteri speciali eventualmente
 posseduti prima di essere stato risvegliato come Spettro.
  
 \end{itemize}
@@ -709,10 +713,18 @@ i ricordi dell'Ipnotista, il suo potere non ha effetto.
  Questo potere non può essere usato per due notti consecutive sullo stesso
 personaggio.
 
- \item {\bf Duplicazione}. Ogni notte, lo Spettro può scegliere un personaggio
-vivo e assumerne l'aspetto. Il giorno successivo, il suo voto per il rogo conta
-doppio. Non risulta, però, che il personaggio abbia votato due volte;
-semplicemente, il personaggio per cui vota riceve un voto in più.
+\item{\bf Ipnosi} Ogni notte, lo spettro può scegliere un personaggio vivo e
+controllarne la mente. Seleziona un secondo personaggio vivo, e il giorno seguente
+il voto per il rogo del personaggio scelto sarà espresso contro il secondo personaggio.
+
+I Negromanti non possono selezionare il Potere dell'Ipnosi nell'atto di risvegliare un
+personaggio come Spettro.
+
+
+%  \item {\bf Duplicazione}. Ogni notte, lo Spettro può scegliere un personaggio
+% vivo e assumerne l'aspetto. Il giorno successivo, il suo voto per il rogo conta
+% doppio. Non risulta, però, che il personaggio abbia votato due volte;
+% semplicemente, il personaggio per cui vota riceve un voto in più.
 
  \item {\bf Illusione}. Ogni due notti, lo Spettro può scegliere un personaggio,
 vivo o morto, quindi generare un'illusione di un personaggio vivo. L'illusione compare
@@ -778,7 +790,7 @@ da un Sequestratore, bloccati da un Esorcista o dallo Spettro con il potere
 dell'Occultamento.
  \item Restrizioni all'utilizzo del potere. Ad esempio, un Lupo non riesce a
 uccidere se nella stessa notte un altro Lupo cerca di assassinare un personaggio
-diverso; il potere del Necrofilo non ha alcun effetto su un Lupo.
+diverso; il potere del Trasformista non ha alcun effetto su un Lupo.
  \item Contraddizioni nell'utilizzo dei poteri. Può succedere che non ci sia
 alcun modo logico di risolvere le azioni dei personaggi nel corso di una notte
 (vedi Sezione \ref{faq} per una discussione più approfondita). Questo accade per
@@ -854,11 +866,11 @@ fallimento.
  \index{Messia}
  \index{Negromante}
 
- \item Se un Necrofilo usa il proprio potere su uno Spettro, copia il potere
+ \item Se un Trasformista usa il proprio potere su uno Spettro, copia il potere
 speciale che quel personaggio aveva prima di essere risvegliato come Spettro.
- Se un Necrofilo usa il proprio potere su un Necrofilo morto che aveva già
+ Se un Trasformista usa il proprio potere su un Trasformista morto che aveva già
 acquisito un nuovo potere, egli acquisisce a sua volta quello stesso potere.
- \index{Necrofilo}
+ \index{Trasformista}
  \index{Spettro}
  
  \item I Negromanti non possono nemmeno provare a usare il proprio potere se
@@ -874,6 +886,10 @@ selezionino tutti lo stesso potere soprannaturale.
 trovavano sotto il controllo dell'Ipnotista al momento della sua morte sono
 nuovamente sotto il suo controllo, a meno che nel frattempo la loro mente sia
 stata controllata da un altro Ipnotista.
+
+Questo non avviene se il suddetto Ipnotista è nel frattempo diventato uno Spettro
+con il Potere dell'Ipnosi, in quanto uno Spettro resuscitato ``non riottiene i poteri
+speciali eventualmente posseduti prima di essere stato risvegliato come Spettro''.
  
  Se un personaggio sotto il controllo di un Ipnotista muore e viene
 successivamente resuscitato, torna ad essere sotto il controllo dell'ultimo
@@ -959,28 +975,30 @@ condannato a morte sul rogo, immediatamente dopo viene nominato casualmente un
 nuovo Sindaco (non vi è stato tempo per la nomina di un successore).
  \index{Elezione del Sindaco@\emph{Elezione del Sindaco}}
  
- \item Il potere dell'Ipnotista e i poteri soprannaturali dell'Amnesia e della
-Duplicazione non incidono sull'elezione del Sindaco, solo sul voto per il rogo.
+ \item Il poteri dell'Ipnotista e dello Scrutatore e i poteri soprannaturali dell'Amnesia e dell'Ipnosi
+ non incidono sull'elezione del Sindaco, solo sul voto per il rogo.
  \index{Ipnotista}
  \index{Spettro!Amnesia}
- \index{Spettro!Duplicazione}
+ \index{Spettro!Ipnosi}
+ \index{Scrutatore}
+% \index{Spettro!Duplicazione}
  \index{Elezione del Sindaco@\emph{Elezione del Sindaco}}
  
- \item Se lo Spettro con il potere dell'Amnesia e lo Spettro con il potere della
-Duplicazione agiscono contemporaneamente su di un personaggio, il voto di quel
-personaggio è comunque annullato. In altre parole, il potere dell'Amnesia
-annulla il potere della Duplicazione.
- \index{Spettro!Amnesia}
- \index{Spettro!Duplicazione}
+%  \item Se lo Spettro con il potere dell'Amnesia e lo Spettro con il potere della
+% Duplicazione agiscono contemporaneamente su di un personaggio, il voto di quel
+% personaggio è comunque annullato. In altre parole, il potere dell'Amnesia
+% annulla il potere della Duplicazione.
+%  \index{Spettro!Amnesia}
+%  \index{Spettro!Duplicazione}
  
- \item Quando lo Spettro con il potere della Duplicazione agisce, il villaggio
-non viene messo al corrente dell'identità del personaggio che ha beneficiato del
-potere. Per esempio, se il personaggio X viene votato da A, B e C, e durante la
-notte precedente lo Spettro aveva usato il suo potere su C, allora il server
-riporterà un messaggio simile a ``X è stato votato da A, B e C, ricevendo un
-totale di 4 voti''.
- \index{Votazione per il rogo@\emph{Votazione per il rogo}}
- \index{Spettro!Duplicazione}
+%  \item Quando lo Spettro con il potere della Duplicazione agisce, il villaggio
+% non viene messo al corrente dell'identità del personaggio che ha beneficiato del
+% potere. Per esempio, se il personaggio X viene votato da A, B e C, e durante la
+% notte precedente lo Spettro aveva usato il suo potere su C, allora il server
+% riporterà un messaggio simile a ``X è stato votato da A, B e C, ricevendo un
+% totale di 4 voti''.
+%  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
+%  \index{Spettro!Duplicazione}
  
  \item Lo Spettro con il potere dell'Illusione che agisce su un personaggio può
 dirigere l'illusione dal personaggio stesso. In questo caso, un eventuale Stalker
@@ -1010,42 +1028,60 @@ Sezione \ref{fallimento}).
  
  \item Al fine di determinare la validità della votazione, la percentuale di
  votanti per il rogo è calcolata dopo aver applicato gli effetti dell'Ipnotista
- e dello Spettro con il potere dell'Amnesia, ma prima di aver applicato gli effetti
- dello Spettro con il potere della Duplicazione.
+ e dello Spettro con il potere dell'Amnesia
+ %, ma prima di aver applicato gli effetti dello Spettro con il potere della Duplicazione
+ .
  Per esempio, se su 10 personaggi vivi ve ne sono 5 sotto il controllo dell'Ipnotista,
  e l'Ipnotista non vota, allora il quorum del 50\% non è raggiunto perché l'Ipnotista
  e i personaggi sotto il suo controllo non votano.
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Ipnotista}
  \index{Spettro!Amnesia}
- \index{Spettro!Duplicazione}
+ %\index{Spettro!Duplicazione}
 
  \item Il potere soprannaturale dell'Occultamento ha effetto anche sugli altri Spettri.
  \index{Spettro}
  \index{Spettro!Occultamento}
  \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
  
- \item Se il Turlupinatore e lo Spettro con il potere dell'Amnesia agiscono entrambi
+ \item Se lo Scrutatore e lo Spettro con il potere dell'Amnesia agiscono entrambi
  su uno stesso personaggio, il voto originariamente espresso da quel personaggio
- viene cancellato (per effetto del potere dell'Amnesia), ma il voto aggiunto dal
- Turlupinatore rimane valido.
+ viene cancellato (per effetto del potere dell'Amnesia), ma il voto aggiunto dallo
+ Scrutatore rimane valido.
  In particolare, dal risultato della votazione non è possibile distinguere il caso in
  cui questo accade dal caso in cui il personaggio scelto ha votato il personaggio indicato
- dal Turlupinatore (a meno che abbiano agito più Turlupinatori).
- \index{Turlupinatore}
+ dallo Scrutatore (a meno che abbiano agito più Scrutatori).
+ \index{Scrutatore}
  \index{Spettro!Amnesia}
  
- \item Se più Turlupinatori agiscono su uno stesso personaggio, ciascuno di essi aggiunge
+ \item Se più Scrutatori agiscono su uno stesso personaggio, ciascuno di essi aggiunge
  un voto (anche se tali voti sono indirizzati al medesimo personaggio).
- \index{Turlupinatore}
+ \index{Scrutatore}
  
- \item Se il Turlupinatore agisce su un personaggio che muore durante la stessa notte,
- il voto aggiunto dal Turlupinatore rimane valido.
- Al contrario, se a morire è il personaggio a cui era diretto il voto aggiunto dal Turlupinatore,
- tale voto è cancellato (e non compare tra i risultati della votazione). Ciò accade
- anche se entrambi i personaggi coinvolti muoiono.
- \index{Turlupinatore}
+ \item Se lo Scrutatore e/o lo Spettro con il potere dell'Ipnosi agiscono su un personaggio che muore durante la stessa notte,
+ l'effetto del loro potere è cancellato. 
+ La stessa cosa succede se a morire è il personaggio a cui era diretto il voto.
+ Questa eventualità non è considerata un motivo di fallimento.
+ \index{Scrutatore}
+ \index{Spettro!Ipnosi}
+ \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
+ 
+ \item Se un Trasformista usa il suo potere con sucesso su un Ipnotista, in ogni caso non viene conteggiato fra gli Ipnotisti
+ vivi ai fini della creazione dello Spettro con il Potere dell'Ipnosi. In particolare, se tutti gli Ipnotisti appartenenti alla
+ Fazione dei Negromanti muoiono, l'ultimo di essi a morire viene risvegliato come Spettro con il potere dell'Ipnosi. Analogamente,
+ un Trasformista non potrà in nessun caso essere risvegliato come Spettro con il Potere dell'Ipnosi.
+ \index{Trasformista}
+ \index{Spettro!Ipnosi}
+ 
+ \item Se tutti gli Ipnotisti vivi muoiono la stessa notte, solamente uno di essi, scelto casualmente,
+ viene risvegliato come Spettro con il potere dell'Ipnosi.
+ \index{Ipnotista}
+ \index{Spettro!Ipnosi}
+ 
+ \item Se nella stessa notte l'ultimo Ipnotista muore e i Negromanti risvegliano un personaggio come Spettro con il potere
+ della Morte, allora l'Ipnotista morto viene comunque risvegliato come Spettro con il potere dell'Ipnosi.
 \end{enumerate}
+
 
 \printindex
 
