@@ -10,6 +10,8 @@
 \usepackage{amssymb}
 \usepackage{makeidx}
 \usepackage[parfill]{parskip}
+\usepackage{hyperref}
+
 
 % * define a `\twoidxcolumn` based on `\twocolumn`:
 \def\twoidxcolumn{%
@@ -52,16 +54,18 @@ Sezione \ref{faq}}]%
 % [title=Indice dei ruoli presenti nella Sezione \ref{faq},columns=3]
 
 
-\topmargin -1cm
-\oddsidemargin -0.5cm
-%\evensidemargin	-1cm
-\textwidth 17cm
+\usepackage[top=1.15in, bottom=1.15in, left=1.3in, right=1.3in]{geometry}
+
+% \topmargin -1cm
+% \oddsidemargin -0.5cm
+% %\evensidemargin	-1cm
+% \textwidth 17cm
 
 
 \newcommand{\smallspace}{\vskip0.3cm}
 
 % Title Page
-\title{Lupus in tempo reale\\ Regolamento della quinta edizione}
+\title{Lupus in tempo reale\\ Regolamento della sesta edizione}
 \author{Alessandro Iraci, Giovanni Mascellani, Giovanni Paolini, Leonardo Tolomeo}
 
 \begin{document}
@@ -188,45 +192,59 @@ giocare.
 
 \subsection{Quando si giocherà}
 
-La partita inizierà la sera di martedì 18 novembre 2014, con ritrovo al collegio Carducci.
+La partita inizierà la sera di martedì 18 novembre 2014, con ritrovo al collegio Carducci. % TODO
 
 
-\subsection{Principali cambiamenti nella quarta edizione}
+% \subsection{Principali cambiamenti nella quarta edizione}
+% 
+% Questa sezione è pensata per dare a chi ha giocato alla terza edizione di Lupus
+% un'idea delle modifiche più importanti che sono state apportate. Tuttavia non
+% sostituisce un'attenta lettura del resto del regolamento.
+% 
+% \begin{itemize}
+%  \item La Fazione dei Vampiri è stata sostituita dalla nuova Fazione dei
+% Negromanti, che ha meccaniche di gioco molto diverse.
+%  \item È stato eliminato il suicidio.
+%  \item È stato eliminato il rituale dei fantasmi.
+%  \item I possibili colori dell'aura sono tornati ad essere solamente il bianco e
+% il nero.
+%  \item Molti ruoli sono stati creati, eliminati o modificati. A chi è abituato
+% al regolamento della terza edizione raccomandiamo di controllare con particolare
+% attenzione i seguenti ruoli, che hanno subito i cambiamenti più rilevanti:
+% Cacciatore, Custode del cimitero, Esorcista, Investigatore, Rinnegato, Profanatore di tombe, Negromante, Fantasma, Ipnotista, Medium, Spettro.
+%  \item Le comunicazioni di gioco (votazione, utilizzo dei poteri, resoconto
+% dell'alba e del tramonto) avvengono attraverso un'interfaccia web e non più via
+% e-mail.
+% \end{itemize}
+% 
+% \subsection{Principali cambiamenti nella quinta edizione}
+% 
+% Le seguenti sono le modifiche apportate rispetto alla quarta edizione di Lupus in tempo reale.
+% 
+% \begin{itemize}
+% \item È stato introdotto lo Scrutatore.
+% \item È stato eliminato lo Spettro con il potere della Duplicazione.
+% \item L'ultimo Ipnotista, quando muore, diventa uno Spettro con il potere dell'Ipnosi.
+% \item Il Profanatore di Tombe è stato trasferito alla fazione dei
+%   Popolani ed è stato rinominato in Sciamano. 
+%   Rimane con aura nera, ma diventa mistico.
+% \item Il Necrofilo è stato rinominato in Trasformista.
+% \item Il Medium scopre il ruolo del personaggio scelto, e non più l'aura.
+% \end{itemize}
 
-Questa sezione è pensata per dare a chi ha giocato alla terza edizione di Lupus
+
+
+\subsection{Principali cambiamenti nella sesta edizione}
+
+Questa sezione è pensata per dare a chi ha giocato alla quinta edizione di Lupus
 un'idea delle modifiche più importanti che sono state apportate. Tuttavia non
 sostituisce un'attenta lettura del resto del regolamento.
 
 \begin{itemize}
- \item La Fazione dei Vampiri è stata sostituita dalla nuova Fazione dei
-Negromanti, che ha meccaniche di gioco molto diverse.
- \item È stato eliminato il suicidio.
- \item È stato eliminato il rituale dei fantasmi.
- \item I possibili colori dell'aura sono tornati ad essere solamente il bianco e
-il nero.
- \item Molti ruoli sono stati creati, eliminati o modificati. A chi è abituato
-al regolamento della terza edizione raccomandiamo di controllare con particolare
-attenzione i seguenti ruoli, che hanno subito i cambiamenti più rilevanti:
-Cacciatore, Custode del cimitero, Esorcista, Investigatore, Rinnegato, Profanatore di tombe, Negromante, Fantasma, Ipnotista, Medium, Spettro.
- \item Le comunicazioni di gioco (votazione, utilizzo dei poteri, resoconto
-dell'alba e del tramonto) avvengono attraverso un'interfaccia web e non più via
-e-mail.
+  \item Il Trasformista e il Fantasma hanno ora aura nera.
 \end{itemize}
 
-\subsection{Principali cambiamenti nella quinta edizione}
 
-Le seguenti sono le modifiche apportate rispetto alla quarta edizione di Lupus in tempo reale.
-
-\begin{itemize}
-\item È stato introdotto lo Scrutatore.
-\item È stato eliminato lo Spettro con il potere della Duplicazione.
-\item L'ultimo Ipnotista, quando muore, diventa uno Spettro con il potere dell'Ipnosi.
-\item Il Profanatore di Tombe è stato trasferito alla fazione dei
-  Popolani ed è stato rinominato in Sciamano. 
-  Rimane con aura nera, ma diventa mistico.
-\item Il Necrofilo è stato rinominato in Trasformista.
-\item Il Medium scopre il ruolo del personaggio scelto, e non più l'aura.
-\end{itemize}
 
 
 \pagebreak
@@ -241,7 +259,7 @@ alle 8:00 del giorno successivo.
 
 
 
-\subsection{Comunicazioni tra GM e giocatori, votazioni, attivazioni dei poteri}
+\subsection{Comunicazioni tra GM e giocatori, votazioni, poteri}
 
 All'inizio della partita, ciascun giocatore riceve le credenziali per accedere
 all'interfaccia web di Lupus, il cui indirizzo è
@@ -524,7 +542,7 @@ fatto.
 stesso, lo Stalker riceve informazioni come se tale personaggio non avesse
 agito.
 
- \item {\bf Trasformista} (aura bianca). Una sola volta durante l'arco della
+ \item {\bf Trasformista} (aura nera). Una sola volta durante l'arco della
 partita, il Trasformista può scegliere un personaggio morto e rubarne il potere. 
  Se il personaggio scelto ha un potere speciale attivabile una volta ogni una o
 due notti, il Trasformista lo scopre ed ottiene tale potere; altrimenti, il potere
@@ -640,7 +658,7 @@ un Negromante, il loro potere non ha effetto.
 
  I Negromanti conoscono gli altri Negromanti.
  
- \item {\bf Fantasma} (aura bianca). Il Fantasma non ha alcun potere speciale.
+ \item {\bf Fantasma} (aura nera). Il Fantasma non ha alcun potere speciale.
 Se il Fantasma muore, diventa immediatamente uno Spettro ed ottiene uno dei
 poteri soprannaturali non ancora assegnati, scelto in modo casuale fra quelli
 possibili. Gli viene inoltre comunicata l'identità dei Negromanti, e ai
@@ -730,12 +748,6 @@ il voto per il rogo del personaggio scelto sarà espresso contro il secondo pers
 
 L'Ipnotista è immune al potere dell'Ipnosi. Se lo Spettro tenta di controllare
 la mente dell'Ipnotista, il suo potere non ha effetto.
-
-Lo Spettro dell'Ipnosi ha la precedenza sull'Ipnotista. Se lo Spettro
-dell'Ipnosi agisce su un personaggio controllato da un Ipnotista, il
-giorno seguente il personaggio vota come indicato dallo
-Spettro. Tuttavia il personaggio rimane sotto il controllo
-dell'Ipnotista.
 
 I Negromanti non possono selezionare il Potere dell'Ipnosi nell'atto di risvegliare un
 personaggio come Spettro.
@@ -918,6 +930,7 @@ Ipnotista ad aver agito su di esso.
  \index{Ipnotista}
  \index{Messia}
  
+ \vspace{-4 mm}
  \item Se un personaggio smette di essere sotto il controllo di un Ipnotista (ad
 esempio perché un altro Ipnotista usa il suo potere su di esso), l'Ipnotista non
 riceve alcuna notifica.
@@ -983,7 +996,7 @@ che per l'elezione del Sindaco.
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Elezione del Sindaco@\emph{Elezione del Sindaco}}
  
- \vspace{-4 mm}
+%  \vspace{-4 mm}
  \item Se più personaggi ottengono il massimo numero di voti per il rogo e
 quello scelto casualmente per essere ucciso è stato protetto dall'Avvocato del
 Diavolo, nessuno muore e non viene resa pubblica l'identità del personaggio
@@ -1111,7 +1124,6 @@ Sezione \ref{fallimento}).
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Scrutatore}
  
- \vspace{-4 mm}
  \item Se il Trasformista utilizza il proprio potere diventando un Ipnotista, al termine della notte in cui questo accade egli smette di essere affetto dai poteri di Ipnotisti, Spettro con il potere dell'Amnesia e Spettro con il potere dell'Ipnosi. In particolare, se era stato precedentemente ipnotizzato da un qualche Ipnotista, smette di essere ipnotizzato (ma l'Ipnotista non riceve alcuna notifica).
  
  Se, nella notte in cui il Trasformista diventa Ipnotista, sul Trasformista agiscono Ipnotisti, Spettro con il potere dell'Amnesia, oppure Spettro con il potere dell'Ipnosi, questi ultimi non ricevono una notifica di fallimento a causa della trasformazione in atto, sebbene il loro potere non abbia effetto (perché al termine della notte il Trasformista diviene immune a tali poteri).
@@ -1120,6 +1132,10 @@ Sezione \ref{fallimento}).
  \index{Spettro!Ipnosi}
  \index{Spettro!Amnesia}
  \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
+ 
+ \item Lo Spettro dell'Ipnosi ha la precedenza sull'Ipnotista. Se lo Spettro dell'Ipnosi agisce su un personaggio controllato da un Ipnotista, il giorno seguente il personaggio vota come indicato dallo Spettro. Tuttavia il personaggio rimane sotto il controllo dell'Ipnotista.
+ \index{Spettro!Ipnosi}
+ \index{Ipnotista}
 \end{enumerate} \vspace{-4 mm}
 
 
