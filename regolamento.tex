@@ -32,8 +32,8 @@
 \makeatletter
 \def\@wrindex#1{%
    \protected@write\@indexfile{}%
-      {\string\indexentry{#1}{\theenumi}}
-      \endgroup
+      {\string\indexentry{#1}{\theenumi}}%
+      \endgroup%
       \@esphack}
 
 \makeatletter
@@ -42,10 +42,10 @@
 Sezione \ref{faq}}]%
                 \@mkboth{\MakeUppercase\indexname}%
                         {\MakeUppercase\indexname}%
-                \thispagestyle{plain}\parindent\z@
-                \parskip\z@ \@plus .3\p@\relax
-                \columnseprule \z@
-                \columnsep 35\p@
+                \thispagestyle{plain}\parindent\z@%
+                \parskip\z@ \@plus .3\p@\relax%
+                \columnseprule \z@%
+                \columnsep 35\p@%
                 \let\item\@idxitem}
                {}
 \makeatother
@@ -530,7 +530,6 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Spettro!Occultamento}
  \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
   
- \vspace{-4mm}
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sullo stesso personaggio (morto), quel personaggio viene resuscitato dal Messia e non risvegliato come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
  \index{Messia}
  \index{Negromante}
@@ -554,7 +553,6 @@ Questo non avviene se il suddetto Ipnotista è nel frattempo diventato uno Spett
  \index{Ipnotista}
  \index{Messia}
  
- \vspace{-4 mm}
  \item Se un personaggio smette di essere sotto il controllo di un Ipnotista (ad esempio perché un altro Ipnotista usa il suo potere su di esso), l'Ipnotista non riceve alcuna notifica.
  \index{Ipnotista}
  
@@ -594,7 +592,6 @@ soprannaturali ancora disponibili (se ve ne sono).
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Elezione del Sindaco@\emph{Elezione del Sindaco}}
  
-%  \vspace{-4 mm}
  \item Se più personaggi ottengono il massimo numero di voti per il rogo e quello scelto casualmente per essere ucciso è stato protetto dall'Avvocato del Diavolo, nessuno muore e non viene resa pubblica l'identità del personaggio protetto dall'Avvocato.
  \index{Avvocato del Diavolo}
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
