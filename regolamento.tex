@@ -315,6 +315,8 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  \item {\bf Massone} (aura bianca). Il Massone non ha alcun potere speciale. I Massoni conoscono gli altri Massoni.
  
  \item {\bf Messia} (aura bianca, mistico). Una sola volta durante l'arco della partita, il Messia può scegliere un personaggio morto e resuscitarlo. Quel personaggio ritornerà in vita all'inizio del giorno seguente, riacquistando i suoi poteri speciali.
+ 
+ Se il personaggio scelto è uno Spettro, il potere del Messia non ha effetto.
 
  \item{\bf Sciamano} (aura nera, mistico). Ogni due notti, lo Sciamano può scegliere un personaggio morto e tormentarne lo spirito. Se il personaggio scelto è uno Spettro, e questi agisce, il suo potere non ha effetto.
 
@@ -351,7 +353,7 @@ rilascio. Durante il giorno successivo, se l'assemblea decide, tramite la votazi
  
  L'Avvocato del Diavolo conosce i Diavoli, le Fattucchiere e gli eventuali altri Avvocati del Diavolo.
  
- \item {\bf Assassino} (aura nera). Ogni due notti, l'Assassino può scegliere un personaggio vivo e puntare il suo fucile di precisione verso casa sua. Uccide uno degli altri personaggi che hanno usato il proprio potere sul personaggio scelto dal Assassino, scelto in modo casuale.
+ \item {\bf Assassino} (aura nera). Ogni due notti, l'Assassino può scegliere un personaggio vivo e puntare il suo fucile di precisione verso casa sua. Uccide uno degli altri personaggi che hanno usato il proprio potere sul personaggio scelto dall'Assassino, scelto in modo casuale.
  
  L'Assasino conosce i Sequestratori, i Rinnegati e gli eventuali altri Assassini.
 
@@ -383,11 +385,10 @@ scelto.
 
  \item {\bf Negromanti} (aura bianca, mistici). Se la notte precedente nessun personaggio è stato risvegliato come Spettro, ciascun Negromante può scegliere un personaggio morto e selezionare un potere soprannaturale (per la lista dei possibili poteri, vedere oltre). Se tutti i Negromanti che decidono di usare il proprio potere speciale scelgono lo stesso personaggio e selezionano lo stesso potere soprannaturale, il personaggio scelto diventa uno Spettro e ottiene il potere selezionato. Da quel momento in poi, egli appartiene alla Fazione dei Negromanti. Gli viene inoltre comunicata l'identità dei Negromanti che lo hanno risvegliato come Spettro.
  Se almeno due Negromanti scelgono personaggi diversi o selezionano poteri soprannaturali diversi, il loro potere speciale non ha effetto e nessun personaggio viene risvegliato come Spettro.
-I Negromanti non possono mai selezionare il potere sovrannaturale dell'Ipnosi.
  
  Una volta che un potere soprannaturale viene assegnato ad uno Spettro (compreso il Fantasma), questo non può più essere scelto per i nuovi Spettri. Appena viene creato uno Spettro con il potere della Morte, tutti i Negromanti perdono il potere di creare Spettri.
  
- I Lupi, le Fattucchiere e tutti i personaggi che appartengono già alla Fazione dei Negromanti non possono essere risvegliati come Spettri.
+ I Lupi, i Diavoli, gli Assassini e tutti i personaggi che appartengono già alla Fazione dei Negromanti non possono essere risvegliati come Spettri.
 
  I Negromanti non possono essere uccisi dai Lupi. Se i Lupi tentano di uccidere un Negromante, il loro potere non ha effetto.
 
@@ -406,7 +407,8 @@ I Negromanti non possono mai selezionare il potere sovrannaturale dell'Ipnosi.
  Se un Ipnotista è morto, i personaggi sotto il suo controllo votano secondo il proprio volere.
  Un personaggio può essere sotto il controllo di un solo Ipnotista per volta, e precisamente l'ultimo ad aver agito su di esso.
 
-Nel momento in cui l'ultimo Ipnotista vivo (e appartenente alla Fazione dei Negromanti) muore, costui diventa automaticamente uno Spettro con il potere dell'Ipnosi. Questo non avviene se un personaggio è già stato risvegliato come Spettro con il potere della Morte.
+ Nel momento in cui un Ipnotista %vivo (e appartenente alla Fazione dei Negromanti) 
+ muore, costui diventa automaticamente uno Spettro con il potere dell'Ipnosi. Questo non avviene se il potere dell'Ipnosi è già stato assegnato.
 
  L'Ipnotista conosce i Medium, gli Scrutatori e gli eventuali altri Ipnotisti.
 
@@ -424,8 +426,8 @@ Nel momento in cui l'ultimo Ipnotista vivo (e appartenente alla Fazione dei Negr
  Uno Spettro rimane morto: in particolare non può essere ucciso, e il villaggio non viene informato del suo risveglio.
  La presenza di uno Spettro che sta usando il suo potere passa inosservata agli occhi del Voyeur.
  
- Se uno Spettro viene resuscitato dal Messia, continua a giocare per la Fazione ei Negromanti, ma perde per sempre il suo potere soprannaturale. 
- Non riottiene i poteri speciali eventualmente posseduti prima di essere stato risvegliato come Spettro.
+%  Se uno Spettro viene resuscitato dal Messia, continua a giocare per la Fazione ei Negromanti, ma perde per sempre il suo potere soprannaturale. 
+%  Non riottiene i poteri speciali eventualmente posseduti prima di essere stato risvegliato come Spettro.
  
 \end{itemize}
 
@@ -443,19 +445,16 @@ Nel momento in cui l'ultimo Ipnotista vivo (e appartenente alla Fazione dei Negr
 
 L'Ipnotista è immune al potere dell'Ipnosi. Se lo Spettro tenta di controllare la mente dell'Ipnotista, il suo potere non ha effetto.
 
-I Negromanti non possono selezionare il Potere dell'Ipnosi nell'atto di risvegliare un personaggio come Spettro.
-
-
 %  \item {\bf Duplicazione}. Ogni notte, lo Spettro può scegliere un personaggio
 % vivo e assumerne l'aspetto. Il giorno successivo, il suo voto per il rogo conta
 % doppio. Non risulta, però, che il personaggio abbia votato due volte;
 % semplicemente, il personaggio per cui vota riceve un voto in più.
 
  \item {\bf Illusione}. Ogni due notti, lo Spettro può scegliere un personaggio, vivo o morto, quindi generare un'illusione di un personaggio vivo. L'illusione compare nella casa del personaggio scelto.
- Agli occhi dello Stalker, è come se il personaggio di cui è stata generata l'illusione avesse agito sul personaggio scelto (invece che su quello dove eventualmente si dirige il personaggio in carne e ossa). %, o non avesse agito, nel caso in cui il personaggio scelto coincida con quello di cui è stata generata l'illusione.
- Agli occhi del Voyeur, è come se il personaggio di cui è stata generata l'illusione avesse agito \emph{anche} sul personaggio scelto.
+ Agli occhi di uno Stalker, è come se il personaggio di cui è stata generata l'illusione avesse agito \emph{solo} sul personaggio scelto. Nel caso in cui il personaggio scelto coincida con quello di cui è stata generata l'illusione, uno Stalker che usa il suo potere su tale personaggio riceve informazioni come se questi non avesse agito.
+ Agli occhi di un Voyeur, è come se il personaggio di cui è stata generata l'illusione avesse agito \emph{anche} sul personaggio scelto. Nel caso in cui il personaggio scelto coincida con quello di cui è stata generata l'illusione, un Voyeur che usa il suo potere su tale personaggio non lo vede.
 
- \item {\bf Mistificazione}. Ogni notte, lo Spettro può scegliere un personaggio, vivo o morto, e creare un'aura magica nella sua casa. Per quella notte, il personaggio scelto è considerato mistico. 
+%  \item {\bf Mistificazione}. Ogni notte, lo Spettro può scegliere un personaggio, vivo o morto, e creare un'aura magica nella sua casa. Per quella notte, il personaggio scelto è considerato mistico. 
  
  \item {\bf Morte}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e ucciderlo.
  Lo Spettro non può uccidere i Lupi. Se lo Spettro tenta di uccidere un Lupo, il suo potere non ha effetto.
@@ -518,19 +517,17 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \item In caso di contraddizione nell'utilizzo dei poteri, viene scelto casualmente un personaggio (o più di uno, se necessario), che non utilizza il proprio potere e riceve la consueta notifica di fallimento (questo è il fallimento ``di terza categoria'', vedi Sezione \ref{fallimento}).
  
 %  Ad esempio, se un Esorcista, un Sequestratore e uno Spettro con il potere dell'Occultamento agiscono simultaneamente su un secondo Sequestratore che agisce sull'Esorcista, si verifica facilmente (esercizio) che non c'è alcun modo coerente di risolvere le azioni.
- \index{Esorcista}
- \index{Sequestratore}
- \index{Spettro!Occultamento}
+%  \index{Esorcista}
+%  \index{Sequestratore}
+%  \index{Spettro!Occultamento}
  \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
   
  \item Se nella stessa notte un Messia e un Negromante cercano di agire sullo stesso personaggio (morto), quel personaggio viene resuscitato dal Messia e non risvegliato come Spettro. In particolare, il Negromante riceve una notifica di fallimento.
  \index{Messia}
  \index{Negromante}
 
- \item Se un Trasformista usa il proprio potere su uno Spettro, copia il potere speciale che quel personaggio aveva prima di essere risvegliato come Spettro.
- Se un Trasformista usa il proprio potere su un Trasformista morto che aveva già acquisito un nuovo potere, egli acquisisce a sua volta quello stesso potere.
+ \item Se un Trasformista usa il proprio potere su un Trasformista morto che aveva già acquisito un nuovo potere, egli acquisisce a sua volta quello stesso potere.
  \index{Trasformista}
- \index{Spettro}
  
  \item I Negromanti non possono nemmeno provare a usare il proprio potere se durante la notte precedente è stato creato uno Spettro.
  \index{Negromante}
@@ -538,9 +535,7 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \item Se più Negromanti cercano di creare degli Spettri, falliscono come succede nel caso dei Lupi, a meno che scelgano tutti lo stesso personaggio e selezionino tutti lo stesso potere soprannaturale.
  \index{Negromante}
 
- \item Se un Ipnotista morto viene resuscitato dal Messia, tutti coloro che si trovavano sotto il controllo dell'Ipnotista al momento della sua morte sono nuovamente sotto il suo controllo, a meno che nel frattempo la loro mente sia stata controllata da un altro Ipnotista.
-
-Questo non avviene se il suddetto Ipnotista è nel frattempo diventato uno Spettro con il Potere dell'Ipnosi, in quanto uno Spettro resuscitato ``non riottiene i poteri speciali eventualmente posseduti prima di essere stato risvegliato come Spettro''.
+ \item Se un Ipnotista morto (che non è divenuto uno Spettro) viene resuscitato dal Messia, tutti coloro che si trovavano sotto il controllo dell'Ipnotista al momento della sua morte sono nuovamente sotto il suo controllo, a meno che nel frattempo la loro mente sia stata controllata da un altro Ipnotista.
  
  Se un personaggio sotto il controllo di un Ipnotista muore e viene successivamente resuscitato, torna ad essere sotto il controllo dell'ultimo Ipnotista ad aver agito su di esso.
  \index{Ipnotista}
@@ -560,23 +555,22 @@ Questo non avviene se il suddetto Ipnotista è nel frattempo diventato uno Spett
  \index{Esorcista}
  \index{Spettro!Occultamento}
  
- \item La Guardia del corpo protegge il personaggio scelto solamente dall'attacco dei Lupi. Il Assassino, lo Spettro con il potere della Morte ed eventuali altri effetti che uccidono il personaggio scelto non sono influenzati dal potere della Guardia del corpo.
+ \item La Guardia del corpo protegge il personaggio scelto solamente dall'attacco dei Lupi. L'Assassino, lo Spettro con il potere della Morte ed eventuali altri effetti che uccidono il personaggio scelto non sono influenzati dal potere della Guardia del corpo.
  \index{Guardia del corpo}
  \index{Lupo}
  \index{Assassino}
  \index{Spettro!Morte}
  
- \item Se in notti diverse un personaggio muore, viene risvegliato come Spettro, resuscitato dal Messia e la sua anima viene letta dal Diavolo, il Diavolo scopre che il personaggio è uno Spettro, ma non scopre che potere soprannaturale ha.
- \index{Spettro}
- \index{Messia}
- \index{Diavolo}
+%  \item Se in notti diverse un personaggio muore, viene risvegliato come Spettro, resuscitato dal Messia e la sua anima viene letta dal Diavolo, il Diavolo scopre che il personaggio è uno Spettro, ma non scopre che potere soprannaturale ha.
+%  \index{Spettro}
+%  \index{Messia}
+%  \index{Diavolo}
  
  \item Se più Fattucchiere agiscono sulla stessa persona, ciascuna cambia il colore dell'aura. Pertanto, il colore dell'aura percepito durante quella notte è quello corretto se le Fattucchiere in questione sono in numero pari, mentre è quello sbagliato se le Fattucchiere sono in numero dispari.
  \index{Fattucchiera}
  
  \item Se al momento della morte del Fantasma non sono più disponibili poteri soprannaturali, il Fantasma non diventa uno Spettro.
- I Negromanti hanno sempre la priorità sui Fantasmi morti di notte: prima avviene l'eventuale risveglio di un morto come Spettro ad opera dei Negromanti, e poi i Fantasmi appena morti ottengono casualmente uno dei poteri
-soprannaturali ancora disponibili (se ve ne sono).
+ I Negromanti hanno sempre la priorità sui Fantasmi morti di notte: prima avviene l'eventuale risveglio di un morto come Spettro ad opera dei Negromanti, e poi i Fantasmi appena morti ottengono casualmente uno dei poteri soprannaturali ancora disponibili (se ve ne sono).
  Se più Fantasmi muoiono contemporaneamente e non sono disponibili abbastanza poteri soprannaturali per assegnarne a ciascuno di essi, vengono scelti casualmente i Fantasmi che diventano effettivamente degli Spettri e ottengono un potere soprannaturale.
  \index{Fantasma}
  \index{Negromante}
@@ -616,12 +610,13 @@ soprannaturali ancora disponibili (se ve ne sono).
 %  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
 %  \index{Spettro!Duplicazione}
  
- \item Lo Spettro con il potere dell'Illusione che agisce su un personaggio può dirigere l'illusione dal personaggio stesso. In questo caso, un eventuale Stalker che utilizzi a sua volta il suo potere sullo stesso personaggio riceve informazioni come se tale personaggio non avesse agito.
- \index{Spettro!Illusione}
- \index{Stalker}
+%  \item Lo Spettro con il potere dell'Illusione che agisce su un personaggio può dirigere l'illusione dal personaggio stesso. In questo caso, un eventuale Stalker che utilizzi a sua volta il suo potere sullo stesso personaggio riceve informazioni come se tale personaggio non avesse agito.
+%  \index{Spettro!Illusione}
+%  \index{Stalker}
  
  \item  Se lo Spettro con il potere dell'Illusione decide di dirigere l'illusione nella casa del personaggio su cui ha agito anche un Esorcista, il suo potere non ha effetto.
- Se invece lo Spettro decide di generare l'illusione di un personaggio su cui ha agito anche un Esorcista, il suo potere funziona normalmente.
+ Se invece lo Spettro decide di generare l'illusione di un personaggio su cui ha agito anche un Esorcista, il suo potere funzi: prima avviene l'eventuale risveglio di un morto come Spettro ad opera dei Negromanti, e poi i Fantasmi appena morti ottengono casualmente uno dei poteri soprannaturali ancora disponibili (se ve ne sono).
+ ona normalmente.
  \index{Esorcista}
  \index{Spettro!Illusione}
  
@@ -658,17 +653,22 @@ soprannaturali ancora disponibili (se ve ne sono).
  \index{Spettro!Ipnosi}
  \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
  
- \item Se un Trasformista usa il suo potere con sucesso su un Ipnotista, in ogni caso non viene conteggiato fra gli Ipnotisti vivi ai fini della creazione dello Spettro con il Potere dell'Ipnosi. In particolare, se tutti gli Ipnotisti appartenenti alla Fazione dei Negromanti muoiono, l'ultimo di essi a morire viene risvegliato come Spettro con il potere dell'Ipnosi. Analogamente, un Trasformista non potrà in nessun caso essere risvegliato come Spettro con il Potere dell'Ipnosi.
- \index{Trasformista}
- \index{Spettro!Ipnosi}
+%  \item Se un Trasformista usa il suo potere con sucesso su un Ipnotista, in ogni caso non viene conteggiato fra gli Ipnotisti vivi ai fini della creazione dello Spettro con il Potere dell'Ipnosi. In particolare, se tutti gli Ipnotisti appartenenti alla Fazione dei Negromanti muoiono, l'ultimo di essi a morire viene risvegliato come Spettro con il potere dell'Ipnosi. Analogamente, un Trasformista non potrà in nessun caso essere risvegliato come Spettro con il Potere dell'Ipnosi.
+%  \index{Trasformista}
+%  \index{Spettro!Ipnosi}
  
- \item Se tutti gli Ipnotisti vivi (e appartenenti alla Fazione dei Negromanti) muoiono la stessa notte, solamente uno di essi, scelto casualmente, viene risvegliato come Spettro con il potere dell'Ipnosi.
+ \item Se più Ipnotisti muoiono la stessa notte, solamente uno di essi (scelto casualmente) viene risvegliato come Spettro con il potere dell'Ipnosi, sempre che tale potere non sia ancora stato assegnato.
  \index{Ipnotista}
  \index{Spettro!Ipnosi}
  
- \item Se nella stessa notte l'ultimo Ipnotista (appartenente alla Fazione dei Negromanti) muore e i Negromanti risvegliano un personaggio come Spettro con il potere della Morte, allora l'Ipnotista morto viene comunque risvegliato come Spettro con il potere dell'Ipnosi.
+ \item I Negromanti hanno sempre la priorità sugli Ipnotisti morti di notte. Se nella stessa notte muore un Ipnotista, e i Negromanti tentano di risvegliare un morto come Spettro con il potere dell'Ipnosi, a meno dell'intervento di altre cause di fallimento questi hanno successo, e l'Ipnotista non viene risvegliato come Spettro.
+ \index{Negromante}
  \index{Ipnotista}
  \index{Spettro!Ipnosi}
+ 
+%  \item Se nella stessa notte l'ultimo Ipnotista (appartenente alla Fazione dei Negromanti) muore e i Negromanti risvegliano un personaggio come Spettro con il potere della Morte, allora l'Ipnotista morto viene comunque risvegliato come Spettro con il potere dell'Ipnosi.
+%  \index{Ipnotista}
+%  \index{Spettro!Ipnosi}
  
  \item Il voto eventualmente aggiunto dallo Scrutatore conta ai fini del raggiungimento del quorum.
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
