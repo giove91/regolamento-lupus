@@ -352,20 +352,20 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
  L'Assasino conosce i Sequestratori, i Rinnegati e gli eventuali altri Assassini.
 
- \item {\bf Avvocato del diavolo} (aura nera). Ogni due notti, l'Avvocato del diavolo può scegliere un personaggio vivo e scrivere per lui una missiva di rilascio.
- Durante il giorno successivo, se l'assemblea decide, tramite la votazione, di uccidere il personaggio scelto dall'Avvocato del diavolo, questi non muore.
+ \item {\bf Avvocato del Diavolo} (aura nera). Ogni due notti, l'Avvocato del Diavolo può scegliere un personaggio vivo e scrivere per lui una missiva di rilascio.
+ Durante il giorno successivo, se l'assemblea decide, tramite la votazione, di uccidere il personaggio scelto dall'Avvocato del Diavolo, questi non muore.
  
- L'Avvocato del Diavolo conosce i Diavoli, le Fattucchiere e gli eventuali altri Avvocati del Diavolo.
+ L'Avvocato del Diavolo conosce i Diavoli, le Fattucchiere, gli Stregoni e gli eventuali altri Avvocati del Diavolo.
 
  \item {\bf Diavolo} (aura nera, mistico). Ogni notte, il Diavolo può scegliere un personaggio vivo e leggere nella sua anima. Scopre il ruolo del personaggio scelto.
  
- Il Diavolo conosce gli Avvocati del Diavolo, le Fattucchiere e gli eventuali altri Diavoli.
+ Il Diavolo conosce gli Avvocati del Diavolo, le Fattucchiere, gli Stregoni e gli eventuali altri Diavoli.
  
  \item {\bf Fattucchiera} (aura nera, mistico). Ogni notte la Fattucchiera può scegliere un personaggio, vivo o morto, e stregarlo. Per quella notte, il colore dell'aura del personaggio scelto risulta diverso da quello effettivo.
  
 %  La Fattucchiera può usare il suo potere speciale su sé stessa.
  
- La Fattucchiera conosce gli Avvocati del Diavolo, i Diavoli e le eventuali altre Fattucchiere.
+ La Fattucchiera conosce gli Avvocati del Diavolo, i Diavoli, gli Stregoni e le eventuali altre Fattucchiere.
   
  \item {\bf Rinnegato} (aura bianca). Il Rinnegato non ha alcun potere speciale. Il Rinnegato conosce gli Assassini, i Sequestratori e gli eventuali altri Rinnegati.
 
@@ -375,7 +375,13 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
  Il Sequestratore conosce gli Assassini, i Rinnegati e gli eventuali altri Sequestratori.
 
-
+ \item {\bf Stregone} (aura nera, mistico). Una sola volta durante l'arco della partita, lo Stregone può scegliere un personaggio vivo e offrirgli anonimamente una pozione di licantropia. Tale personaggio riceve una notifica dell'evento, e ha tempo fino all'alba successiva per decidere se berla o distruggerla. Se la beve diventa un Lupo, assume aura nera, diviene non mistico e passa alla Fazione dei Lupi; inoltre gli viene rivelata l'identità degli altri Lupi, e agli altri Lupi viene comunicata l'avvenuta trasformazione.
+ In qualsiasi caso, allo Stregone viene comunicata la scelta effettuata dal personaggio su cui ha utilizzato il potere.
+ 
+ La pozione di licantropia non ha effetto sui membri della Fazione dei Negromanti.
+ 
+ Lo Stregone conosce gli Avvocati del Diavolo, i Diavoli, le Fattucchiere e gli eventuali altri Stregoni.
+ 
 \end{itemize}
 
 \subsection*{Fazione dei Negromanti}
@@ -387,7 +393,8 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
  Una volta che un potere soprannaturale viene assegnato ad uno Spettro (compreso il Fantasma), questo non può più essere scelto per i nuovi Spettri. Appena viene creato uno Spettro con il potere della Morte, tutti i Negromanti perdono il potere di creare Spettri.
  
- I Lupi, i Diavoli, gli Assassini e tutti i personaggi che appartengono già alla Fazione dei Negromanti non possono essere risvegliati come Spettri.
+ Solamente i personaggi appartenenti alla Fazione dei Popolani possono essere risvegliati come Spettri.
+ Se i Negromanti tentano di risvegliare come Spettro un membro di una fazione diversa da quella dei Popolani, il loro potere non ha effetto.
 
  I Negromanti non possono essere uccisi dai Lupi. Se i Lupi tentano di uccidere un Negromante, il loro potere non ha effetto.
 
@@ -716,13 +723,19 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Medium}
  
  \item Personaggi diversi che cercano di ottenere informazioni su un personaggio su cui ha agito lo Spettro con il potere della Confusione ricevono informazioni casuali indipendenti.
- Per esempio, se contemporaneamente due Veggenti e tale Spettro agiscono su un medesimo personaggio, i due Veggenti possono ottenere responsi differenti.
+ Per esempio, se contemporaneamente due Veggenti e tale Spettro agiscono sullo stesso personaggio, i due Veggenti possono ottenere responsi differenti.
  \index{Spettro!Confusione}
  \index{Veggente}
  
  \item Se una o più Fattucchiere e lo Spettro con il potere della Confusione agiscono sullo stesso personaggio, chiunque cerchi di ottenere informazioni sul colore dell'aura di tale personaggio ottiene un responso casuale.
  \index{Fattucchiera}
  \index{Spettro!Confusione}
+ 
+ \item Se uno Stregone utilizza il proprio potere su un membro della Fazione dei Negromanti, tale personaggio riceve la relativa notifica ma non può scegliere di bere la pozione.
+ \index{Stregone}
+ 
+ \item Se più Stregoni utilizzano contemporaneamente il proprio potere su uno stesso personaggio, tale personaggio riceve un'unica notifica recante l'offerta di una pozione. Successivamente la sua scelta viene comunicata a tutti gli Stregoni che hanno utilizzato il proprio potere su di lui.
+ \index{Stregone}
 \end{enumerate}
 
 
