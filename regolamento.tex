@@ -168,6 +168,9 @@ Questa sezione è pensata per dare a chi ha giocato alla quinta edizione di Lupu
   \item Il Trasformista e il Fantasma hanno ora aura nera.
   \item Nessun personaggio può utilizzare il proprio potere su sé stesso.
   \item Sono state rimosse le restrizioni sull'utilizzo di un potere due notti consecutive sullo stesso personaggio.
+  \item Sono stati eliminati il Custode del Cimitero, il Cacciatore, e il potere soprannaturale della Mistificazione.
+  \item Sono stati introdotti l'Assassino, lo Stregone, e il potere soprannaturale della Confusione.
+  \item I personaggi della fazione dei Lupi non possono diventare Spettri.
 \end{itemize}
 
 
@@ -346,7 +349,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 \subsection*{Fazione dei Lupi}
 
 \begin{itemize}
- \item {\bf Lupi} (aura nera). Ogni notte dopo la prima, ciascun Lupo può scegliere un personaggio vivo e tentare di ucciderlo. Se tutti i Lupi che decidono di usare il proprio potere speciale scelgono lo stesso personaggio, questi muore. Se almeno due Lupi indicano personaggi diversi, il loro potere speciale non ha effetto.
+ \item {\bf Lupi} (aura nera). Ogni notte, ciascun Lupo può scegliere un personaggio vivo e tentare di ucciderlo. Se tutti i Lupi che decidono di usare il proprio potere speciale scelgono lo stesso personaggio, questi muore. Se almeno due Lupi indicano personaggi diversi, il loro potere speciale non ha effetto.
  
  I Lupi non possono uccidere i Negromanti. Se i Lupi tentano di uccidere un Negromante, il loro potere non ha effetto.
  
@@ -639,13 +642,22 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Lupo}
  \index{Spettro!Morte}
  
- \item Al fine di determinare la validità della votazione, la percentuale di votanti per il rogo è calcolata dopo aver applicato gli effetti dell'Ipnotista e dello Spettro con il potere dell'Amnesia.
+ \item Il voto eventualmente aggiunto dallo Scrutatore conta ai fini del raggiungimento del quorum.
+ \index{Votazione per il rogo@\emph{Votazione per il rogo}}
+ \index{Scrutatore}
+ 
+ \item Se il voto aggiunto dallo Scrutatore è identico al voto espresso dal personaggio su cui è stato usato il potere dello Scrutatore, entrambi i voti vengono conteggiati per determinare il condannato a morte.
+ Tuttavia, nella lista dei votanti, il personaggio su cui è stato usato il potere dello Scrutatore compare solo una volta.
+ \index{Votazione per il rogo@\emph{Votazione per il rogo}}
+ \index{Scrutatore}
+ 
+ \item Al fine di determinare la validità della votazione, la percentuale di votanti per il rogo è calcolata dopo aver applicato gli effetti dei poteri che interagiscono con la votazione (Ipnotista, Scrutatore, poteri soprannaturali dell'Amnesia e dell'Ipnosi).
  Per esempio, se su 10 personaggi vivi ve ne sono 5 sotto il controllo dell'Ipnotista, e l'Ipnotista non vota, allora il quorum del 50\% non è raggiunto perché l'Ipnotista e i personaggi sotto il suo controllo non votano.
  \index{Votazione per il rogo@\emph{Votazione per il rogo}}
  \index{Ipnotista}
+ \index{Scrutatore}
  \index{Spettro!Amnesia}
- %\index{Spettro!Duplicazione}
- % TODO E lo Scrutatore?
+ \index{Spettro!Ipnosi}
 
  \item Il potere soprannaturale dell'Occultamento ha effetto anche sugli altri Spettri.
  \index{Spettro}
@@ -682,15 +694,6 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
 %  \item Se nella stessa notte l'ultimo Ipnotista (appartenente alla Fazione dei Negromanti) muore e i Negromanti risvegliano un personaggio come Spettro con il potere della Morte, allora l'Ipnotista morto viene comunque risvegliato come Spettro con il potere dell'Ipnosi.
 %  \index{Ipnotista}
 %  \index{Spettro!Ipnosi}
- 
- \item Il voto eventualmente aggiunto dallo Scrutatore conta ai fini del raggiungimento del quorum.
- \index{Votazione per il rogo@\emph{Votazione per il rogo}}
- \index{Scrutatore}
- 
- \item Se il voto aggiunto dallo Scrutatore è identico al voto espresso dal personaggio su cui è stato usato il potere dello Scrutatore, entrambi i voti vengono conteggiati per determinare il condannato a morte.
- Tuttavia, nella lista dei votanti, il personaggio su cui è stato usato il potere dello Scrutatore compare solo una volta.
- \index{Votazione per il rogo@\emph{Votazione per il rogo}}
- \index{Scrutatore}
  
  \item Se il Trasformista utilizza il proprio potere diventando un Ipnotista, al termine della notte in cui questo accade egli smette di essere affetto dai poteri di Ipnotisti, Spettro con il potere dell'Amnesia e Spettro con il potere dell'Ipnosi. In particolare, se era stato precedentemente ipnotizzato da un qualche Ipnotista, smette di essere ipnotizzato (ma l'Ipnotista non riceve alcuna notifica).
  
@@ -754,7 +757,24 @@ Per rendere questo elenco più facilmente consultabile, più avanti vi è un ind
  \index{Stalker}
  \index{Voyeur}
  
- \item Se un personaggio fallisce nell'utilizzo del potere a causa di un Sequestratore, tale personaggio non compare nell'elenco di quelli fra cui viene sorteggiata la vittima di un eventuale Assassino che ha agito sullo stesso personaggio su cui avrebbe agito il personaggio sequestrato. % TODO È scritto da cani!
+ \item I personaggi su cui agisce con successo un Sequestratore non compaiono nell'elenco di quelli tra cui viene sorteggiata la vittima dell'Assassino.
+ %  Se un personaggio fallisce nell'utilizzo del potere a causa di un Sequestratore, tale personaggio non compare nell'elenco di quelli fra cui viene sorteggiata la vittima di un eventuale Assassino che ha agito sullo stesso personaggio su cui avrebbe agito il personaggio sequestrato.
+ \index{Sequestratore}
+ \index{Assassino}
+ 
+ \item Se più Assassini agiscono contemporaneamente su uno stesso personaggio, i sorteggi delle vittime avvengono in maniera indipendente.
+ In particolare è possibile che più Assassini uccidano il medesimo personaggio.
+ \index{Assassino}
+ 
+ \item Un Assassino può essere ucciso da un altro Assassino, se entrambi agiscono contemporaneamente su uno stesso personaggio.
+ \index{Assassino}
+ 
+ \item Se almeno due Lupi cercano di agire su personaggi diversi, il loro potere speciale non ha effetto anche nel caso in cui qualcuno di essi fallisca (per esempio a causa di un Sequestratore).
+ Lo stesso vale per i Negromanti.
+ \index{Lupo}
+ \index{Negromante}
+ \index{Sequestratore}
+ \index{Fallimento dei poteri@\emph{Fallimento dei poteri}}
 \end{enumerate}
 
 
