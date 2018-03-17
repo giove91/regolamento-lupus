@@ -1,7 +1,11 @@
 
 *.aux
+
 *.idx
+
 *.gz
+
 *.out
+
 *.log
-lupushandbook.pdf
+*.pdf

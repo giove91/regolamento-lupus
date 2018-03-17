@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage[parfill]{parskip}
+\usepackage[colorlinks]{hyperref}
+\usepackage{fullpage}
+\usepackage{mathpazo}
+%\usepackage{utopia}
+\usepackage{graphicx}
+
+% * define a `\twoidxcolumn` based on `\twocolumn`:
+\def\twoidxcolumn{%
+%\clearpage
+\global\columnwidth\textwidth%
+\global\advance\columnwidth-\columnsep%
+\global\divide\columnwidth\tw@%
+\global\hsize\columnwidth%
+\global\linewidth\columnwidth%
+\global\@twocolumntrue%
+\global\@firstcolumntrue%
+\col@number \tw@%
+%\@ifnextchar [\@topnewpage
+\@floatplacement%
+}%
+
+
+\makeatletter%
+\def\@wrindex#1{%
+   \protected@write\@indexfile{}%
+      {\string\indexentry{#1}{\theenumi}}%
+      \endgroup%
+      \@esphack}%
+
+\makeatletter
+\renewenvironment{theindex}
+               {\twocolumn[\section*{Indice delle parole chiave presenti nella
+Sezione \ref{faq}}]%
+                \@mkboth{\MakeUppercase\indexname}%
+                        {\MakeUppercase\indexname}%
+                \thispagestyle{plain}\parindent\z@%
+                \parskip\z@ \@plus .3\p@\relax%
+                \columnseprule \z@%
+                \columnsep 35\p@%
+                \let\item\@idxitem}
+               {}
+\makeatother
+
+\makeindex
+
+\newcommand{\smallspace}{\vskip0.3cm}
+
+% Title Page
+\title{Lupus in tempo reale\\ Cronologia versioni}
+
+\begin{document}
+	
+\maketitle
+
+\section{Principali cambiamenti nella quarta edizione}
+ 
+Questa sezione è pensata per dare a chi ha giocato alla terza edizione di Lupus un'idea delle modifiche più importanti che sono state apportate. Tuttavia non sostituisce un'attenta lettura del resto del regolamento.
+ 
+\begin{itemize}
+	\item La Fazione dei Vampiri è stata sostituita dalla nuova Fazione dei	Negromanti, che ha meccaniche di gioco molto diverse.
+	\item È stato eliminato il suicidio.
+	\item È stato eliminato il rituale dei fantasmi.
+	\item I possibili colori dell'aura sono tornati ad essere solamente il bianco e	il nero.
+	\item Molti ruoli sono stati creati, eliminati o modificati. A chi è abituato al regolamento della terza edizione raccomandiamo di controllare con particolare	attenzione i seguenti ruoli, che hanno subito i cambiamenti più rilevanti: Cacciatore, Custode del cimitero, Esorcista, Investigatore, Rinnegato, Profanatore di tombe, Negromante, Fantasma, Ipnotista, Medium, Spettro.
+	\item Le comunicazioni di gioco (votazione, utilizzo dei poteri, resoconto dell'alba e del tramonto) avvengono attraverso un'interfaccia web e non più via
+	e-mail.
+\end{itemize}
+ 
+\section{Principali cambiamenti nella quinta edizione}
+
+Questa sezione è pensata per dare a chi ha giocato alla quarta edizione di Lupus un'idea delle modifiche più importanti che sono state apportate. Tuttavia non sostituisce un'attenta lettura del resto del regolamento.
+
+\begin{itemize}
+	\item È stato introdotto lo Scrutatore.
+	\item È stato eliminato lo Spettro con il potere della Duplicazione.
+	\item L'ultimo Ipnotista, quando muore, diventa uno Spettro con il potere dell'Ipnosi.
+	\item Il Profanatore di Tombe è stato trasferito alla fazione dei Popolani ed è stato rinominato in Sciamano. Rimane con aura nera, ma diventa mistico.
+	\item Il Necrofilo è stato rinominato in Trasformista.
+	\item Il Medium scopre il ruolo del personaggio scelto, e non più l'aura.
+\end{itemize}
+
+\section{Principali cambiamenti nella sesta edizione}
+ 
+Questa sezione è pensata per dare a chi ha giocato alla quinta edizione di Lupus un'idea delle modifiche più importanti che sono state apportate. Tuttavia non sostituisce un'attenta lettura del resto del regolamento.
+
+\begin{itemize}
+	\item Il Trasformista e il Fantasma hanno ora aura nera.
+	\item Nessun personaggio può utilizzare il proprio potere su sé stesso.
+	\item Sono state rimosse le restrizioni sull'utilizzo di un potere due notti consecutive sullo stesso personaggio.
+	\item Sono stati eliminati il Custode del Cimitero, il Cacciatore, e il potere soprannaturale della Mistificazione.
+	\item Sono stati introdotti l'Assassino, lo Stregone, e il potere soprannaturale della Confusione.
+	\item I personaggi della fazione dei Lupi non possono diventare Spettri.
+	\item Le conoscenze iniziali dei personaggi della fazione dei Lupi sono state modificate.
+	\item Il potere soprannaturale dell'Ipnosi può ora essere scelto dai Negromanti; il primo Ipnotista che muore diventa uno Spettro con tale potere (se disponibile).
+	\item Il Messia fallisce se utilizza il proprio potere su uno Spettro.
+	\item L'Avvocato del Diavolo è stato rinominato in Avvocato.
+\end{itemize}
+
+\section{Principali cambiamenti nella settima edizione}
+ 
+Questa sezione è pensata per dare a chi ha giocato alla sesta edizione di Lupus un'idea delle modifiche più importanti che sono state apportate. Tuttavia non sostituisce un'attenta lettura del resto del regolamento.
+ 
+\begin{itemize}
+	\item Il poteri speciali del Trasformista, dei Lupi, ed il potere soprannaturale della Morte hanno effetto solo sui componenti della Fazione dei Popolani.
+ 	\item Il potere speciale del Diavolo non ha effetto sui componenti della Fazione dei Negromanti.
+ 	\item Il potere speciale dei Negromanti può essere usato ogni notte.
+ 	\item L'Ipnotista non diviene uno Spettro dopo la sua morte.
+ 	\item I seguenti poteri soprannaturali sono stati modificati: Confusione, Ipnosi, Morte, Visione. È stato aggiunto un nuovo potere soprannaturale: Corruzione.
+ 	\item Le restrizioni sulla spettrificazione sono state modificate.
+ 	\item È stato reintrodotto il ruolo di Custode del cimitero. Oltre al vecchio potere, Custode del cimitero e Guardia del corpo scoprono anche quanti personaggi hanno agito sul loro stesso bersaglio.
+ 	\item È stato introdotto un nuovo ruolo: il Necrofilo. Appartiene alla Fazione dei Lupi.
+ 	\item La Fattucchiera ha aura bianca.
+ 	\item Il potere speciale dello Scrutatore è stato modificato.
+\end{itemize}
+
+\end{document}
