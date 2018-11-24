@@ -279,6 +279,8 @@ Durante la notte, se un personaggio (vivo) utilizza la propria abilità su un al
 
 Alcuni ruoli possono ottenere informazioni sui movimenti, cancellarli, o modificarli. Un movimento generato in modo diverso da quello sopra descritto viene denominato fittizio; i movimenti fittizi sono movimenti a tutti gli effetti, salvo diversamente specificato.
 
+Come specificato nella sezione \ref{fallimento}, il fallimento nell'utilizzo di un'abilità genera comunque un movimento, a meno che non sia dovuto ad un Sequestratore.
+
 \subsection{Morte}
 
 Molti dei personaggi non resteranno vivi sino alla fine della partita. Un personaggio può morire in diversi modi: condannato al rogo, sbranato dai Lupi, oppure ucciso da un Cacciatore, da un Assassino, o da uno Spettro.
@@ -328,11 +330,13 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
  
 	\item {\bf Massone} (aura bianca). Il Massone non ha alcun potere speciale. I Massoni conoscono gli altri Massoni.
  
-	\item {\bf Messia} (aura bianca, mistico). Una sola volta durante l'arco della partita, il Messia può scegliere un personaggio morto e resuscitarlo. Tale personaggio ritornerà in vita all'inizio del giorno seguente.
- 
-	 Se il personaggio scelto è uno Spettro, il potere del Messia non ha effetto.
+	\item {\bf Messia} (aura bianca, mistico). Una sola volta durante l'arco della partita, il Messia può scegliere un personaggio morto e resuscitarlo. Tale personaggio ritornerà in vita all'inizio del giorno seguente. Se il personaggio scelto è uno Spettro, il potere del Messia non ha effetto.
 
-	\item{\bf Sciamano} (aura nera, mistico). Ogni due notti, lo Sciamano può scegliere un personaggio morto ed effettuare su di lui un rito arcano. Se il personaggio scelto è uno Spettro, e vi è un Incantesimo attivo su di esso, l'Incantesimo viene disattivato. Inoltre, se durante la stessa notte un Negromante tenta di attivare un Incantesimo su tale Spettro, l'abilità del Negromante non ha effetto.
+	\item{\bf Sciamano} (aura nera, mistico). Ogni due notti, lo Sciamano può scegliere un personaggio morto ed effettuare su di lui un rito arcano.
+	
+	Se il personaggio scelto è uno Spettro, e vi è un Incantesimo attivo su di esso, l'Incantesimo viene disattivato. Inoltre, se durante la stessa notte un Negromante tenta di attivare un Incantesimo su tale Spettro, l'abilità del Negromante non ha effetto.
+	
+	Se invece il personaggio scelto appartiene alla Fazione dei Popolani, e durante la stessa notte un Negromante tenta di utilizzare il suo potere su di lui, il potere del Negromante non ha effetto.
 	
 	\item {\bf Spia} (aura bianca). Ogni notte, eccetto la prima, la Spia può scegliere un personaggio vivo e curiosare fra i suoi effetti personali. Scopre a chi era diretto il voto di tale personaggio durante l'ultima votazione.
 
@@ -353,7 +357,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 	
 	\item {\bf Lupo} (aura nera). Ogni notte, eccetto la prima, ciascun Lupo può scegliere un personaggio vivo e tentare di ucciderlo. Se tutti i Lupi che decidono di usare la propria abilità scelgono lo stesso personaggio, questi muore. Se almeno due Lupi indicano personaggi diversi, la loro abilità non ha effetto.
 	
-	\item {\bf Alcolista} (aura bianca). Ogni notte, l'Alcolista può scegliere un personaggio, vivo o morto, e ubriacarsi vicino casa sua. L'abilità dell'Alcolista non ha alcun effetto.
+	\item {\bf Alcolista} (aura bianca). Ogni notte, l'Alcolista può scegliere un personaggio, vivo o morto, e ubriacarsi vicino casa sua. L'abilità dell'Alcolista fallisce. Come precisato nella sezione \ref{fallimento}, l'abilità dell'Alcolista genera comunque un movimento.
 	
 	\item {\bf Assassino} (aura nera). Ogni due notti, eccetto la prima, l'Assassino può scegliere un personaggio vivo e puntare il suo fucile di precisione verso casa sua. Uccide uno degli altri personaggi vivi il cui movimento è diretto verso la casa del personaggio scelto dall'Assassino, selezionato in modo casuale. Se il movimento selezionato è fittizio, nessuno viene ucciso.
 
@@ -374,11 +378,9 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 
 	\item {\bf Negromante} (aura bianca, mistico). Ogni notte, ciascun Negromante può scegliere uno Spettro ed un Incantesimo non già attivo. L'Incantesimo selezionato viene attivato sullo Spettro scelto.
 	Un eventuale Incantesimo precedentemente attivo su tale Spettro viene sostituito dall'Incantesimo selezionato.
-	Un Negromante può anche disattivare un Incantesimo attivo su tale Spettro senza attivarne uno nuovo.
+	Il Negromante può anche disattivare un Incantesimo attivo su tale Spettro senza attivarne uno nuovo.
 	
-	Un Negromante possiede anche un potere. Una sola volta durante l'arco della partita, un Negromante morto può scegliere un altro personaggio morto e selezionare un Incantesimo non già attivo. Se tale personaggio appartiene alla Fazione dei Popolani, questi comincia a giocare per la Fazione dei Negromanti, diventa uno Spettro e l'Incantesimo selezionato viene attivato su di esso. Altrimenti, il potere del Negromante non ha effetto.
-	
-	Ciascun Incantesimo può essere attivo su al più uno Spettro alla volta.
+	Il Negromante possiede anche un potere. Una sola volta durante l'arco della partita, un Negromante morto può scegliere un altro personaggio morto e selezionare un Incantesimo non già attivo (eventualmente nessun Incantesimo). Se tale personaggio appartiene alla Fazione dei Popolani, questi comincia a giocare per la Fazione dei Negromanti, diventa uno Spettro e l'Incantesimo selezionato viene attivato su di esso. Altrimenti, il potere del Negromante non ha effetto.
  
 	\item {\bf Fantasma} (aura nera). Il Fantasma non ha alcuna abilità. Se il Fantasma muore, diventa immediatamente uno Spettro. Inoltre, se vi sono degli Incantesimi non attivi (diversi da Vita), uno di essi, selezionato in modo casuale, viene attivato sul Fantasma.
 
@@ -407,6 +409,8 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 \subsubsection*{Incantesimi}
 
 La maggior parte degli Incantesimi assegna un potere ad uno Spettro. Se non diversamente riportato, la descrizione dell'Incantesimo coincide con quella del potere ottenuto dallo Spettro.
+
+Ciascun Incantesimo può essere attivo su al più uno Spettro alla volta.
 
 \begin{itemize}
 
@@ -452,11 +456,11 @@ Anche escludendo i casi menzionati sopra, non sempre un personaggio riesce ad us
 
 \begin{itemize}
 	\item Blocco da parte di un altro personaggio. Ad esempio, si può essere rapiti da un Sequestratore, bloccati da un Esorcista o dallo Spettro su cui è attivo l'Incantesimo dell'Occultamento.
-	\item Restrizioni all'utilizzo di abilità o potere. Ad esempio, un Lupo non riesce a uccidere se nella stessa notte un altro Lupo cerca di assassinare un personaggio diverso; l'abilità del Trasformista non ha alcun effetto su un Lupo; l'abilità dell'Alcolista non ha mai alcun effetto.
+	\item Restrizioni all'utilizzo di abilità o potere. Ad esempio, un Lupo non riesce a uccidere se nella stessa notte un altro Lupo cerca di assassinare un personaggio diverso; l'abilità del Trasformista non può essere usata su un Lupo; l'abilità dell'Alcolista non ha mai successo.
 	\item Contraddizioni nell'utilizzo di abilità o poteri. Può succedere che non ci sia alcun modo logico di risolvere le azioni dei personaggi nel corso di una notte (vedi le FAQ per una discussione più approfondita). Questo accade per esempio se tre Sequestratori si sequestrano in modo ciclico.
 \end{itemize}
 
-Nel caso in cui un personaggio cerchi di utilizzare la propria abilità o potere ma l'utilizzo non ha effetto, il personaggio riceve una notifica di fallimento. Tale notifica non precisa la ragione del fallimento. Un utilizzo a vuoto (ad esempio una Guardia che utilizzi la propria abilità su un personaggio diverso da quello scelto dai Lupi) non costituisce un fallimento.
+Nel caso in cui un personaggio cerchi di utilizzare la propria abilità o potere ma l'utilizzo non ha successo, il personaggio riceve una notifica di fallimento. Tale notifica non precisa la ragione del fallimento. Un utilizzo a vuoto (ad esempio una Guardia che utilizzi la propria abilità su un personaggio diverso da quello scelto dai Lupi) non costituisce un fallimento.
 
 Un personaggio vivo che cerchi di utilizzare la propria abilità e fallisca genera comunque un movimento, a meno che il fallimento sia dovuto a un Sequestratore (come riportato nella descrizione del Sequestratore, Sezione \ref{ruoli}).
 
