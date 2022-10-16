@@ -342,7 +342,7 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 
 \begin{itemize}
 	        
-	\item {\bf Apprendista} (aura bianca). All'inizio della partita, l'Apprendista ottiene un Mansionario, ossia un elenco di abilità (eventualmente con molteplicità). Ogni notte, l'Apprendista può selezionare un'abilità dal proprio Mansionario e un personaggio su cui tale abilità può essere utilizzata. Utilizza l'abilità selezionata sul personaggio scelto, e tale abilità viene rimossa dal Mansionario.
+	\item {\bf Apprendista} (aura bianca). All'inizio della partita, l'Apprendista ottiene un Mansionario, ossia un elenco di abilità (eventualmente ripetute). Ogni notte, l'Apprendista può selezionare un'abilità dal proprio Mansionario ed utilizzarla, specificando il personaggio sul quale la utilizza ed eventuali ulteriori informazioni. Se tale abilità viene utilizzata con successo, viene rimossa dal Mansionario.
 	
 	Il Mansionario non può comprendere le abilità di Fantasma, Lupo, o Negromante.
 	
@@ -385,21 +385,11 @@ I seguenti sono i ruoli che \emph{possono} comparire nel gioco, divisi per fazio
 
 \subsection*{Fazione dei Villani}
 
-All'inizio della partita, la Fazione dei Villani ottiene un Grimorio, ossia un elenco di Incantesimi, chiamato Grimorio principale.
+All'inizio della partita, la Fazione dei Villani ottiene un Grimorio, ossia un elenco di Incantesimi (eventualmente ripetuti), chiamato Grimorio principale.
 
 \begin{itemize}
 	
 	\item {\bf Lupo} (aura nera). Ogni notte, eccetto la prima, ciascun Lupo può scegliere un personaggio vivo e tentare di ucciderlo. Se tutti i Lupi che decidono di usare la propria abilità scelgono lo stesso personaggio, questi muore. Se almeno due Lupi indicano personaggi diversi, la loro abilità non ha effetto.
-	
-	\item {\bf Negromante} (aura nera, mistico). All'inizio della partita, il Negromante ottiene un proprio Grimorio.
-	
-	Ogni notte, il Negromante può scegliere un personaggio morto (o uno Spettro con l'Incantesimo della Vita) ed un Incantesimo scelto dal proprio Grimorio o dal Grimorio principale.
-
-    Se il personaggio scelto è uno Spettro, l'Incantesimo selezionato viene attivato sullo Spettro scelto. Un eventuale Incantesimo precedentemente attivo su tale Spettro viene sostituito dall'Incantesimo selezionato. %Il Negromante può anche disattivare un Incantesimo attivo su tale Spettro senza attivarne uno nuovo.
-
-    Se il personaggio scelto è un Villico, e l'Incantesimo è stato selezionato dal Grimorio principale, questi diventa uno Spettro, l'Incantesimo selezionato viene attivato su di esso, e comincia a giocare per la Fazione dei Villani. Il Negromante perde il proprio Grimorio.
-
-	L'Incantesimo selezionato viene rimosso dal Grimorio.
 
 	\item {\bf Alcolista} (aura bianca). Ogni notte, l'Alcolista può scegliere un personaggio, vivo o morto, e ubriacarsi sotto casa sua. L'abilità dell'Alcolista non ha effetto.
 	
@@ -412,6 +402,16 @@ All'inizio della partita, la Fazione dei Villani ottiene un Grimorio, ossia un e
 	Ogni notte, il Fantasma può scegliere un Incantesimo dal proprio Grimorio, ed effettuare un rituale per legarsi a tale incantesimo. Se il Fantasma muore, diventa immediatamente uno Spettro; se ha effettuato rituali dall'inizio della partita, ottiene l'Incantesimo scelto nell'ultimo rituale e tale Incantesimo viene rimosso dal Grimorio, altrimenti viene risvegliato come Spettro senza alcun Incantesimo attivo.
  
 	\item {\bf Fattucchiera} (aura bianca, mistico). Ogni notte la Fattucchiera può scegliere un personaggio, vivo o morto, ed un ruolo, e colpire il personaggio scelto con una fattura. Ai fini dell'utilizzo di abilità, per quella notte, ruolo, aura, e misticità di tale personaggio risultano come quelle del ruolo scelto; i poteri non sono influenzati dall'abilità della Fattucchiera, così come eventuali abilità o poteri di tale personaggio.
+	
+	\item {\bf Negromante} (aura nera, mistico). All'inizio della partita, il Negromante ottiene un proprio Grimorio.
+	
+	Ogni notte, il Negromante può scegliere un personaggio morto (o uno Spettro con l'Incantesimo della Vita) ed un Incantesimo scelto dal proprio Grimorio o dal Grimorio principale.
+
+    Se il personaggio scelto è uno Spettro, l'Incantesimo selezionato viene attivato sullo Spettro scelto. Un eventuale Incantesimo precedentemente attivo su tale Spettro viene sostituito dall'Incantesimo selezionato. %Il Negromante può anche disattivare un Incantesimo attivo su tale Spettro senza attivarne uno nuovo.
+
+    Se il personaggio scelto è un Villico, e l'Incantesimo è stato selezionato dal Grimorio principale, questi diventa uno Spettro, l'Incantesimo selezionato viene attivato su di esso, e comincia a giocare per la Fazione dei Villani. Il Negromante perde il proprio Grimorio.
+
+	L'Incantesimo selezionato viene rimosso dal Grimorio.
 
 	\item {\bf Sequestratore} (aura nera). Ogni notte, il Sequestratore può scegliere un personaggio vivo e rapirlo. Per quella notte, se il personaggio scelto utilizza la propria abilità, tale abilità non ha effetto. Il Sequestratore scopre il movimento di tale personaggio.
 	
@@ -458,7 +458,7 @@ La maggior parte degli Incantesimi assegna un potere ad uno Spettro. Se non dive
 
 	\item {\bf Telepatia}. Ogni due notti, lo Spettro può scegliere un personaggio vivo e un ruolo, e tentarne leggerne la mente. Scopre se il personaggio scelto ha tale ruolo. Inoltre, in caso di responso positivo, ottiene tutte le informazioni che tale personaggio riceve durante l'alba successiva.
 
-	\item {\bf Visione}. Ogni due notti, lo Spettro può scegliere un personaggio, vivo o morto, e spiarne la casa. Scopre l'elenco di tutte le abilità, con molteplicità, che sono state utilizzate quella notte su quel personaggio, ma non scopre l'identità dei giocatori che le hanno utilizzate.
+	\item {\bf Visione}. Ogni due notti, lo Spettro può scegliere un personaggio, vivo o morto, e spiarne la casa. Scopre l'elenco di tutte le abilità (eventualmente ripetute) che sono state utilizzate quella notte su quel personaggio, ma non scopre l'identità dei giocatori che le hanno utilizzate.
 
 	\item {\bf Vita}. Lo Spettro non ottiene alcun potere. Invece, durante l'alba successiva, ritorna in vita mantenendo ruolo ed abilità, ma continuando a giocare con i Villani. L'Incantesimo della Vita viene disattivato se si verifica una condizione per cui tale personaggio dovrebbe morire (per esempio perché bruciato sul rogo), in aggiunta alle normali condizioni di disattivazione. Se l'Incantesimo della Vita viene disattivato (per qualsiasi ragione), lo Spettro muore.
  
