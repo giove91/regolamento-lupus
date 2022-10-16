@@ -9,3 +9,7 @@
 
 *.log
 *.pdf
+*.fdb_latexmk
+*.fls
+*.ilg
+*.ind
